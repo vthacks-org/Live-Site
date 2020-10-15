@@ -1,0 +1,6 @@
+#event-list {
+	outline: 1px solid #ddd;
+	height: 300px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
