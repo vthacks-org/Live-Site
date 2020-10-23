@@ -1,38 +1,38 @@
 .mr-auto a {
-	padding: 8px;
+  padding: 8px;
 }
 
 #navbar-main {
-	z-index: 1000;
-	user-select: none;
+  z-index: 1000;
+  user-select: none;
 }
 
 #navbar-hidden-overlay {
-	position: fixed;
-	z-index: 999;
-	width: 100%;
-	height: 100%;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
 }
 
 #brand {
-	font-family: Harabara;
+  font-family: Harabara;
 }
 
 #brand span {
-	font-family: Inter;
-	font-weight: bold;
+  font-family: Inter;
+  font-weight: bold;
 }
 
 #brand a {
-	color: white;
-	margin-left: 8px;
+  color: white;
+  margin-left: 8px;
 }
 
 #brand img {
-	height: 32px;
-	width: 32px;
+  height: 64px;
+  width: 64px;
 }
 
 #basic-navbar-nav a {
-	color: white;
+  color: white;
 }
