@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: vthacks-org/Live-Site
+media_folder: static/assets
+public_folder: /assets
+#display_url: https://your-site.com
+#logo_url: https://your-site.com/images/logo.svg
+collections:
+  - name: event
+    label: Event
+    folder: event
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: name, label: Name }
+      - { name: start, label: Start, widget: datetime }
+      - { name: duration, label: Duration }
+      - { name: category, label: Category, widget: relation }
+      - { name: location, label: Location }
+      - { name: description, label: Description, widget: markdown }

@@ -9,17 +9,6 @@ const InfoView: React.FC = () => {
   return (
     <Container id="info-view" fluid>
       <Col>
-        <Row className="links">
-          <Col>
-            <a href="">
-              <img
-                className="rounded"
-                src={require("../assets/images/Discord-Logo+Wordmark-Color.png")}
-                alt="Discord Server Link"
-              />
-            </a>
-          </Col>
-        </Row>
         <div>
           <h2>WiFi Networks</h2>
           <h4>eduroam</h4>
