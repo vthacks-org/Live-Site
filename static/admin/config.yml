@@ -16,5 +16,6 @@ collections:
       - { name: start, label: Start, widget: datetime }
       - { name: duration, label: Duration }
       - { name: category, label: Category, widget: relation }
-      - { name: location, label: Location }
+      - { name: location, label: Zoom Location }
+      - { name: resources, label: Resources }
       - { name: description, label: Description, widget: markdown }

@@ -7,7 +7,7 @@ import FooterComponent from "./FooterComponent"
 
 const Layout = ({ children, title = "" }) => {
   return (
-    <div>
+    <>
       <div className="App">
         <Helmet>
           <title>VTHacks - {title}</title>
@@ -18,10 +18,12 @@ const Layout = ({ children, title = "" }) => {
           ></link>
         </Helmet>
         <NavBarComponent />
-        <div id="switch">{children}</div>
+        <div className="app-content" id="switch">
+          {children}
+        </div>
+        <FooterComponent />
       </div>
-      <FooterComponent />
-    </div>
+    </>
   )
 }
 

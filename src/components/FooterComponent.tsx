@@ -28,7 +28,7 @@ const FooterComponent = () => {
             <a href="https://www.facebook.com/vthacks/" target="_blank">
               <img
                 className="facebook"
-                src={require("../assets/brand-logos/f_logo_RGB-Blue_58.png")}
+                src={require("../assets/brand-logos/f_logo_RGB-Blue_512.png")}
                 alt="Facebook Page Link"
               />
             </a>
