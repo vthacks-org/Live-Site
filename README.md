@@ -1,6 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
+  <a href="https://vt-hacks-live-site.netlify.app/">
     <img alt="VTHacks" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
 </p>
@@ -8,7 +8,7 @@
   VTHacks Live Site
 </h1>
 
-The Production Live Site can be found [here](https://)
+The Production Live Site can be found [here](https://vt-hacks-live-site.netlify.app/)
 
 Later We will provide instructions on how to use the Netlify CMS to population the Live Site with information.
 
