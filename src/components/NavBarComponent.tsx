@@ -16,10 +16,6 @@ const ROUTES_WITH_TITLES = [
     path: "/",
   },
   {
-    title: "Information",
-    path: "/info",
-  },
-  {
     title: "Challenges",
     path: "/challenges",
   },
@@ -28,8 +24,16 @@ const ROUTES_WITH_TITLES = [
     path: "/workshops",
   },
   {
-    title: "Contact",
-    path: "/contact",
+    title: "Resources",
+    path: "/resources",
+  },
+  {
+    title: "Submission Guidelines",
+    path: "/submission_guidelines",
+  },
+  {
+    title: "Prizes",
+    path: "/prizes",
   },
 ]
 

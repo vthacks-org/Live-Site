@@ -1,0 +1,17 @@
+#info-view img {
+  width: 64px;
+  height: 64px;
+}
+
+#info-view .discord {
+  width: 80px;
+  height: 82px;
+}
+
+#info-view .facebook {
+  margin-left: 10px;
+}
+
+#info-view .links {
+  text-align: center;
+}

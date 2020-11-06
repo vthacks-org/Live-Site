@@ -1,10 +1,13 @@
+/**
+ * Deprecated
+ */
 import React from "react"
-
-import Container from "react-bootstrap/Container"
-import Col from "react-bootstrap/Col"
+import "./ContactView.css"
+import { Container, Col } from "react-bootstrap"
 
 import DiscordComponent from "../components/DiscordComponent"
 import TwitterComponent from "../components/TwitterComponent"
+import FacebookComponent from "../components/FacebookComponent"
 
 const ContactView: React.FC = () => {
   return (
@@ -18,6 +21,9 @@ const ContactView: React.FC = () => {
       </Col>
       <DiscordComponent />
       <TwitterComponent account="VT_Hacks" limit={1} />
+      <div className="facebook">
+        <FacebookComponent />
+      </div>
     </Container>
   )
 }

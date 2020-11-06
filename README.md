@@ -1,13 +1,28 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+    <img alt="VTHacks" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's blog starter
+  VTHacks Live Site
 </h1>
 
+The Production Live Site can be found [here](https://)
+
+Later We will provide instructions on how to use the Netlify CMS to population the Live Site with information.
+
+The Live Site is the website that we will be directing Hackers to on the day of the event
+
+If you have any questions about the Live-Site, please contact anyone on the Web Dev team or Peter or Patrick
+
+We hope you like it! - Jacob, Brian
+
+## How to use the Netlify CMS to populate data on the Live Site
+
+1. **Navigate to /admin on the Live Site**
+Note: This is just a starter template for the ReadMe
+<!-- 
 Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
@@ -96,4 +111,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-blog)
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+AUTO-GENERATED-CONTENT:END -->
