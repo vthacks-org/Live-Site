@@ -19,7 +19,7 @@ module.exports = {
       options: {
         name: `schedule`,
         path: `${__dirname}/schedule`,
-      }
+      },
     },
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
@@ -33,7 +33,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `static/LogoFinal.svg`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
