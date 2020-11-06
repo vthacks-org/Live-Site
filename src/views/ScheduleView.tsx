@@ -1,9 +1,10 @@
 import React from 'react';
+import { graphql } from "gatsby";
 import './ScheduleView.css';
 
 import { ONE_MINUTE_MILLISECOND, SHOW_AS_LIVE_DATES, MOBILE_BREAKPOINT_WIDTH } from '../constants';
 import { EventListener, RelativeTime } from '../enums';
-import { IEventDay } from '../interfaces';
+import { IEvent, IEventDay } from '../interfaces';
 import { firstDay, secondDay, thirdDay, dayAfterLastDay } from '../data/schedule';
 import { getRelativeDayTime } from '../utils';
 
@@ -17,7 +18,14 @@ import EventListComponent from '../components/EventListComponent';
 const days: [IEventDay, IEventDay, IEventDay] = [firstDay, secondDay, thirdDay];
 days.forEach(day => day.events.forEach(event => (event.duration = Math.abs(event.duration))));
 
-const ScheduleView: React.FC = () => {
+type Props = {
+	schedule: IEvent[]
+};
+
+const ScheduleView: React.FC<Props> = ({schedule}) => {
+	schedule.forEach(event => event.start = new Date(event.start));
+	const daysTest = Array.from(new Set(schedule.map(({start}) => new Date(start.getFullYear(), start.getMonth(), start.getDate(), 0,0,0))));
+	console.log(daysTest);
 	let initialDay = firstDay;
 	if (getRelativeDayTime(secondDay.date) === RelativeTime.Present) {
 		initialDay = secondDay;

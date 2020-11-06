@@ -1,0 +1,37 @@
+Copystatic/admin/config.yml: copy code to clipboard
+backend:
+  name: test-repo
+media_folder: static/assets
+public_folder: /assets
+collections:
+  - name: schedule
+    label: Schedule
+    folder: schedule
+    create: true
+    extension: json
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: start, label: Date, widget: datetime }
+      - { name: duration, label: Duration, widget: number, value_type: int }
+      - {
+          name: category,
+          label: Category,
+          widget: select,
+          options:
+            [
+              "default",
+              "food",
+              "workshop1",
+              "workshop2",
+              "activity",
+              "career",
+              "hacker",
+            ],
+        }
+      - {
+          name: location,
+          label: Location,
+          widget: select,
+          options: ["Virtual", "Surge 301", "Surge 303"],
+        }
+      - { name: description, label: Description, widget: text }
