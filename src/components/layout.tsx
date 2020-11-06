@@ -11,11 +11,7 @@ const Layout = ({ children, title = "" }) => {
       <div className="App">
         <Helmet>
           <title>VTHacks - {title}</title>
-          <link
-            rel="shortcut icon"
-            type="image/png"
-            href="/LogoFinal.svg"
-          ></link>
+          <link rel="icon" type="image/svg+xml" href="/LogoFinal.svg"></link>
         </Helmet>
         <NavBarComponent />
         <div className="app-content" id="switch">
