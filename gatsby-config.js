@@ -21,7 +21,7 @@ module.exports = {
         path: `${__dirname}/schedule`,
       }
     },
-    `gatsby-transformer-json`
+    `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
