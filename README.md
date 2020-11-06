@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://vt-hacks-live-site.netlify.app/">
-    <img alt="VTHacks" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+    <img alt="VTHacks" src="https://vt-hacks-live-site.netlify.app/LogoFinal.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
