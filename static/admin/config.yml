@@ -1,12 +1,13 @@
 Copystatic/admin/config.yml: copy code to clipboard
 backend:
-  name: test-repo
+  name: github
+  repo: vthacks-org/Live-Site
 media_folder: static/assets
 public_folder: /assets
 collections:
   - name: schedule
     label: Schedule
-    folder: schedule
+    folder: content/schedule
     create: true
     extension: json
     fields:
