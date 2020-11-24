@@ -12,7 +12,14 @@ collections:
     extension: json
     fields:
       - { name: name, label: Name, widget: string }
-      - { name: start, label: Date, widget: datetime }
+      - {
+          name: start,
+          label: Date,
+          widget: datetime,
+          date_format: "DD.MM.YYYY",
+          time_format: "HH.mm",
+          format: "LLLL",
+        }
       - { name: duration, label: Duration, widget: number, value_type: int }
       - {
           name: category,

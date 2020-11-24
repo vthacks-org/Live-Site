@@ -1,6 +1,6 @@
 import { RelativeTime } from "./enums"
-import { ONE_MINUTE_MILLISECOND } from "./constants"
-import { TIMEZONE_ABBR } from "./constants"
+import { ONE_MINUTE_MILLISECOND, ONE_DAY_MILLISECOND } from "./constants"
+import { TIMEZONE_ABBR, DAY_OF_THE_EVENT } from "./constants"
 import { IEvent, IEventDay } from "./interfaces"
 
 export function identity<T>(arg: T): T {
@@ -71,9 +71,9 @@ export function isSameDay(first: Date, second: Date) {
 }
 
 export function daysFromSchedule(schedule: IEvent[]) {
-  const dayOneDate = new Date("2021-02-17T00:00:00-05:00")
-  const dayTwoDate = new Date(dayOneDate.getTime() + 1000 * 60 * 60 * 24)
-  const dayThreeDate = new Date(dayTwoDate.getTime() + 1000 * 60 * 60 * 24)
+  const dayOneDate = DAY_OF_THE_EVENT
+  const dayTwoDate = new Date(dayOneDate.getTime() + ONE_DAY_MILLISECOND)
+  const dayThreeDate = new Date(dayTwoDate.getTime() + ONE_DAY_MILLISECOND)
   schedule.forEach(event => (event.start = new Date(event.start)))
 
   let dayOneEvents: IEvent[] = []
@@ -95,25 +95,23 @@ export function daysFromSchedule(schedule: IEvent[]) {
     index: 0,
     title: "Wed",
     longTitle: "Wednesday February 17",
-    date: new Date("2021-02-17T00:00:00-05:00"),
+    date: DAY_OF_THE_EVENT,
     events: dayOneEvents,
   }
   const secondDay: IEventDay = {
     index: 1,
     title: "Thurs",
     longTitle: "Thursday February 18",
-    date: new Date("2021-02-18T00:00:00-05:00"),
+    date: new Date(DAY_OF_THE_EVENT.getTime() + ONE_DAY_MILLISECOND),
     events: dayTwoEvents,
   }
   const thirdDay: IEventDay = {
     index: 2,
     title: "Fri",
     longTitle: "Friday February 19",
-    date: new Date("2021-02-19T00:00:00-05:00"),
+    date: new Date(DAY_OF_THE_EVENT.getTime() + ONE_DAY_MILLISECOND * 2),
     events: dayThreeEvents,
   }
-
-  const dayAfterLastDay = new Date("2021-02-20T00:00:00-05:00")
 
   const days: [IEventDay, IEventDay, IEventDay] = [
     firstDay,
