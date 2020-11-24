@@ -35,28 +35,28 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `resources`,
+        name: `prizes`,
         path: `${__dirname}/content/prizes`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `resources`,
+        name: `submission-guidelines`,
         path: `${__dirname}/content/submission-guidelines`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `resources`,
+        name: `sponsors`,
         path: `${__dirname}/content/sponsors`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `resources`,
+        name: `judges`,
         path: `${__dirname}/content/judges`,
       },
     },
