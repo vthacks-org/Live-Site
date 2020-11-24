@@ -36,3 +36,32 @@ collections:
           options: ["Virtual", "Surge 301", "Surge 303"],
         }
       - { name: description, label: Description, widget: text }
+
+  - name: resources
+    label: Resources
+    folder: content/resources
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    extension: markdown
+    format: frontmatter
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Body, widget: markdown }
+
+  # - name: prizes
+  #   label: Prizes
+  #   folder: content/prizes
+  #   create: true
+  #   extension: markdown
+  #   fields:
+  #     - { name: name, label: Name, widget: string }
+  #     - { name: description, label: Description, widget: markdown }
+
+  # - name: submission_guidlines
+  #   label: Submission Guidlines
+  #   folder: content/submission_guidlines
+  #   create: true
+  #   extension: markdown
+  #   fields:
+  #     - { name: name, label: Name, widget: string }
+  #     - { name: description, label: Description, widget: markdown }
