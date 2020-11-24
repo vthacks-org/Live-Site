@@ -33,11 +33,6 @@ type Props = {
 const ScheduleView: React.FC<Props> = ({ schedule }) => {
   const days = daysFromSchedule(schedule)
 
-  const start = days[0].events[0].start
-  const aDate = start.valueOf()
-  console.log(aDate)
-  console.log(new Date(aDate))
-
   let initialDay = days[0]
   if (getRelativeDayTime(days[1].date) === RelativeTime.Present) {
     initialDay = days[1]
