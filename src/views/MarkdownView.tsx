@@ -12,7 +12,8 @@ type Props = {
 }
 
 const MarkdownView = ({ templateKey, list }: Props) => {
-  const renderJudges = () => {
+  const renderMarkdown = () => {
+    console.log(list)
     if (!list.length) {
       return <NoContentComponent name={templateKey} />
     }
@@ -30,7 +31,7 @@ const MarkdownView = ({ templateKey, list }: Props) => {
   const id = `${templateKey}-view`
   return (
     <Container id={id}>
-      <Col>{renderJudges()}</Col>
+      <Col>{renderMarkdown()}</Col>
     </Container>
   )
 }
