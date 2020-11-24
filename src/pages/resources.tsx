@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
-import ResourceView from "../views/ResourceView"
+import MarkdownView from "../views/MarkdownView"
 
 import { MarkdownProps } from "../types"
 
@@ -12,7 +12,7 @@ const Resources: React.FC<MarkdownProps> = ({
 }) => {
   return (
     <Layout title="Resources">
-      <ResourceView resources={resources} />
+      <MarkdownView templateKey="resources" list={resources} />
     </Layout>
   )
 }
@@ -21,13 +21,17 @@ export default Resources
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { title: { eq: "resources" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "resources" } } }
+    ) {
       edges {
         node {
           id
           html
           frontmatter {
             title
+            templateKey
+            shouldDisplayTitle
           }
         }
       }

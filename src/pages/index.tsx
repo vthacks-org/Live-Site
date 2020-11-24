@@ -1,5 +1,5 @@
 import React from "react"
-import {graphql} from 'gatsby'
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import ScheduleView from "../views/ScheduleView"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -8,16 +8,20 @@ import { IEvent } from "../interfaces"
 type Props = {
   data: {
     allScheduleJson: {
-      nodes: IEvent
+      nodes: IEvent[]
     }
   }
 }
 
-const Index: React.FC<Props> = ({data: {allScheduleJson: {nodes: schedule}}}) => {
-  console.log(schedule);
+const Index: React.FC<Props> = ({
+  data: {
+    allScheduleJson: { nodes: schedule },
+  },
+}) => {
+  console.log(schedule)
   return (
     <Layout title="Schedule">
-      <ScheduleView schedule={schedule}/>
+      <ScheduleView schedule={schedule} />
     </Layout>
   )
 }
@@ -25,16 +29,16 @@ const Index: React.FC<Props> = ({data: {allScheduleJson: {nodes: schedule}}}) =>
 export default Index
 
 export const pageQuery = graphql`
-	query {
-		allScheduleJson {
-		nodes {
-			name
-			location
-			start
-			duration
-			category
-			description
-		}
-		}
-	}
+  query {
+    allScheduleJson {
+      nodes {
+        name
+        location
+        start
+        duration
+        category
+        description
+      }
+    }
+  }
 `

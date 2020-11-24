@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import React from "react"
-import SubmissionsView from "../views/SubmissionsView"
 import Layout from "../components/layout"
+import MarkdownView from "../views/MarkdownView"
 
 import { MarkdownProps } from "../types"
 
@@ -12,7 +12,10 @@ const Submissions: React.FC<MarkdownProps> = ({
 }) => {
   return (
     <Layout title="Submission Guidelines">
-      <SubmissionsView guidelines={submission_guidelines} />
+      <MarkdownView
+        templateKey="submission_guidelines"
+        list={submission_guidelines}
+      />
     </Layout>
   )
 }
@@ -22,7 +25,7 @@ export default Submissions
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { frontmatter: { title: { eq: "submission_guidelines" } } }
+      filter: { frontmatter: { templateKey: { eq: "submission_guidelines" } } }
     ) {
       edges {
         node {
@@ -30,6 +33,8 @@ export const pageQuery = graphql`
           html
           frontmatter {
             title
+            templateKey
+            shouldDisplayTitle
           }
         }
       }
