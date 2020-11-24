@@ -7,12 +7,12 @@ import { MarkdownProps } from "../types"
 
 const Submissions: React.FC<MarkdownProps> = ({
   data: {
-    allMarkdownRemark: { edges: submission_guidlines },
+    allMarkdownRemark: { edges: submission_guidelines },
   },
 }) => {
   return (
-    <Layout title="Submission Guidlines">
-      <SubmissionsView guidelines={submission_guidlines} />
+    <Layout title="Submission Guidelines">
+      <SubmissionsView guidelines={submission_guidelines} />
     </Layout>
   )
 }
