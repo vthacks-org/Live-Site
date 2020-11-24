@@ -1,0 +1,5 @@
+---
+title: Test 2
+templateKey: resources
+---
+This is the second resource addition, generally speaking we would only have a single "Resource" in this collection, but despite that sounding weird it may be the optimal way to go about this sort of endeavor.
