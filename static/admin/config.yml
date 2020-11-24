@@ -9,6 +9,7 @@ collections:
     label: Schedule
     folder: content/schedule
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{name}}"
     extension: json
     fields:
       - { name: name, label: Name, widget: string }
