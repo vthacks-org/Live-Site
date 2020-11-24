@@ -1,49 +1,113 @@
-import React from 'react';
+import React from "react"
 
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal"
 
-import { CLOCK_EMOJI_HOUR_LIST, CLOCK_EMOJI_THIRTY_LIST } from '../constants';
-import { IEvent } from '../interfaces';
+import { CLOCK_EMOJI_HOUR_LIST, CLOCK_EMOJI_THIRTY_LIST } from "../constants"
+import { IEvent } from "../interfaces"
 
 interface PropTypes {
-	show: boolean;
-	onHide: () => void;
-	formattedTime: string;
-	event: IEvent;
+  show: boolean
+  onHide: () => void
+  formattedTime: string
+  event: IEvent
 }
 
-const ModalDialog: React.FC<PropTypes> = props => {
-	const hours = props.event.start.getHours();
-	const minutes = props.event.start.getMinutes();
+const ModalDialog: React.FC<PropTypes> = ({
+  event,
+  formattedTime,
+  onHide,
+  show,
+}) => {
+  const hours = event.start.getHours()
+  const minutes = event.start.getMinutes()
 
-	return (
-		<Modal show={props.show} onHide={props.onHide} centered>
-			<Modal.Header closeButton>
-				<Modal.Title>
-					{props.event.name} {props.event.subtitle && `- ${props.event.subtitle}`}
-				</Modal.Title>
-			</Modal.Header>
-			<Modal.Body>
-				<p>
-					<span role="img" aria-label="clock emoji">
-						{(minutes < 30 ? CLOCK_EMOJI_HOUR_LIST : CLOCK_EMOJI_THIRTY_LIST)[hours % 12]}
-					</span>
-					&nbsp;
-					<span>{props.formattedTime}</span>
-				</p>
-				{props.event.location && (
-					<p>
-						<span role="img" aria-label="round pushpin emoji">
-							📍
-						</span>
-						&nbsp;
-						<span>{props.event.location}</span>
-					</p>
-				)}
-				{props.event.description && <p>{props.event.description}</p>}
-			</Modal.Body>
-		</Modal>
-	);
-};
+  const renderTime = () => {
+    const list = (minutes < 30
+      ? CLOCK_EMOJI_HOUR_LIST
+      : CLOCK_EMOJI_THIRTY_LIST)[hours % 12]
+    return (
+      <p>
+        <span role="img" aria-label="clock emoji">
+          {list}
+        </span>
+        &nbsp;
+        <span>{formattedTime}</span>
+      </p>
+    )
+  }
 
-export default ModalDialog;
+  const renderLocation = () => {
+    if (!event.location) {
+      return null
+    }
+
+    return (
+      <p>
+        <span role="img" aria-label="round pushpin emoji">
+          📍
+        </span>
+        &nbsp;
+        <span>{event.location}</span>
+      </p>
+    )
+  }
+
+  const renderCallLink = () => {
+    if (!event.callLink) {
+      return null
+    }
+
+    return (
+      <p>
+        <span role="img" aria-label="round pushpin emoji">
+          📍
+        </span>
+        &nbsp;
+        <span>
+          <a href={event.callLink} target="_blank">
+            Call Link
+          </a>
+        </span>
+      </p>
+    )
+  }
+
+  const renderContentLink = () => {
+    if (!event.contentLink) {
+      return null
+    }
+
+    return (
+      <p>
+        <span role="img" aria-label="round pushpin emoji">
+          📍
+        </span>
+        &nbsp;
+        <span>
+          <a href={event.contentLink} target="_blank">
+            Slides/VOD
+          </a>
+        </span>
+      </p>
+    )
+  }
+
+  const title = `${event.name} ${event.subtitle && `- ${event.subtitle}`}`
+
+  return (
+    <Modal show={show} onHide={onHide} centered>
+      <Modal.Header closeButton>
+        <Modal.Title>{title}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        {renderTime()}
+        {renderLocation()}
+        {event.description && <p>{event.description}</p>}
+        {renderContentLink()}
+        {renderCallLink()}
+      </Modal.Body>
+    </Modal>
+  )
+}
+
+export default ModalDialog

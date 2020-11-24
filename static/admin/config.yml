@@ -36,6 +36,8 @@ collections:
           options: ["Virtual", "Surge 301", "Surge 303"],
         }
       - { name: description, label: Description, widget: text }
+      - { name: contentLink, label: Slides/VOD, widget: text }
+      - { name: callLink, label: Call Link, widget: text }
 
   - name: resources
     label: Resources

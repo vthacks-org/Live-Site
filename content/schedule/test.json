@@ -1,8 +1,10 @@
 {
-    "name": "Registration",
-    "start": "2020-02-07T17:00:00-05:00",
-    "duration": 300,
-    "category": "default",
-    "location": "Virtual",
-    "description": ""
+  "name": "Registration",
+  "start": "2021-02-17T17:00:00-05:00",
+  "duration": 3000,
+  "category": "workshop1",
+  "location": "Virtual",
+  "description": "",
+  "contentLink": "nocontent.com/nocontent",
+  "callLink": "nocall.com/nocall"
 }

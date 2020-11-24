@@ -1,8 +1,8 @@
 {
-    "name": "Registration",
-    "start": "2020-02-07T18:00:00-05:00",
-    "duration": 300,
-    "category": "default",
-    "location": "Virtual",
-    "description": ""
+  "name": "Chow",
+  "start": "2021-02-19T18:00:00-05:00",
+  "duration": 300,
+  "category": "food",
+  "location": "Virtual",
+  "description": ""
 }

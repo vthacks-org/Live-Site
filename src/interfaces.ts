@@ -8,6 +8,8 @@ export interface IEvent {
   category: EventCategory
   location: string
   description: string
+  contentLink: string
+  callLink: string
 }
 
 export interface MarkdownContent {

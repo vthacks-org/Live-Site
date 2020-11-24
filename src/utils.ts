@@ -1,7 +1,7 @@
-import { IEvent } from "./interfaces"
 import { RelativeTime } from "./enums"
 import { ONE_MINUTE_MILLISECOND } from "./constants"
 import { TIMEZONE_ABBR } from "./constants"
+import { IEvent, IEventDay } from "./interfaces"
 
 export function identity<T>(arg: T): T {
   return arg
@@ -60,4 +60,69 @@ export function formattedEventTime(event: IEvent) {
           event.start.getTime() + event.duration * ONE_MINUTE_MILLISECOND
         )
       )} ${TIMEZONE_ABBR}`
+}
+
+export function isSameDay(first: Date, second: Date) {
+  return (
+    first.getFullYear() === second.getFullYear() &&
+    first.getMonth() === second.getMonth() &&
+    first.getDate() === second.getDate()
+  )
+}
+
+export function daysFromSchedule(schedule: IEvent[]) {
+  const dayOneDate = new Date("2021-02-17T00:00:00-05:00")
+  const dayTwoDate = new Date(dayOneDate.getTime() + 1000 * 60 * 60 * 24)
+  const dayThreeDate = new Date(dayTwoDate.getTime() + 1000 * 60 * 60 * 24)
+  schedule.forEach(event => (event.start = new Date(event.start)))
+
+  let dayOneEvents: IEvent[] = []
+  let dayTwoEvents: IEvent[] = []
+  let dayThreeEvents: IEvent[] = []
+  schedule.forEach(event => {
+    if (isSameDay(event.start, dayOneDate)) {
+      dayOneEvents.push(event)
+    }
+    if (isSameDay(event.start, dayTwoDate)) {
+      dayTwoEvents.push(event)
+    }
+    if (isSameDay(event.start, dayThreeDate)) {
+      dayThreeEvents.push(event)
+    }
+  })
+
+  const firstDay: IEventDay = {
+    index: 0,
+    title: "Wed",
+    longTitle: "Wednesday February 17",
+    date: new Date("2021-02-17T00:00:00-05:00"),
+    events: dayOneEvents,
+  }
+  const secondDay: IEventDay = {
+    index: 1,
+    title: "Thurs",
+    longTitle: "Thursday February 18",
+    date: new Date("2021-02-18T00:00:00-05:00"),
+    events: dayTwoEvents,
+  }
+  const thirdDay: IEventDay = {
+    index: 2,
+    title: "Fri",
+    longTitle: "Friday February 19",
+    date: new Date("2021-02-19T00:00:00-05:00"),
+    events: dayThreeEvents,
+  }
+
+  const dayAfterLastDay = new Date("2021-02-20T00:00:00-05:00")
+
+  const days: [IEventDay, IEventDay, IEventDay] = [
+    firstDay,
+    secondDay,
+    thirdDay,
+  ]
+
+  days.forEach(day =>
+    day.events.forEach(event => (event.duration = Math.abs(event.duration)))
+  )
+  return days
 }
