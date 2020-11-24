@@ -14,6 +14,9 @@ export interface MarkdownContent {
   node: {
     html: String
     id: String
+    frontmatter: {
+      title: String
+    }
   }
 }
 
