@@ -41,6 +41,7 @@ const FooterComponent = () => {
             </a>
           </Col>
         </Row>
+        <Row></Row>
       </Container>
     </footer>
   )

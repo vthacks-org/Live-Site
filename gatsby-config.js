@@ -21,6 +21,14 @@ module.exports = {
         path: `${__dirname}/content/schedule`,
       },
     },
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `resources`,
+        path: `${__dirname}/content/resources`,
+      },
+    },
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

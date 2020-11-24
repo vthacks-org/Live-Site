@@ -1,12 +1,33 @@
 import React from "react"
 import { Container, Col } from "react-bootstrap"
+import _ from "lodash"
+import NoContentComponent from "../components/NoContentComponent"
+import SubGuidelineComponent from "../components/SubGuidelineComponent"
 
-const SubmissionsView = () => {
+const SubmissionsView = ({ guidelines }) => {
   //TODO: Use Netlify CMS
+
+  const renderSubmissions = () => {
+    if (!guidelines.length) {
+      return <NoContentComponent name="Submission Guidlines" />
+    }
+
+    return _.map(guidelines, guideline => {
+      const node = guideline.node
+      return (
+        <div key={node.id}>
+          <SubGuidelineComponent guideline={node} />
+        </div>
+      )
+    })
+  }
   return (
     <Container id="submissions-guidelines-view">
-      <Col>
-        <div>
+      <Col>{renderSubmissions()}</Col>
+    </Container>
+  )
+}
+/* <div>
           <h3>DevPost</h3>
           <p>
             Submission rules can be found
@@ -39,10 +60,5 @@ const SubmissionsView = () => {
               here
             </a>
           </p>
-        </div>
-      </Col>
-    </Container>
-  )
-}
-
+        </div> */
 export default SubmissionsView

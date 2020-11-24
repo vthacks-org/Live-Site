@@ -1,12 +1,35 @@
 import React from "react"
 import { Container, Col } from "react-bootstrap"
+import PrizeComponent from "../components/PrizeComponent"
+import NoContentComponent from "../components/NoContentComponent"
+import _ from "lodash"
 
-const PrizesView = () => {
-  //TODO: Use Netlify CMS
+const PrizesView = ({ prizes }) => {
+  const renderPrizes = () => {
+    if (!prizes.length) {
+      return <NoContentComponent name="Prizes" />
+    }
+
+    return _.map(prizes, prize => {
+      const node = prize.node
+      return (
+        <div key={node.id}>
+          <PrizeComponent prize={node} />
+        </div>
+      )
+    })
+  }
+
   return (
     <Container id="prizes-view">
-      <Col>
-        <div>
+      <Col>{renderPrizes()}</Col>
+    </Container>
+  )
+}
+
+export default PrizesView
+
+/* <div>
           <h3>DevPost</h3>
           <p>
             A list of prizes can be found
@@ -69,10 +92,4 @@ const PrizesView = () => {
               Saturday, link TBA in #mlh-ctf-challenge
             </li>
           </ul>
-        </div>
-      </Col>
-    </Container>
-  )
-}
-
-export default PrizesView
+        </div> */
