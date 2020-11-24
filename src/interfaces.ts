@@ -12,10 +12,12 @@ export interface IEvent {
 
 export interface MarkdownContent {
   node: {
-    html: String
-    id: String
+    html: string
+    id: string
     frontmatter: {
-      title: String
+      title: string
+      templateKey: string
+      shouldDisplayTitle: boolean
     }
   }
 }

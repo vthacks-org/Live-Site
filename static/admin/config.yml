@@ -47,6 +47,12 @@ collections:
     fields:
       - { name: title, label: Title, widget: string }
       - {
+          name: shouldDisplayTitle,
+          label: "Display Title?",
+          widget: boolean,
+          default: true,
+        }
+      - {
           name: "templateKey",
           label: "Template Key",
           widget: hidden,
@@ -63,6 +69,12 @@ collections:
     format: frontmatter
     fields:
       - { name: title, label: Title, widget: string }
+      - {
+          name: shouldDisplayTitle,
+          label: "Display Title?",
+          widget: boolean,
+          default: true,
+        }
       - {
           name: "templateKey",
           label: "Template Key",
@@ -81,6 +93,12 @@ collections:
     fields:
       - { name: title, label: Title, widget: string }
       - {
+          name: shouldDisplayTitle,
+          label: "Display Title?",
+          widget: boolean,
+          default: true,
+        }
+      - {
           name: "templateKey",
           label: "Template Key",
           widget: hidden,
@@ -97,6 +115,12 @@ collections:
     format: frontmatter
     fields:
       - { name: title, label: Title, widget: string }
+      - {
+          name: shouldDisplayTitle,
+          label: "Display Title?",
+          widget: boolean,
+          default: true,
+        }
       - {
           name: "templateKey",
           label: "Template Key",
@@ -115,26 +139,15 @@ collections:
     fields:
       - { name: title, label: Title, widget: string }
       - {
+          name: shouldDisplayTitle,
+          label: "Display Title?",
+          widget: boolean,
+          default: true,
+        }
+      - {
           name: "templateKey",
           label: "Template Key",
           widget: hidden,
           default: judges,
         }
       - { name: body, label: Body, widget: markdown }
-  # - name: prizes
-  #   label: Prizes
-  #   folder: content/prizes
-  #   create: true
-  #   extension: markdown
-  #   fields:
-  #     - { name: name, label: Name, widget: string }
-  #     - { name: description, label: Description, widget: markdown }
-
-  # - name: submission_guidlines
-  #   label: Submission Guidlines
-  #   folder: content/submission_guidlines
-  #   create: true
-  #   extension: markdown
-  #   fields:
-  #     - { name: name, label: Name, widget: string }
-  #     - { name: description, label: Description, widget: markdown }
