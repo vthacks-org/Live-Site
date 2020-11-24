@@ -1,0 +1,10 @@
+---
+title: MLH
+shouldDisplayTitle: true
+templateKey: resources
+---
+* **Domain.com**: register a free `.tech`, `.online`, or `.space` domain through Domain.com using the code `SPOOKYSCARY` at checkout
+* **Google Cloud**: redeem up to $100 dollars in credit using either the form you received via email, or the form at <https://hackp.ac/GoogleCloudCredits>. DM me to redeem more credits if you need 👍
+* **Hardware Hack**: Feel free to use any hardware you may have on hand, or an emulator such as <https://echosim.io/welcome> (for Amazon Alexa simulation), or <https://developers.google.com/assistant/conversational/overview> (for Google hardware simulation), or anything else that fits your use case!
+* **CoackroachDB**: Head over to <https://hackp.ac/CockroachDB> and use code `CRDB30` to get started!
+* **Github Student Developer Pack**: Get GitHub Pro status along with tons of credits and tutorials on how to use em over at <https://hackp.ac/learn>
