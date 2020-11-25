@@ -82,9 +82,122 @@ class TimelineComponent extends React.Component<PropTypesDay> {
     })
   }
 
-  render() {
+  renderTimelineTracks() {
     const categoryBuckets = processCategoryBuckets(this.props.day.events)
 
+    return (
+      <div id="timeline-tracks-container">
+        {Object.keys(categoryBuckets).map((activityKey, activityIndex) => (
+          <div key={`timeline-track-${activityKey}-container`}>
+            {categoryBuckets[activityKey].map((event, eventIndex) => (
+              <div
+                key={`timeline-track-${activityKey}-${eventIndex}`}
+                className={`timeline-track-item ${
+                  this.props.showAsToday
+                    ? getRelativeEventTime(event)
+                    : this.props.relativeDayTime
+                }`}
+                style={{
+                  width: (labelSpaceHorizontal / minutes) * event.duration,
+                  left:
+                    (labelSpaceHorizontal / minutes) *
+                    dateToMinutesInDay(event.start),
+                  top: trackStartHeight + trackSpace * activityIndex,
+                }}
+                onClick={() => this.handleEventListItemClick(event)}
+              >
+                <p>{event.name}</p>
+                <div
+                  key={`timeline-track-${activityKey}-${eventIndex}`}
+                  className="timeline-track-line"
+                  style={{
+                    background:
+                      EventCategoryColor[activityKey] || Color.Overflow,
+                  }}
+                >
+                  {["left", "right"].map(lineEnd => (
+                    <svg
+                      key={`timeline-line-${lineEnd}`}
+                      className={`timeline-track-line-end-${lineEnd}`}
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        className={`timeline-track-line-end-${lineEnd}`}
+                        cx="5"
+                        cy="5"
+                        r="5"
+                        fill={EventCategoryColor[activityKey] || Color.Overflow}
+                      />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  renderSlider() {
+    if (!this.props.showAsToday) {
+      return null
+    }
+    return (
+      <div
+        id="timeline-slider"
+        style={{
+          left: this.computeSliderPos(),
+        }}
+      >
+        <svg
+          className="triangle-pointer top"
+          fill="#ff7f7f"
+          viewBox="0 0 100 100"
+        >
+          <path d="M0 0 L50 100 L100 0 Z"></path>
+        </svg>
+        <svg
+          className="triangle-pointer bottom"
+          fill="#ff7f7f"
+          viewBox="0 0 100 100"
+        >
+          <path d="M0 100 L50 2 L100 100 Z"></path>
+        </svg>
+      </div>
+    )
+  }
+
+  renderTimeline() {
+    return (
+      <div id="timeline-label-container">
+        {timeLabels.map((label, index) => (
+          <div key={`timeline-label-${index}`}>
+            <p
+              className="timeline-label"
+              style={{
+                top: labelSpaceVertical,
+                left: index * labelSpaceHorizontal + timeLabelOffset,
+                width: labelSpaceHorizontal,
+              }}
+            >
+              {label}
+            </p>
+            <div
+              className="timeline-label-marker"
+              style={{
+                left: index * labelSpaceHorizontal - timeMarkerOffset,
+              }}
+            />
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  render() {
+    console.log(this.props)
     return (
       <div id="timeline" ref={this.scrollContainerRef}>
         <ModalDialog
@@ -93,104 +206,9 @@ class TimelineComponent extends React.Component<PropTypesDay> {
           formattedTime={this.state.modalFormattedTime}
           event={this.state.selectedEvent}
         />
-        <div id="timeline-label-container">
-          {timeLabels.map((label, index) => (
-            <div key={`timeline-label-${index}`}>
-              <p
-                className="timeline-label"
-                style={{
-                  top: labelSpaceVertical,
-                  left: index * labelSpaceHorizontal + timeLabelOffset,
-                  width: labelSpaceHorizontal,
-                }}
-              >
-                {label}
-              </p>
-              <div
-                className="timeline-label-marker"
-                style={{
-                  left: index * labelSpaceHorizontal - timeMarkerOffset,
-                }}
-              />
-            </div>
-          ))}
-        </div>
-        {this.props.showAsToday && (
-          <div
-            id="timeline-slider"
-            style={{
-              left: this.computeSliderPos(),
-            }}
-          >
-            <svg
-              className="triangle-pointer top"
-              fill="#ff7f7f"
-              viewBox="0 0 100 100"
-            >
-              <path d="M0 0 L50 100 L100 0 Z"></path>
-            </svg>
-            <svg
-              className="triangle-pointer bottom"
-              fill="#ff7f7f"
-              viewBox="0 0 100 100"
-            >
-              <path d="M0 100 L50 2 L100 100 Z"></path>
-            </svg>
-          </div>
-        )}
-        <div id="timeline-tracks-container">
-          {Object.keys(categoryBuckets).map((activityKey, activityIndex) => (
-            <div key={`timeline-track-${activityKey}-container`}>
-              {categoryBuckets[activityKey].map((event, eventIndex) => (
-                <div
-                  key={`timeline-track-${activityKey}-${eventIndex}`}
-                  className={`timeline-track-item ${
-                    this.props.showAsToday
-                      ? getRelativeEventTime(event)
-                      : this.props.relativeDayTime
-                  }`}
-                  style={{
-                    width: (labelSpaceHorizontal / minutes) * event.duration,
-                    left:
-                      (labelSpaceHorizontal / minutes) *
-                      dateToMinutesInDay(event.start),
-                    top: trackStartHeight + trackSpace * activityIndex,
-                  }}
-                  onClick={() => this.handleEventListItemClick(event)}
-                >
-                  <p>{event.name}</p>
-                  <div
-                    key={`timeline-track-${activityKey}-${eventIndex}`}
-                    className="timeline-track-line"
-                    style={{
-                      background:
-                        EventCategoryColor[activityKey] || Color.Overflow,
-                    }}
-                  >
-                    {["left", "right"].map(lineEnd => (
-                      <svg
-                        key={`timeline-line-${lineEnd}`}
-                        className={`timeline-track-line-end-${lineEnd}`}
-                        height="10"
-                        width="10"
-                      >
-                        <circle
-                          className={`timeline-track-line-end-${lineEnd}`}
-                          cx="5"
-                          cy="5"
-                          r="5"
-                          fill={
-                            EventCategoryColor[activityKey] || Color.Overflow
-                          }
-                        />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+        {this.renderTimeline()}
+        {this.renderSlider()}
+        {this.renderTimelineTracks()}
       </div>
     )
   }

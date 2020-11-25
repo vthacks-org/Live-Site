@@ -5,16 +5,12 @@ import {
   ONE_MINUTE_MILLISECOND,
   SHOW_AS_LIVE_DATES,
   MOBILE_BREAKPOINT_WIDTH,
+  ONE_DAY_MILLISECOND,
 } from "../constants"
 import { EventListener, RelativeTime } from "../enums"
 import { IEvent, IEventDay } from "../interfaces"
-// import {
-//   firstDay,
-//   secondDay,
-//   thirdDay,
-//   dayAfterLastDay,
-// } from "../data/schedule"
 import { getRelativeDayTime, daysFromSchedule } from "../utils"
+import _ from "lodash"
 
 import { Container, Row, Col } from "react-bootstrap"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
@@ -66,32 +62,45 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
 
   const hasPassed =
     new Date().getTime() >=
-    new Date(days[2].date.getTime() + 1000 * 60 * 60 * 24).getTime()
+    new Date(days[2].date.getTime() + ONE_DAY_MILLISECOND).getTime()
+
   const relativeDayTime = hasPassed
     ? RelativeTime.Future
     : getRelativeDayTime(day.date)
+
   const showAsToday =
     (relativeDayTime === RelativeTime.Present || !SHOW_AS_LIVE_DATES) &&
     !hasPassed
   const devPostImage = require("../assets/brand-logos/devpost-logo.svg")
 
+  const renderTimelineDays = () => {
+    const createLabels = () => {
+      return _.map(days, (day, index) => {
+        console.log("The day is: ", day)
+        return (
+          <Button
+            key={`btn-group-${index}`}
+            onClick={() => setDay(day)}
+            variant={index === day.index ? "dark" : "light"}
+          >
+            {(!mobile && day.longTitle) || day.title}
+          </Button>
+        )
+      })
+    }
+
+    return (
+      <div className="d-flex flex-column">
+        <ButtonGroup>{createLabels()}</ButtonGroup>
+      </div>
+    )
+  }
+
   return (
     <Container id="schedule" fluid>
       <Col>
         <div>
-          <div className="d-flex flex-column">
-            <ButtonGroup>
-              {days.map((dayInfo, index) => (
-                <Button
-                  key={`btn-group-${index}`}
-                  onClick={() => setDay(dayInfo)}
-                  variant={index === day.index ? "dark" : "light"}
-                >
-                  {(!mobile && dayInfo.longTitle) || dayInfo.title}
-                </Button>
-              ))}
-            </ButtonGroup>
-          </div>
+          {renderTimelineDays()}
           <TimelineComponent
             day={day}
             showAsToday={showAsToday}

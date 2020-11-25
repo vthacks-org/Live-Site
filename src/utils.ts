@@ -1,6 +1,18 @@
 import { RelativeTime } from "./enums"
-import { ONE_MINUTE_MILLISECOND, ONE_DAY_MILLISECOND } from "./constants"
-import { TIMEZONE_ABBR, DAY_OF_THE_EVENT } from "./constants"
+import {
+  ONE_MINUTE_MILLISECOND,
+  ONE_DAY_MILLISECOND,
+  LONG_DAY_NAMES,
+  SHORT_DAY_NAMES,
+  SHORT_MONTH_NAMES,
+  LONG_MONTH_NAMES,
+} from "./constants"
+import {
+  TIMEZONE_ABBR,
+  DAY_OF_THE_EVENT,
+  EVENT_END_TIME_DATE,
+  HACK_LENGTH,
+} from "./constants"
 import { IEvent, IEventDay } from "./interfaces"
 
 export function identity<T>(arg: T): T {
@@ -63,6 +75,7 @@ export function formattedEventTime(event: IEvent) {
 }
 
 export function isSameDay(first: Date, second: Date) {
+  console.log(first, second)
   return (
     first.getFullYear() === second.getFullYear() &&
     first.getMonth() === second.getMonth() &&
@@ -70,54 +83,51 @@ export function isSameDay(first: Date, second: Date) {
   )
 }
 
+export function formatDateLong(date: Date) {
+  return `${LONG_DAY_NAMES[date.getDay() - 1]}, ${
+    LONG_MONTH_NAMES[date.getMonth()]
+  } ${date.getDate()}`
+}
+
+export function formatDateShort(date: Date) {
+  return `${SHORT_DAY_NAMES[date.getDay() - 1]}, ${
+    SHORT_MONTH_NAMES[date.getMonth()]
+  } ${date.getDate()}`
+}
+
+export function daysApart(start: Date, end: Date) {
+  const result = (end.getTime() - start.getTime()) / ONE_DAY_MILLISECOND
+
+  return end.getTime() >
+    new Date(start.getTime() + ONE_DAY_MILLISECOND * result).getTime()
+    ? Math.ceil(result)
+    : Math.floor(result)
+}
+
 export function daysFromSchedule(schedule: IEvent[]) {
-  const dayOneDate = DAY_OF_THE_EVENT
-  const dayTwoDate = new Date(dayOneDate.getTime() + ONE_DAY_MILLISECOND)
-  const dayThreeDate = new Date(dayTwoDate.getTime() + ONE_DAY_MILLISECOND)
   schedule.forEach(event => (event.start = new Date(event.start)))
 
-  let dayOneEvents: IEvent[] = []
-  let dayTwoEvents: IEvent[] = []
-  let dayThreeEvents: IEvent[] = []
+  let tempDays: IEventDay[] = []
+  for (let i = 0; i < HACK_LENGTH; i++) {
+    console.log(HACK_LENGTH)
+    const date = new Date(DAY_OF_THE_EVENT.getTime() + ONE_DAY_MILLISECOND * i)
+    tempDays[i] = {
+      index: i,
+      title: formatDateShort(date),
+      longTitle: formatDateLong(date),
+      date: date,
+      events: [],
+    }
+  }
+
   schedule.forEach(event => {
-    if (isSameDay(event.start, dayOneDate)) {
-      dayOneEvents.push(event)
-    }
-    if (isSameDay(event.start, dayTwoDate)) {
-      dayTwoEvents.push(event)
-    }
-    if (isSameDay(event.start, dayThreeDate)) {
-      dayThreeEvents.push(event)
+    const daysBetween = daysApart(DAY_OF_THE_EVENT, event.start)
+    if (daysBetween >= 0 && daysBetween < HACK_LENGTH) {
+      tempDays[daysBetween].events.push(event)
     }
   })
 
-  const firstDay: IEventDay = {
-    index: 0,
-    title: "Wed",
-    longTitle: "Wednesday February 17",
-    date: DAY_OF_THE_EVENT,
-    events: dayOneEvents,
-  }
-  const secondDay: IEventDay = {
-    index: 1,
-    title: "Thurs",
-    longTitle: "Thursday February 18",
-    date: new Date(DAY_OF_THE_EVENT.getTime() + ONE_DAY_MILLISECOND),
-    events: dayTwoEvents,
-  }
-  const thirdDay: IEventDay = {
-    index: 2,
-    title: "Fri",
-    longTitle: "Friday February 19",
-    date: new Date(DAY_OF_THE_EVENT.getTime() + ONE_DAY_MILLISECOND * 2),
-    events: dayThreeEvents,
-  }
-
-  const days: [IEventDay, IEventDay, IEventDay] = [
-    firstDay,
-    secondDay,
-    thirdDay,
-  ]
+  const days = tempDays
 
   days.forEach(day =>
     day.events.forEach(event => (event.duration = Math.abs(event.duration)))
