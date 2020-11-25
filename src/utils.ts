@@ -1,7 +1,19 @@
-import { IEvent } from "./interfaces"
 import { RelativeTime } from "./enums"
-import { ONE_MINUTE_MILLISECOND } from "./constants"
-import { TIMEZONE_ABBR } from "./constants"
+import {
+  ONE_MINUTE_MILLISECOND,
+  ONE_DAY_MILLISECOND,
+  LONG_DAY_NAMES,
+  SHORT_DAY_NAMES,
+  SHORT_MONTH_NAMES,
+  LONG_MONTH_NAMES,
+} from "./constants"
+import {
+  TIMEZONE_ABBR,
+  DAY_OF_THE_EVENT,
+  EVENT_END_TIME_DATE,
+  HACK_LENGTH,
+} from "./constants"
+import { IEvent, IEventDay } from "./interfaces"
 
 export function identity<T>(arg: T): T {
   return arg
@@ -60,4 +72,65 @@ export function formattedEventTime(event: IEvent) {
           event.start.getTime() + event.duration * ONE_MINUTE_MILLISECOND
         )
       )} ${TIMEZONE_ABBR}`
+}
+
+export function isSameDay(first: Date, second: Date) {
+  console.log(first, second)
+  return (
+    first.getFullYear() === second.getFullYear() &&
+    first.getMonth() === second.getMonth() &&
+    first.getDate() === second.getDate()
+  )
+}
+
+export function formatDateLong(date: Date) {
+  return `${LONG_DAY_NAMES[date.getDay() - 1]}, ${
+    LONG_MONTH_NAMES[date.getMonth()]
+  } ${date.getDate()}`
+}
+
+export function formatDateShort(date: Date) {
+  return `${SHORT_DAY_NAMES[date.getDay() - 1]}, ${
+    SHORT_MONTH_NAMES[date.getMonth()]
+  } ${date.getDate()}`
+}
+
+export function daysApart(start: Date, end: Date) {
+  const result = (end.getTime() - start.getTime()) / ONE_DAY_MILLISECOND
+
+  return end.getTime() >
+    new Date(start.getTime() + ONE_DAY_MILLISECOND * result).getTime()
+    ? Math.ceil(result)
+    : Math.floor(result)
+}
+
+export function daysFromSchedule(schedule: IEvent[]) {
+  schedule.forEach(event => (event.start = new Date(event.start)))
+
+  let tempDays: IEventDay[] = []
+  for (let i = 0; i < HACK_LENGTH; i++) {
+    console.log(HACK_LENGTH)
+    const date = new Date(DAY_OF_THE_EVENT.getTime() + ONE_DAY_MILLISECOND * i)
+    tempDays[i] = {
+      index: i,
+      title: formatDateShort(date),
+      longTitle: formatDateLong(date),
+      date: date,
+      events: [],
+    }
+  }
+
+  schedule.forEach(event => {
+    const daysBetween = daysApart(DAY_OF_THE_EVENT, event.start)
+    if (daysBetween >= 0 && daysBetween < HACK_LENGTH) {
+      tempDays[daysBetween].events.push(event)
+    }
+  })
+
+  const days = tempDays
+
+  days.forEach(day =>
+    day.events.forEach(event => (event.duration = Math.abs(event.duration)))
+  )
+  return days
 }

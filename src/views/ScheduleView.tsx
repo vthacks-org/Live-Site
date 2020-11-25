@@ -1,12 +1,16 @@
-import React from 'react';
-import { graphql } from "gatsby";
-import './ScheduleView.css';
+import React from "react"
+import "./ScheduleView.css"
 
-import { ONE_MINUTE_MILLISECOND, SHOW_AS_LIVE_DATES, MOBILE_BREAKPOINT_WIDTH } from '../constants';
-import { EventListener, RelativeTime } from '../enums';
-import { IEvent, IEventDay } from '../interfaces';
-import { firstDay, secondDay, thirdDay, dayAfterLastDay } from '../data/schedule';
-import { getRelativeDayTime } from '../utils';
+import {
+  ONE_MINUTE_MILLISECOND,
+  SHOW_AS_LIVE_DATES,
+  MOBILE_BREAKPOINT_WIDTH,
+  ONE_DAY_MILLISECOND,
+} from "../constants"
+import { EventListener, RelativeTime } from "../enums"
+import { IEvent, IEventDay } from "../interfaces"
+import { getRelativeDayTime, daysFromSchedule } from "../utils"
+import _ from "lodash"
 
 import { Container, Row, Col } from "react-bootstrap"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
@@ -18,25 +22,19 @@ import EventListComponent from "../components/EventListComponent"
 import DiscordComponent from "../components/DiscordComponent"
 import TwitterComponent from "../components/TwitterComponent"
 
-const days: [IEventDay, IEventDay, IEventDay] = [firstDay, secondDay, thirdDay]
-days.forEach(day =>
-  day.events.forEach(event => (event.duration = Math.abs(event.duration)))
-)
-
 type Props = {
-	schedule: IEvent[]
-};
+  schedule: IEvent[]
+}
 
-const ScheduleView: React.FC<Props> = ({schedule}) => {
-	schedule.forEach(event => event.start = new Date(event.start));
-	const daysTest = Array.from(new Set(schedule.map(({start}) => new Date(start.getFullYear(), start.getMonth(), start.getDate(), 0,0,0))));
-	console.log(daysTest);
-	let initialDay = firstDay;
-	if (getRelativeDayTime(secondDay.date) === RelativeTime.Present) {
-		initialDay = secondDay;
-	} else if (getRelativeDayTime(thirdDay.date) === RelativeTime.Present) {
-		initialDay = thirdDay;
-	}
+const ScheduleView: React.FC<Props> = ({ schedule }) => {
+  const days = daysFromSchedule(schedule)
+
+  let initialDay = days[0]
+  if (getRelativeDayTime(days[1].date) === RelativeTime.Present) {
+    initialDay = days[1]
+  } else if (getRelativeDayTime(days[2].date) === RelativeTime.Present) {
+    initialDay = days[2]
+  }
 
   const [mobile, setMobile] = React.useState(true)
   const [day, setDay] = React.useState(initialDay)
@@ -62,32 +60,47 @@ const ScheduleView: React.FC<Props> = ({schedule}) => {
     }
   })
 
-  const hasPassed = new Date().getTime() >= dayAfterLastDay.getTime()
+  const hasPassed =
+    new Date().getTime() >=
+    new Date(days[2].date.getTime() + ONE_DAY_MILLISECOND).getTime()
+
   const relativeDayTime = hasPassed
     ? RelativeTime.Future
     : getRelativeDayTime(day.date)
+
   const showAsToday =
     (relativeDayTime === RelativeTime.Present || !SHOW_AS_LIVE_DATES) &&
     !hasPassed
   const devPostImage = require("../assets/brand-logos/devpost-logo.svg")
 
+  const renderTimelineDays = () => {
+    const createLabels = () => {
+      return _.map(days, (day, index) => {
+        console.log("The day is: ", day)
+        return (
+          <Button
+            key={`btn-group-${index}`}
+            onClick={() => setDay(day)}
+            variant={index === day.index ? "dark" : "light"}
+          >
+            {(!mobile && day.longTitle) || day.title}
+          </Button>
+        )
+      })
+    }
+
+    return (
+      <div className="d-flex flex-column">
+        <ButtonGroup>{createLabels()}</ButtonGroup>
+      </div>
+    )
+  }
+
   return (
     <Container id="schedule" fluid>
       <Col>
         <div>
-          <div className="d-flex flex-column">
-            <ButtonGroup>
-              {days.map((dayInfo, index) => (
-                <Button
-                  key={`btn-group-${index}`}
-                  onClick={() => setDay(dayInfo)}
-                  variant={index === day.index ? "dark" : "light"}
-                >
-                  {(!mobile && dayInfo.longTitle) || dayInfo.title}
-                </Button>
-              ))}
-            </ButtonGroup>
-          </div>
+          {renderTimelineDays()}
           <TimelineComponent
             day={day}
             showAsToday={showAsToday}
@@ -125,4 +138,4 @@ const ScheduleView: React.FC<Props> = ({schedule}) => {
   )
 }
 
-export default ScheduleView;
+export default ScheduleView

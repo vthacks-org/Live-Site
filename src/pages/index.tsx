@@ -18,7 +18,6 @@ const Index: React.FC<Props> = ({
     allScheduleJson: { nodes: schedule },
   },
 }) => {
-  console.log(schedule)
   return (
     <Layout title="Schedule">
       <ScheduleView schedule={schedule} />
@@ -38,6 +37,8 @@ export const pageQuery = graphql`
         duration
         category
         description
+        contentLink
+        callLink
       }
     }
   }

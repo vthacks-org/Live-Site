@@ -9,10 +9,18 @@ collections:
     label: Schedule
     folder: content/schedule
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{name}}"
     extension: json
     fields:
       - { name: name, label: Name, widget: string }
-      - { name: start, label: Date, widget: datetime }
+      - {
+          name: start,
+          label: Date,
+          widget: datetime,
+          date_format: "MM/DD/YYYY",
+          time_format: "HH:mm",
+          format: "MM/DD/YYYY HH:mm ZZ",
+        }
       - { name: duration, label: Duration, widget: number, value_type: int }
       - {
           name: category,
@@ -36,6 +44,8 @@ collections:
           options: ["Virtual", "Surge 301", "Surge 303"],
         }
       - { name: description, label: Description, widget: text }
+      - { name: contentLink, label: Slides/VOD, widget: text }
+      - { name: callLink, label: Call Link, widget: text }
 
   - name: resources
     label: Resources

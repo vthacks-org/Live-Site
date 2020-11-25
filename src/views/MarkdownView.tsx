@@ -13,7 +13,6 @@ type Props = {
 
 const MarkdownView = ({ templateKey, list }: Props) => {
   const renderMarkdown = () => {
-    console.log(list)
     if (!list.length) {
       return <NoContentComponent name={templateKey} />
     }

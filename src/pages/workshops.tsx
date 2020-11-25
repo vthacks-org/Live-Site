@@ -1,13 +1,44 @@
-import React from 'react';
-import Layout from '../components/layout';
-import WorkshopView from '../views/WorkshopView';
+import { graphql } from "gatsby"
+import React from "react"
+import Layout from "../components/layout"
+import WorkshopView from "../views/WorkshopView"
+import { IEvent } from "../interfaces"
 
-const Workshops = () => {
-    return (
-        <Layout>
-            <WorkshopView />
-        </Layout>
-    )
+type Props = {
+  data: {
+    allScheduleJson: {
+      nodes: IEvent[]
+    }
+  }
 }
 
-export default Workshops;
+const Workshops: React.FC<Props> = ({
+  data: {
+    allScheduleJson: { nodes: schedule },
+  },
+}) => {
+  return (
+    <Layout>
+      <WorkshopView schedule={schedule} />
+    </Layout>
+  )
+}
+
+export default Workshops
+
+export const pageQuery = graphql`
+  query {
+    allScheduleJson {
+      nodes {
+        name
+        location
+        start
+        duration
+        category
+        description
+        contentLink
+        callLink
+      }
+    }
+  }
+`
