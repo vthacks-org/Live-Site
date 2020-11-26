@@ -197,7 +197,6 @@ class TimelineComponent extends React.Component<PropTypesDay> {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div id="timeline" ref={this.scrollContainerRef}>
         <ModalDialog

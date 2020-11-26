@@ -2,6 +2,7 @@ import { RelativeTime } from "./enums"
 import {
   ONE_MINUTE_MILLISECOND,
   ONE_DAY_MILLISECOND,
+  ONE_DAY_MINUTE,
   LONG_DAY_NAMES,
   SHORT_DAY_NAMES,
   SHORT_MONTH_NAMES,
@@ -104,12 +105,55 @@ export function daysApart(start: Date, end: Date) {
     : Math.floor(result)
 }
 
-export function daysFromSchedule(schedule: IEvent[]) {
+export function splitEvent(event: IEvent): IEvent[] {
+  const eventLegs: IEvent[] = []
+  let currEvent: IEvent = event
+  let currDuration = event.duration
+
+  while (currDuration > 0) {
+    const timeLeft =
+      ONE_DAY_MINUTE -
+      (currEvent.start.getHours() * 60 + currEvent.start.getMinutes())
+
+    const {
+      name,
+      category,
+      location,
+      description,
+      contentLink,
+      callLink,
+    } = currEvent
+
+    const newStart =
+      eventLegs.length === 0
+        ? currEvent.start
+        : new Date(currEvent.start.getTime() + timeLeft * 60 * 1000)
+
+    const newDuration = timeLeft < currDuration ? timeLeft : currDuration
+
+    const newLeg: IEvent = {
+      name,
+      start: newStart,
+      duration: newDuration,
+      category,
+      location,
+      description,
+      contentLink,
+      callLink,
+    }
+
+    currEvent = newLeg
+    eventLegs.push(currEvent)
+    currDuration = currDuration - currEvent.duration
+  }
+  return eventLegs
+}
+
+export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
   schedule.forEach(event => (event.start = new Date(event.start)))
 
   let tempDays: IEventDay[] = []
   for (let i = 0; i < HACK_LENGTH; i++) {
-    console.log(HACK_LENGTH)
     const date = new Date(DAY_OF_THE_EVENT.getTime() + ONE_DAY_MILLISECOND * i)
     tempDays[i] = {
       index: i,
@@ -121,9 +165,18 @@ export function daysFromSchedule(schedule: IEvent[]) {
   }
 
   schedule.forEach(event => {
-    const daysBetween = daysApart(DAY_OF_THE_EVENT, event.start)
+    // Pushes event to the correct days
+    const eventStart = event.start
+    const daysBetween = daysApart(DAY_OF_THE_EVENT, eventStart)
     if (daysBetween >= 0 && daysBetween < HACK_LENGTH) {
-      tempDays[daysBetween].events.push(event)
+      // If event should span across two days, edit the event
+      // to last for the entirety of the first day, and the
+      // last day to start at 12am and end at the correct time
+
+      const eventLegs = splitEvent(event)
+      for (let i = 0; i < eventLegs.length; i++) {
+        tempDays[daysBetween + i].events.push(eventLegs[i])
+      }
     }
   })
 
@@ -132,5 +185,6 @@ export function daysFromSchedule(schedule: IEvent[]) {
   days.forEach(day =>
     day.events.forEach(event => (event.duration = Math.abs(event.duration)))
   )
+
   return days
 }
