@@ -76,7 +76,6 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
   const renderTimelineDays = () => {
     const createLabels = () => {
       return _.map(days, (day, index) => {
-        console.log("The day is: ", day)
         return (
           <Button
             key={`btn-group-${index}`}
