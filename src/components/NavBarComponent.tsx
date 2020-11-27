@@ -71,9 +71,13 @@ const NavBarComponent = () => {
     }
   })
 
-  const brandName = mobile ? "" : "VTHacks8"
-  const placeHolder = mobile ? <a> </a> : null
-
+  const brandName = mobile ? null : (
+    <Link id="wordmark" to={RoutePath.Home} onClick={collapse}>
+      VTHacks8
+    </Link>
+  )
+  const placeHolder = mobile ? <a style={{ width: "56px" }}> </a> : null
+  const marginRight = mobile ? "0px" : "1rem"
   return (
     <>
       <div
@@ -85,11 +89,10 @@ const NavBarComponent = () => {
       />
       <Navbar id="navbar-main" expanded={expanded} expand="lg">
         {placeHolder}
-        <Navbar.Brand id="brand">
-          <img src="/LogoFinal.svg" alt="" />
-          <Link id="wordmark" to={RoutePath.Home} onClick={collapse}>
-            {brandName}
-          </Link>
+
+        <Navbar.Brand id="brand" style={{ marginRight: marginRight }}>
+          <img src="/LogoFinal.svg" alt="Logo" />
+          {brandName}
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
