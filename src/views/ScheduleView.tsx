@@ -118,7 +118,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
             relativeDayTime={relativeDayTime}
           />
         </div>
-        <Row>
+        <Row className="extra-content">
           <DiscordComponent
             className="discord-container"
             serverId="769007930585382954"
