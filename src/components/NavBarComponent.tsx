@@ -72,8 +72,8 @@ class NavBarComponent extends React.Component {
         <Navbar
           id="navbar-main"
           expanded={this.state.expanded}
-          bg="dark"
-          variant="dark"
+          // bg="dark"
+          // variant="dark"
           expand="lg"
         >
           <Navbar.Brand id="brand">
@@ -98,6 +98,7 @@ class NavBarComponent extends React.Component {
                       : routeItem.path
                   }
                   onClick={this.collapse}
+                  className="navbar-link"
                 >
                   {routeItem.title}
                 </Link>

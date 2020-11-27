@@ -5,6 +5,12 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import "./FooterComponent.css"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+
+library.add(fab)
+
 const FooterComponent = () => {
   return (
     <footer>
@@ -12,32 +18,25 @@ const FooterComponent = () => {
       <Container id="info-view" fluid>
         <Row className="links">
           <Col>
-            <a href="https://discord.gg/b5pveB" target="_blank">
-              <img
-                className="discord"
-                src={require("../assets/brand-logos/Discord-Logo-Color.svg")}
-                alt="Discord Server Link"
-              />
+            <a
+              href="https://discord.gg/b5pveB"
+              target="_blank"
+              className="icon"
+            >
+              <FontAwesomeIcon
+                icon={["fab", "discord"]}
+                className="icon"
+              ></FontAwesomeIcon>
             </a>
+
             <a href="https://twitter.com/VT_Hacks/" target="_blank">
-              <img
-                src={require("../assets/brand-logos/Twitter_Social_Icon_Rounded_Square_Color.svg")}
-                alt="Twitter Page Link"
-              />
+              <FontAwesomeIcon icon={["fab", "twitter"]} className="icon" />
             </a>
             <a href="https://www.facebook.com/vthacks/" target="_blank">
-              <img
-                className="facebook"
-                src={require("../assets/brand-logos/f_logo_RGB-Blue_512.png")}
-                alt="Facebook Page Link"
-              />
+              <FontAwesomeIcon icon={["fab", "facebook"]} className="icon" />
             </a>
             <a href="https://www.instagram.com/vthacks/" target="_blank">
-              <img
-                className="instagram"
-                src="re.com"
-                alt="Instagram Page Link"
-              />
+              <FontAwesomeIcon icon={["fab", "instagram"]} className="icon" />
             </a>
           </Col>
         </Row>

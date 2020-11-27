@@ -1,4 +1,4 @@
-#info-view img {
+/* #info-view img {
   width: 64px;
   height: 64px;
 }
@@ -10,8 +10,21 @@
 
 #info-view .facebook {
   margin-left: 10px;
-}
+} */
 
 #info-view .links {
   text-align: center;
+}
+
+#info-view .links a {
+  color: #3a3a3a;
+  margin: 5px;
+}
+
+#info-view .links a:hover {
+  color: #f89b6a;
+}
+
+#info-view .links {
+  font-size: 36px;
 }
