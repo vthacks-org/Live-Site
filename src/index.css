@@ -1,24 +1,43 @@
-@import url('https://rsms.me/inter/inter.css');
+@import url("https://rsms.me/inter/inter.css");
 
 @font-face {
-	font-family: 'Harabara';
-	src: url('./assets/fonts/Harabara Mais.otf');
+  font-family: "BNRoute22";
+  src: url("./assets/fonts/BNRoute22.otf");
 }
 
 @supports (font-variation-settings: normal) {
-	html {
-		font-family: 'Inter var', sans-serif;
-	}
+  html {
+    font-family: "Inter var", sans-serif;
+  }
 }
 
 body {
-	margin: 0;
-	font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: BNRoute22;
+  font-size: 1.5em !important;
+}
+#navbar-main {
+  font-size: 1.5em !important;
+}
+
+#brand {
+  font-family: BNRoute22;
+  font-size: 1em !important;
 }
 
 code {
-	font-family: Inter;
+  font-family: Inter;
 }

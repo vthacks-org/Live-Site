@@ -75,14 +75,20 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
 
   const renderTimelineDays = () => {
     const createLabels = () => {
-      return _.map(days, (day, index) => {
+      return _.map(days, (eventDay, index) => {
+        const color = index === day.index ? "#f89b6a" : "#3a3a3a"
         return (
           <Button
             key={`btn-group-${index}`}
-            onClick={() => setDay(day)}
-            variant={index === day.index ? "dark" : "light"}
+            onClick={() => setDay(eventDay)}
+            className="day-label-btn"
+            style={{
+              backgroundColor: color,
+              borderColor: color,
+              fontSize: "1em",
+            }}
           >
-            {(!mobile && day.longTitle) || day.title}
+            {(!mobile && eventDay.longTitle) || eventDay.title}
           </Button>
         )
       })

@@ -2,9 +2,18 @@
   padding: 8px;
 }
 
+.mr-auto .navbar-link {
+  font-family: BNRoute22;
+}
+
+.mr-auto .navbar-link:hover {
+  color: #f89b6a !important;
+}
+
 #navbar-main {
   z-index: 1000;
   user-select: none;
+  background-color: #3a3a3a !important;
 }
 
 #navbar-hidden-overlay {
@@ -15,7 +24,11 @@
 }
 
 #brand {
-  font-family: Harabara;
+  font-family: BNRoute22;
+}
+
+#wordmark:hover {
+  color: #f89b6a !important;
 }
 
 #brand span {
