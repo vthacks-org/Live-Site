@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./NavBarComponent.css"
 import "../App.css"
 import "../index.css"
 
-import { RoutePath } from "../enums"
+import { RoutePath, EventListener } from "../enums"
+import { MOBILE_BREAKPOINT_WIDTH, ONE_MINUTE_MILLISECOND } from "../constants"
 
 import { Link } from "gatsby"
 
@@ -37,78 +38,86 @@ const ROUTES_WITH_TITLES = [
   },
 ]
 
-class NavBarComponent extends React.Component {
-  state: any
+const NavBarComponent = () => {
+  const [expanded, setExpanded] = useState(false)
+  const [mobile, setMobile] = React.useState(true)
+  const [, setDummy] = React.useState()
 
-  constructor(props: any) {
-    super(props)
+  const toggle = () => {
+    setExpanded(!expanded)
+  }
 
-    this.state = {
-      expanded: false,
+  const collapse = () => {
+    setExpanded(false)
+  }
+
+  const updateDimensions = () => {
+    const isMobile = window.innerWidth < MOBILE_BREAKPOINT_WIDTH
+    if (mobile !== isMobile) {
+      setMobile(isMobile)
     }
-
-    this.toggle = this.toggle.bind(this)
-    this.collapse = this.collapse.bind(this)
   }
 
-  toggle() {
-    this.setState({ expanded: !this.state.expanded })
-  }
+  React.useEffect(() => {
+    updateDimensions()
+    window.addEventListener(EventListener.Resize, updateDimensions)
+    const interval = setInterval(() => {
+      setDummy({})
+    }, ONE_MINUTE_MILLISECOND)
 
-  collapse() {
-    this.setState({ expanded: false })
-  }
+    return () => {
+      window.removeEventListener(EventListener.Resize, updateDimensions)
+      clearInterval(interval)
+    }
+  })
 
-  render() {
-    return (
-      <>
-        <div
-          id="navbar-hidden-overlay"
-          style={{
-            display: this.state.expanded ? "block" : "none",
-          }}
-          onClick={this.collapse}
+  const brandName = mobile ? "" : "VTHacks8"
+  const placeHolder = mobile ? <a> </a> : null
+
+  return (
+    <>
+      <div
+        id="navbar-hidden-overlay"
+        style={{
+          display: expanded ? "block" : "none",
+        }}
+        onClick={collapse}
+      />
+      <Navbar id="navbar-main" expanded={expanded} expand="lg">
+        {placeHolder}
+        <Navbar.Brand id="brand">
+          <img src="/LogoFinal.svg" alt="" />
+          <Link id="wordmark" to={RoutePath.Home} onClick={collapse}>
+            {brandName}
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={toggle}
+          style={{ color: "white" }}
         />
-        <Navbar
-          id="navbar-main"
-          expanded={this.state.expanded}
-          // bg="dark"
-          // variant="dark"
-          expand="lg"
-        >
-          <Navbar.Brand id="brand">
-            <img src="/LogoFinal.svg" alt="" />
-            <Link id="wordmark" to={RoutePath.Home} onClick={this.collapse}>
-              VTHacks<span>8</span>
-            </Link>
-          </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="basic-navbar-nav"
-            onClick={this.toggle}
-            style={{ color: "white" }}
-          />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              {ROUTES_WITH_TITLES.map((routeItem, index) => (
-                <Link
-                  key={`route-path-link-${index}`}
-                  to={
-                    Array.isArray(routeItem.path)
-                      ? routeItem.path[0]
-                      : routeItem.path
-                  }
-                  onClick={this.collapse}
-                  className="navbar-link"
-                >
-                  {routeItem.title}
-                </Link>
-              ))}
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </>
-    )
-  }
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            {ROUTES_WITH_TITLES.map((routeItem, index) => (
+              <Link
+                key={`route-path-link-${index}`}
+                to={
+                  Array.isArray(routeItem.path)
+                    ? routeItem.path[0]
+                    : routeItem.path
+                }
+                onClick={collapse}
+                className="navbar-link"
+              >
+                {routeItem.title}
+              </Link>
+            ))}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </>
+  )
 }
 
 export default NavBarComponent
