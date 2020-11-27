@@ -2,6 +2,10 @@
   padding: 8px;
 }
 
+.mr-auto .navbar-link {
+  font-family: BNRoute22;
+}
+
 .mr-auto .navbar-link:hover {
   color: #f89b6a !important;
 }
@@ -20,7 +24,7 @@
 }
 
 #brand {
-  font-family: Harabara;
+  font-family: BNRoute22;
 }
 
 #wordmark:hover {

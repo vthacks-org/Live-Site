@@ -82,7 +82,11 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
             key={`btn-group-${index}`}
             onClick={() => setDay(eventDay)}
             className="day-label-btn"
-            style={{ backgroundColor: color, borderColor: color }}
+            style={{
+              backgroundColor: color,
+              borderColor: color,
+              fontSize: "1em",
+            }}
           >
             {(!mobile && eventDay.longTitle) || eventDay.title}
           </Button>
