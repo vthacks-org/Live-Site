@@ -27,6 +27,9 @@ type Props = {
 }
 
 const ScheduleView: React.FC<Props> = ({ schedule }) => {
+  const [mobile, setMobile] = React.useState(true)
+  const [, setDummy] = React.useState()
+
   const days = daysFromSchedule(schedule)
 
   let initialDay = days[0]
@@ -36,9 +39,14 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
     initialDay = days[2]
   }
 
-  const [mobile, setMobile] = React.useState(true)
+  for (let i = 0; i < days.length; i++) {
+    if (getRelativeDayTime(days[i].date) === RelativeTime.Present) {
+      initialDay = days[i]
+      i = days.length // End loop
+    }
+  }
+
   const [day, setDay] = React.useState(initialDay)
-  const [, setDummy] = React.useState()
 
   const updateDimensions = () => {
     const isMobile = window.innerWidth < MOBILE_BREAKPOINT_WIDTH
@@ -76,12 +84,15 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
   const renderTimelineDays = () => {
     const createLabels = () => {
       return _.map(days, (eventDay, index) => {
-        const color = index === day.index ? "#f89b6a" : "#3a3a3a"
+        const isActive = index === day.index
+        const color = isActive ? "#f89b6a" : "#3a3a3a"
+
         return (
           <Button
             key={`btn-group-${index}`}
             onClick={() => setDay(eventDay)}
             className="day-label-btn"
+            active={false}
             style={{
               backgroundColor: color,
               borderColor: color,
