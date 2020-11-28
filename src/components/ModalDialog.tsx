@@ -92,7 +92,7 @@ const ModalDialog: React.FC<PropTypes> = ({
     )
   }
 
-  const title = `${event.name} ${event.subtitle && `- ${event.subtitle}`}`
+  const title = `${event.name} ${event.subtitle ? `- ${event.subtitle}` : ""}`
 
   return (
     <Modal show={show} onHide={onHide} centered>

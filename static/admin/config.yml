@@ -12,16 +12,22 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{name}}"
     extension: json
     fields:
-      - { name: name, label: Name, widget: string }
+      - { name: name, label: Title, widget: string }
+      - { name: subtitle, label: Subtitle, widget: string, required: false }
       - {
           name: start,
           label: Date,
           widget: datetime,
           date_format: "MM/DD/YYYY",
           time_format: "HH:mm",
-          format: "MM/DD/YYYY HH:mm ZZ",
+          format: "MM/DD/YYYY h:mm a ZZ",
         }
-      - { name: duration, label: Duration, widget: number, value_type: int }
+      - {
+          name: duration,
+          label: Duration (In minutes),
+          widget: number,
+          value_type: int,
+        }
       - {
           name: category,
           label: Category,
@@ -43,9 +49,9 @@ collections:
           widget: select,
           options: ["Virtual", "Surge 301", "Surge 303"],
         }
-      - { name: description, label: Description, widget: text }
-      - { name: contentLink, label: Slides/VOD, widget: text }
-      - { name: callLink, label: Call Link, widget: text }
+      - { name: description, label: Description, widget: text, required: false }
+      - { name: contentLink, label: Slides/VOD, widget: text, required: false }
+      - { name: callLink, label: Call Link, widget: text, required: false }
 
   - name: resources
     label: Resources
@@ -61,6 +67,7 @@ collections:
           label: "Display Title?",
           widget: boolean,
           default: true,
+          hint: "If this field is set to true, the resulting markdown page will display the title field as a big header. Disable for more customization and control of the page",
         }
       - {
           name: "templateKey",
@@ -84,6 +91,7 @@ collections:
           label: "Display Title?",
           widget: boolean,
           default: true,
+          hint: "If this field is set to true, the resulting markdown page will display the title field as a big header. Disable for more customization and control of the page",
         }
       - {
           name: "templateKey",
@@ -107,6 +115,7 @@ collections:
           label: "Display Title?",
           widget: boolean,
           default: true,
+          hint: "If this field is set to true, the resulting markdown page will display the title field as a big header. Disable for more customization and control of the page",
         }
       - {
           name: "templateKey",
@@ -130,6 +139,7 @@ collections:
           label: "Display Title?",
           widget: boolean,
           default: true,
+          hint: "If this field is set to true, the resulting markdown page will display the title field as a big header. Disable for more customization and control of the page",
         }
       - {
           name: "templateKey",
@@ -153,6 +163,7 @@ collections:
           label: "Display Title?",
           widget: boolean,
           default: true,
+          hint: "If this field is set to true, the resulting markdown page will display the title field as a big header. Disable for more customization and control of the page",
         }
       - {
           name: "templateKey",

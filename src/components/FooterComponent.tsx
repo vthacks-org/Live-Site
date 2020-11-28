@@ -8,6 +8,7 @@ import "./FooterComponent.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 library.add(fab)
 
@@ -37,6 +38,9 @@ const FooterComponent = () => {
             </a>
             <a href="https://www.instagram.com/vthacks/" target="_blank">
               <FontAwesomeIcon icon={["fab", "instagram"]} className="icon" />
+            </a>
+            <a href="mailto:hacker@vthacks.com" target="_blank">
+              <FontAwesomeIcon icon={faEnvelope} className="icon" />
             </a>
           </Col>
         </Row>

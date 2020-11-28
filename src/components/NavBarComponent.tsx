@@ -17,10 +17,6 @@ const ROUTES_WITH_TITLES = [
     path: "/",
   },
   {
-    title: "Challenges",
-    path: "/challenges",
-  },
-  {
     title: "Workshops",
     path: "/workshops",
   },
@@ -40,8 +36,8 @@ const ROUTES_WITH_TITLES = [
 
 const NavBarComponent = () => {
   const [expanded, setExpanded] = useState(false)
-  const [mobile, setMobile] = React.useState(true)
-  const [, setDummy] = React.useState()
+  const [mobile, setMobile] = useState(true)
+  const [, setDummy] = useState()
 
   const toggle = () => {
     setExpanded(!expanded)
@@ -58,7 +54,7 @@ const NavBarComponent = () => {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     updateDimensions()
     window.addEventListener(EventListener.Resize, updateDimensions)
     const interval = setInterval(() => {

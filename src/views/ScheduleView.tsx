@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./ScheduleView.css"
 
 import {
@@ -27,8 +27,8 @@ type Props = {
 }
 
 const ScheduleView: React.FC<Props> = ({ schedule }) => {
-  const [mobile, setMobile] = React.useState(true)
-  const [, setDummy] = React.useState()
+  const [mobile, setMobile] = useState(true)
+  const [, setDummy] = useState()
 
   const days = daysFromSchedule(schedule)
 
@@ -46,7 +46,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
     }
   }
 
-  const [day, setDay] = React.useState(initialDay)
+  const [day, setDay] = useState(initialDay)
 
   const updateDimensions = () => {
     const isMobile = window.innerWidth < MOBILE_BREAKPOINT_WIDTH
@@ -55,7 +55,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     updateDimensions()
     window.addEventListener(EventListener.Resize, updateDimensions)
     const interval = setInterval(() => {
@@ -144,7 +144,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
         </Row>
         <Row>
           <div className="dev-post">
-            <a href="re.com" target="_blank">
+            <a href="https://vthacks7.devpost.com/" target="_blank">
               <img className="dev-post" src={devPostImage} />
             </a>
           </div>
