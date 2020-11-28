@@ -1,3 +1,4 @@
+import "./MarkdownComponent.css"
 import React from "react"
 import { MarkdownContent } from "../interfaces"
 
@@ -9,7 +10,7 @@ const MarkdownComponent = ({ node }: MarkdownContent) => {
     return null
   }
   return (
-    <div>
+    <div className="markdown-content">
       {renderTitle()}
       <div dangerouslySetInnerHTML={{ __html: node.html }}></div>
     </div>

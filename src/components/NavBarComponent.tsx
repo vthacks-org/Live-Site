@@ -17,10 +17,6 @@ const ROUTES_WITH_TITLES = [
     path: "/",
   },
   {
-    title: "Challenges",
-    path: "/challenges",
-  },
-  {
     title: "Workshops",
     path: "/workshops",
   },
@@ -40,8 +36,8 @@ const ROUTES_WITH_TITLES = [
 
 const NavBarComponent = () => {
   const [expanded, setExpanded] = useState(false)
-  const [mobile, setMobile] = React.useState(true)
-  const [, setDummy] = React.useState()
+  const [mobile, setMobile] = useState(true)
+  const [, setDummy] = useState()
 
   const toggle = () => {
     setExpanded(!expanded)
@@ -58,7 +54,7 @@ const NavBarComponent = () => {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     updateDimensions()
     window.addEventListener(EventListener.Resize, updateDimensions)
     const interval = setInterval(() => {
@@ -71,9 +67,13 @@ const NavBarComponent = () => {
     }
   })
 
-  const brandName = mobile ? "" : "VTHacks8"
-  const placeHolder = mobile ? <a> </a> : null
-
+  const brandName = mobile ? null : (
+    <Link id="wordmark" to={RoutePath.Home} onClick={collapse}>
+      VTHacks8
+    </Link>
+  )
+  const placeHolder = mobile ? <a style={{ width: "56px" }}> </a> : null
+  const marginRight = mobile ? "0px" : "1rem"
   return (
     <>
       <div
@@ -85,11 +85,10 @@ const NavBarComponent = () => {
       />
       <Navbar id="navbar-main" expanded={expanded} expand="lg">
         {placeHolder}
-        <Navbar.Brand id="brand">
-          <img src="/LogoFinal.svg" alt="" />
-          <Link id="wordmark" to={RoutePath.Home} onClick={collapse}>
-            {brandName}
-          </Link>
+
+        <Navbar.Brand id="brand" style={{ marginRight: marginRight }}>
+          <img src="/LogoFinal.svg" alt="Logo" />
+          {brandName}
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
