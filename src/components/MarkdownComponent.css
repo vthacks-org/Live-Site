@@ -1,4 +1,4 @@
 .markdown-content {
-  word-break: break-all;
-  overflow-wrap: anywhere;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
