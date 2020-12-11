@@ -135,7 +135,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
         <Row className="extra-content">
           <DiscordComponent
             className="discord-container"
-            serverId="769007930585382954"
+            serverId="753747861480669312"
           />
           <TwitterComponent
             className="twitter-container"
