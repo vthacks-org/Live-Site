@@ -20,7 +20,7 @@ const FooterComponent = () => {
         <Row className="links">
           <Col>
             <a
-              href="https://discord.gg/b5pveB"
+              href="https://discord.gg/xeT9GxXe3P"
               target="_blank"
               className="icon"
             >
@@ -35,6 +35,9 @@ const FooterComponent = () => {
             </a>
             <a href="https://www.facebook.com/vthacks/" target="_blank">
               <FontAwesomeIcon icon={["fab", "facebook"]} className="icon" />
+            </a>
+            <a href="" target="_blank">
+              <FontAwesomeIcon icon={["fab", "youtube"]} className="icon" />
             </a>
             <a href="https://www.instagram.com/vthacks/" target="_blank">
               <FontAwesomeIcon icon={["fab", "instagram"]} className="icon" />
