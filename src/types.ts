@@ -7,3 +7,5 @@ export type MarkdownProps = {
     }
   }
 }
+
+export type EffectCallback = () => void | (() => void | undefined)

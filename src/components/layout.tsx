@@ -4,8 +4,42 @@ import { Helmet } from "react-helmet"
 import "../App.css"
 import "../index.css"
 import FooterComponent from "./FooterComponent"
+import { Modal, Button } from "react-bootstrap"
+
+import useUserLog from "../hooks/useUserLog"
 
 const Layout = ({ children, title = "" }) => {
+  const [newcomer, setNewcomer] = useUserLog()
+  console.log("First time?", newcomer)
+
+  const renderTutorial = () => {
+    if (newcomer) {
+      const tutorialData = {
+        header: "Welcome to the VTHacks Live-Site!",
+        body:
+          "The Live-Site is the tool that will be used on the day of the event!",
+        footer: ["Got it!"],
+      }
+      const { header, body, footer } = tutorialData
+
+      const close = () => setNewcomer(false)
+      return (
+        <Modal show={newcomer} onHide={close}>
+          <Modal.Header closeButton>
+            <Modal.Title>{header}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{body}</Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={close}>
+              {footer[0]}
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )
+    }
+    return null
+  }
+
   return (
     <>
       <div className="App">
@@ -14,6 +48,7 @@ const Layout = ({ children, title = "" }) => {
           <link rel="icon" type="image/svg+xml" href="/LogoFinal.svg"></link>
         </Helmet>
         <NavBarComponent />
+        {renderTutorial()}
         <div className="app-content" id="switch">
           {children}
         </div>
