@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 function useUserLog(): [boolean, (val: boolean) => void] {
   if (typeof window === `undefined`) {
-    return null
+    return [null, null]
   }
 
   const initialValue =
