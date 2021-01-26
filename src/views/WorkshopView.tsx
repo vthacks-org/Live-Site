@@ -21,10 +21,11 @@ const WorkshopView = ({ schedule }) => {
   const [workshop, setWorkshop] = React.useState(DUMMY_EVENT)
 
   const filterWorkshops = (events: IEvent[]) =>
-    events.filter(event =>
-      [EventCategory.Workshop1, EventCategory.Workshop2].includes(
-        event.category
-      )
+    events.filter(
+      event =>
+        [EventCategory.Workshop1, EventCategory.Workshop2].includes(
+          event.category
+        ) && event.display
     )
 
   const renderDays = () => {
