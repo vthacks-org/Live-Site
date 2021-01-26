@@ -12,6 +12,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{name}}"
     extension: json
     fields:
+      - { name: display, label: Display?, widget: boolean, default: true }
       - { name: name, label: Title, widget: string }
       - { name: subtitle, label: Subtitle, widget: string, required: false }
       - {
@@ -85,6 +86,7 @@ collections:
     extension: markdown
     format: frontmatter
     fields:
+      - { name: display, label: Display?, widget: boolean, default: true }
       - { name: title, label: Title, widget: string }
       - {
           name: shouldDisplayTitle,
@@ -109,6 +111,7 @@ collections:
     extension: markdown
     format: frontmatter
     fields:
+      - { name: display, label: Display?, widget: boolean, default: true }
       - { name: title, label: Title, widget: string }
       - {
           name: shouldDisplayTitle,
@@ -133,6 +136,7 @@ collections:
     extension: markdown
     format: frontmatter
     fields:
+      - { name: display, label: Display?, widget: boolean, default: true }
       - { name: title, label: Title, widget: string }
       - {
           name: shouldDisplayTitle,
@@ -157,6 +161,7 @@ collections:
     extension: markdown
     format: frontmatter
     fields:
+      - { name: display, label: Display?, widget: boolean, default: true }
       - { name: title, label: Title, widget: string }
       - {
           name: shouldDisplayTitle,

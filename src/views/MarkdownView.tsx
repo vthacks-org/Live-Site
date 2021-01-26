@@ -16,15 +16,24 @@ const MarkdownView = ({ templateKey, list }: Props) => {
     if (!list.length) {
       return <NoContentComponent name={templateKey} />
     }
-
-    return _.map(list, item => {
+    var numDisp = 0
+    const items = _.map(list, item => {
       const { node } = item
+
+      if (!node.frontmatter.display) {
+        return null
+      }
+      numDisp++
       return (
         <div key={node.id}>
           <MarkdownComponent node={node} />
         </div>
       )
     })
+    if (numDisp == 0) {
+      return <NoContentComponent name={templateKey} />
+    }
+    return items
   }
 
   const id = `${templateKey}-view`
