@@ -2,6 +2,7 @@ import { EventCategory, RoutePath, RelativeTime } from "./enums"
 
 export interface IEvent {
   name: string
+  display: boolean
   subtitle?: string
   start: Date
   duration: number
@@ -18,6 +19,7 @@ export interface MarkdownContent {
     id: string
     frontmatter: {
       title: string
+      display: boolean
       templateKey: string
       shouldDisplayTitle: boolean
     }

@@ -29,6 +29,10 @@ const ROUTES_WITH_TITLES = [
     path: "/submission_guidelines",
   },
   {
+    title: "UX Events",
+    path: "/ux_events",
+  },
+  {
     title: "Prizes",
     path: "/prizes",
   },

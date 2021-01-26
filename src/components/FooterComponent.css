@@ -10,6 +10,21 @@
 #info-view .links a:hover {
   color: #f89b6a;
 }
+#info-view .discord a:hover {
+  color: #7289da;
+}
+#info-view .twitter a:hover {
+  color: #50abf1;
+}
+#info-view .facebook a:hover {
+  color: #4867aa;
+}
+#info-view .instagram a:hover {
+  color: #e55053;
+}
+#info-view .youtube a:hover {
+  color: #cc0000;
+}
 
 #info-view .links {
   font-size: 36px;

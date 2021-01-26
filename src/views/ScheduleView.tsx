@@ -16,7 +16,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Button from "react-bootstrap/Button"
 
-import Loadable from "@loadable/component";
+import Loadable from "@loadable/component"
 
 import EventListComponent from "../components/EventListComponent"
 
@@ -27,7 +27,9 @@ type Props = {
   schedule: IEvent[]
 }
 
-const TimelineComponent = Loadable(() => import("../components/TimelineComponent"));
+const TimelineComponent = Loadable(
+  () => import("../components/TimelineComponent")
+)
 
 const ScheduleView: React.FC<Props> = ({ schedule }) => {
   const [mobile, setMobile] = useState(true)
@@ -135,7 +137,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
         <Row className="extra-content">
           <DiscordComponent
             className="discord-container"
-            serverId="769007930585382954"
+            serverId="753747861480669312"
           />
           <TwitterComponent
             className="twitter-container"

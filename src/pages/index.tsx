@@ -10,6 +10,7 @@ type Props = {
     allScheduleJson: {
       nodes: IEvent[]
     }
+    newcomer: boolean
   }
 }
 

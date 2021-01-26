@@ -1,4 +1,5 @@
 import { RelativeTime } from "./enums"
+
 import {
   ONE_MINUTE_MILLISECOND,
   ONE_DAY_MILLISECOND,
