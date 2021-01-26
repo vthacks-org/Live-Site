@@ -1,10 +1,11 @@
 {
   "start": "02/17/2021 07:00 -0500",
+  "display": false,
   "name": "Dominos",
-  "duration": 150,
-  "category": "hacker",
-  "location": "Virtual",
-  "description": "Just a standard description",
   "contentLink": "n/a",
-  "callLink": "n/a"
+  "duration": 150,
+  "location": "Virtual",
+  "callLink": "n/a",
+  "description": "Just a standard description",
+  "category": "hacker"
 }
