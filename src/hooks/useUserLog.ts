@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 
 function useUserLog(): [boolean, (val: boolean) => void] {
+  console.log("WINDOW IS: ", window)
+  if (window === undefined || window === null) {
+    return
+  }
   const initialValue =
     window.localStorage.getItem("newcomer") === "true" ||
     window.localStorage.getItem("newcomer") === null
