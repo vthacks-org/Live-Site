@@ -91,8 +91,8 @@ export const DUMMY_EVENT: IEvent = {
   callLink: "",
 }
 
-export const DAY_OF_THE_EVENT: Date = new Date("2021-02-17T00:00:00-05:00")
-export const EVENT_END_TIME_DATE: Date = new Date("2021-02-20T00:00:00-05:00")
+export const DAY_OF_THE_EVENT: Date = new Date("2021-02-26T00:00:00-05:00")
+export const EVENT_END_TIME_DATE: Date = new Date("2021-02-29T00:00:00-05:00")
 export const HACK_LENGTH: Number = daysApart(
   DAY_OF_THE_EVENT,
   EVENT_END_TIME_DATE
