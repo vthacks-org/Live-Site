@@ -37,14 +37,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
 
   const days = daysFromSchedule(schedule)
 
-  // TODO: Find initial days dynamically
   let initialDay = days[0]
-  if (getRelativeDayTime(days[1].date) === RelativeTime.Present) {
-    initialDay = days[1]
-  } else if (getRelativeDayTime(days[2].date) === RelativeTime.Present) {
-    initialDay = days[2]
-  }
-
   for (let i = 0; i < days.length; i++) {
     if (getRelativeDayTime(days[i].date) === RelativeTime.Present) {
       initialDay = days[i]
@@ -76,7 +69,9 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
 
   const hasPassed =
     new Date().getTime() >=
-    new Date(days[2].date.getTime() + ONE_DAY_MILLISECOND).getTime()
+    new Date(
+      days[days.length - 1].date.getTime() + ONE_DAY_MILLISECOND
+    ).getTime()
 
   const relativeDayTime = hasPassed
     ? RelativeTime.Future
