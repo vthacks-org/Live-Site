@@ -143,7 +143,6 @@ export function splitEvent(event: IEvent): IEvent[] {
       description,
       contentLink,
       callLink,
-      display,
     }
 
     currEvent = newLeg
