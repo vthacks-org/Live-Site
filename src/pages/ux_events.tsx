@@ -1,18 +1,30 @@
 import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
-import MarkdownView from "../views/MarkdownView"
+import WorkshopView from "../views/WorkshopView"
+import { IEvent } from "../interfaces"
+import { EventCategory as EC } from "../enums"
 
-import { MarkdownProps } from "../types"
-
-const Ux: React.FC<MarkdownProps> = ({
+type Props = {
   data: {
-    allMarkdownRemark: { edges: ux_events },
+    allScheduleJson: {
+      nodes: IEvent[]
+    }
+  }
+}
+
+const Ux: React.FC<Props> = ({
+  data: {
+    allScheduleJson: { nodes: schedule },
   },
 }) => {
   return (
-    <Layout title="UX Events">
-      <MarkdownView templateKey="ux_events" list={ux_events} />
+    <Layout>
+      <WorkshopView
+        schedule={schedule}
+        name="UX events"
+        blacklist={[EC.Activity, EC.Default, EC.UX]}
+      />
     </Layout>
   )
 }
@@ -21,19 +33,16 @@ export default Ux
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "ux_events" } } }
-    ) {
-      edges {
-        node {
-          id
-          html
-          frontmatter {
-            title
-            templateKey
-            shouldDisplayTitle
-          }
-        }
+    allScheduleJson {
+      nodes {
+        name
+        location
+        start
+        duration
+        category
+        description
+        contentLink
+        callLink
       }
     }
   }

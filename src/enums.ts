@@ -6,6 +6,7 @@ export enum EventCategory {
   Activity = "activity",
   Career = "career",
   Hacker = "hacker",
+  UX = "ux",
 }
 
 export const EventCategoryColor: {

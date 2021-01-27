@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import WorkshopView from "../views/WorkshopView"
 import { IEvent } from "../interfaces"
+import { EventCategory as EC } from "../enums"
 
 type Props = {
   data: {
@@ -19,7 +20,7 @@ const Workshops: React.FC<Props> = ({
 }) => {
   return (
     <Layout>
-      <WorkshopView schedule={schedule} />
+      <WorkshopView schedule={schedule} name="workshops" blacklist={[EC.UX]} />
     </Layout>
   )
 }
