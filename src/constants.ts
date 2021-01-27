@@ -48,7 +48,7 @@ export const LONG_DAY_NAMES = [
   "Saturday",
 ]
 
-export const SHORT_DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+export const SHORT_DAY_NAMES = ["Sun", "Tue", "Wed", "Thu", "Fri", "Sat", "Mon"]
 
 export const LONG_MONTH_NAMES = [
   "January",
@@ -94,6 +94,7 @@ export const DUMMY_EVENT: IEvent = {
 
 export const DAY_OF_THE_EVENT: Date = new Date("2021-02-26T00:00:00-05:00")
 export const EVENT_END_TIME_DATE: Date = new Date("2021-03-01T00:00:00-05:00")
+
 export const HACK_LENGTH: Number = daysApart(
   DAY_OF_THE_EVENT,
   EVENT_END_TIME_DATE
