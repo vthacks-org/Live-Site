@@ -116,10 +116,20 @@ export function splitEvent(event: IEvent): IEvent[] {
   let currDuration = event.duration
 
   while (currDuration > 0) {
+    // Time left in the day
     const timeLeft =
       ONE_DAY_MINUTE -
       (currEvent.start.getHours() * 60 + currEvent.start.getMinutes())
 
+    const legStart =
+      eventLegs.length === 0
+        ? currEvent.start
+        : new Date(currEvent.start.getTime() + timeLeft * 60 * 1000)
+
+    // New duration is either time left in day, or time remaining in event
+    const legDuration = timeLeft < currDuration ? timeLeft : currDuration
+
+    // Pull off vals from the currEvent to populate the new event leg
     const {
       name,
       category,
@@ -130,18 +140,11 @@ export function splitEvent(event: IEvent): IEvent[] {
       display,
     } = currEvent
 
-    const newStart =
-      eventLegs.length === 0
-        ? currEvent.start
-        : new Date(currEvent.start.getTime() + timeLeft * 60 * 1000)
-
-    const newDuration = timeLeft < currDuration ? timeLeft : currDuration
-
     const newLeg: IEvent = {
       display,
       name,
-      start: newStart,
-      duration: newDuration,
+      start: legStart,
+      duration: legDuration,
       category,
       location,
       description,
@@ -149,9 +152,25 @@ export function splitEvent(event: IEvent): IEvent[] {
       callLink,
     }
 
-    currEvent = newLeg
-    eventLegs.push(currEvent)
-    currDuration = currDuration - currEvent.duration
+    const newStart =
+      currDuration > 0
+        ? new Date(
+            legStart.getTime() + timeLeft * 60 * 1000 + ONE_DAY_MILLISECOND
+          )
+        : null
+    eventLegs.push(newLeg)
+    currDuration -= newLeg.duration
+    currEvent = {
+      display,
+      name,
+      start: newStart,
+      duration: currDuration,
+      category,
+      location,
+      description,
+      contentLink,
+      callLink,
+    }
   }
   return eventLegs
 }
@@ -182,6 +201,7 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
         // last day to start at 12am and end at the correct time
 
         const eventLegs = splitEvent(event)
+
         for (let i = 0; i < eventLegs.length; i++) {
           tempDays[daysBetween + i].events.push(eventLegs[i])
         }

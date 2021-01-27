@@ -40,6 +40,7 @@ export const pageQuery = graphql`
         description
         contentLink
         callLink
+        display
       }
     }
   }

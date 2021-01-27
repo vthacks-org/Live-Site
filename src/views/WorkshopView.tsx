@@ -33,6 +33,7 @@ const WorkshopView = ({ schedule, name, blacklist }) => {
     var n = 0
     for (let i = 0; i < days.length; i++) {
       for (let j = 0; j < days[i].events.length; j++) {
+        console.log(days[i].events[j].category)
         if (!blacklist.includes(days[i].events[j].category)) {
           n++
           break
@@ -43,6 +44,9 @@ const WorkshopView = ({ schedule, name, blacklist }) => {
       }
     }
     if (n < 1) {
+      console.log("No content")
+      console.log(blacklist)
+      console.log(days)
       return (
         <Container>
           <Col>
