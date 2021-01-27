@@ -52,7 +52,7 @@ collections:
         }
       - { name: description, label: Description, widget: text, required: false }
       - { name: contentLink, label: Slides/VOD, widget: text, required: false }
-      - { name: callLink, label: Call Link, widget: text, required: false }
+      - { name: callLink, label: Stream Link, widget: text, required: false }
 
   - name: resources
     label: Resources
@@ -177,27 +177,44 @@ collections:
           default: judges,
         }
       - { name: body, label: Body, widget: markdown }
-  - name: ux_events
-    label: UX Events
-    folder: content/ux-events
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
-    extension: markdown
-    format: frontmatter
-    fields:
-      - { name: display, label: Display?, widget: boolean, default: true }
-      - { name: title, label: Title, widget: string }
-      - {
-          name: shouldDisplayTitle,
-          label: "Display Title?",
-          widget: boolean,
-          default: true,
-          hint: "If this field is set to true, the resulting markdown page will display the title field as a big header. Disable for more customization and control of the page",
-        }
-      - {
-          name: "templateKey",
-          label: "Template Key",
-          widget: hidden,
-          default: "ux_events",
-        }
-      - { name: body, label: Body, widget: markdown }
+  # - name: ux_events
+  #   label: UX Events
+  #   folder: content/ux-events
+  #   create: true
+  #   slug: "{{year}}-{{month}}-{{day}}-{{name}}"
+  #   extension: json
+  #   fields:
+  #     - { name: display, label: Display?, widget: boolean, default: true }
+  #     - { name: name, label: Title, widget: string }
+  #     - {
+  #         name: start,
+  #         label: Date,
+  #         widget: datetime,
+  #         date_format: "MM/DD/YYYY",
+  #         time_format: "HH:mm",
+  #         format: "MM/DD/YYYY h:mm a ZZ",
+  #       }
+  #     - {
+  #         name: duration,
+  #         label: Duration (In minutes),
+  #         widget: number,
+  #         value_type: int,
+  #       }
+  #     - {
+  #         name: category,
+  #         label: Category,
+  #         widget: select,
+  #         options:
+  #           [
+  #             "default",
+  #             "food",
+  #             "workshop1",
+  #             "workshop2",
+  #             "activity",
+  #             "career",
+  #             "hacker",
+  #           ],
+  #       }
+  #     - { name: description, label: Description, widget: text, required: false }
+  #     - { name: contentLink, label: Slides/VOD, widget: text, required: false }
+  #     - { name: callLink, label: Stream Link, widget: text, required: false }

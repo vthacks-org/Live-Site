@@ -6,7 +6,6 @@ function useUserLog(): [boolean, (val: boolean) => void] {
     window.localStorage.getItem("newcomer") === null
       ? true
       : false
-  console.log(initialValue)
   const [newcomer, setValue] = useState(initialValue)
   const setNewcomer = (val: boolean) => {
     if (val) {

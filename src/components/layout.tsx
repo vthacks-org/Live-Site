@@ -10,7 +10,6 @@ import useUserLog from "../hooks/useUserLog"
 
 const Layout = ({ children, title = "" }) => {
   const [newcomer, setNewcomer] = useUserLog()
-  console.log("First time?", newcomer)
 
   const renderTutorial = () => {
     if (newcomer) {

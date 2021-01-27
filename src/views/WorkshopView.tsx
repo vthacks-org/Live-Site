@@ -12,8 +12,9 @@ import { formattedEventTime, daysFromSchedule } from "../utils"
 import { DUMMY_EVENT } from "../constants"
 import { IEvent, IEventDay } from "../interfaces"
 import _ from "lodash"
+import NoContentComponent from "../components/NoContentComponent"
 
-const WorkshopView = ({ schedule }) => {
+const WorkshopView = ({ schedule, name, blacklist }) => {
   const days = daysFromSchedule(schedule)
 
   const [show, setShow] = React.useState(false)
@@ -28,6 +29,22 @@ const WorkshopView = ({ schedule }) => {
     )
 
   const renderDays = () => {
+    var n = 0
+    for (let i = 0; i < days.length; i++) {
+      for (let j = 0; j < days[i].events.length; j++) {
+        if (!blacklist.includes(days[i].events[j].category)) {
+          n++
+          break
+        }
+      }
+      if (n > 0) {
+        break
+      }
+    }
+    if (n < 1) {
+      return <NoContentComponent name={name} />
+    }
+
     return _.map(days, (day, index) => {
       return (
         filterWorkshops(day.events).length !== 0 && (
@@ -38,6 +55,19 @@ const WorkshopView = ({ schedule }) => {
         )
       )
     })
+  }
+
+  const renderEvent = event => {
+    if (blacklist.includes(event.category)) {
+      return null
+    }
+    return (
+      <EventListItem
+        event={event}
+        showAsToday={false}
+        relativeDayTime={RelativeTime.Future}
+      />
+    )
   }
 
   const renderEvents = (day: IEventDay) => {
@@ -52,11 +82,7 @@ const WorkshopView = ({ schedule }) => {
             setWorkshop(event)
           }}
         >
-          <EventListItem
-            event={event}
-            showAsToday={false}
-            relativeDayTime={RelativeTime.Future}
-          />
+          {renderEvent(event)}
         </div>
       )
     })
