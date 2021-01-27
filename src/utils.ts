@@ -98,12 +98,16 @@ export function formatDateShort(date: Date) {
 }
 
 export function daysApart(start: Date, end: Date) {
-  const result = (end.getTime() - start.getTime()) / ONE_DAY_MILLISECOND
+  const day1 = start.getDate()
+  const day2 = new Date(end.getTime() - 1).getDate()
 
-  return end.getTime() >
-    new Date(start.getTime() + ONE_DAY_MILLISECOND * result).getTime()
-    ? Math.ceil(result)
-    : Math.floor(result)
+  let i = day1
+  let n = 0
+  while (i != day2) {
+    i = new Date(start.getTime() + ONE_DAY_MILLISECOND * n + 1).getDate()
+    n++
+  }
+  return n
 }
 
 export function splitEvent(event: IEvent): IEvent[] {
@@ -155,7 +159,6 @@ export function splitEvent(event: IEvent): IEvent[] {
 export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
   schedule.forEach(event => (event.start = new Date(event.start)))
 
-  console.log(schedule)
   let tempDays: IEventDay[] = []
   for (let i = 0; i < HACK_LENGTH; i++) {
     const date = new Date(DAY_OF_THE_EVENT.getTime() + ONE_DAY_MILLISECOND * i)
