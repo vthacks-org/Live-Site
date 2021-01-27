@@ -177,3 +177,27 @@ collections:
           default: judges,
         }
       - { name: body, label: Body, widget: markdown }
+  - name: ux_events
+      label: UX Events
+      folder: content/ux-events
+      create: true
+      slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+      extension: markdown
+      format: frontmatter
+      fields:
+        - { name: display, label: Display?, widget: boolean, default: true }
+        - { name: title, label: Title, widget: string }
+        - {
+            name: shouldDisplayTitle,
+            label: "Display Title?",
+            widget: boolean,
+            default: true,
+            hint: "If this field is set to true, the resulting markdown page will display the title field as a big header. Disable for more customization and control of the page",
+          }
+        - {
+            name: "templateKey",
+            label: "Template Key",
+            widget: hidden,
+            default: "ux_events",
+          }
+        - { name: body, label: Body, widget: markdown }

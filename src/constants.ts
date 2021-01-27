@@ -82,6 +82,7 @@ export const SHORT_MONTH_NAMES = [
 
 export const DUMMY_EVENT: IEvent = {
   name: "",
+  display: true,
   start: new Date(),
   duration: 0,
   category: EventCategory.Default,
