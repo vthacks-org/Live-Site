@@ -16,7 +16,7 @@ const Layout = ({ children, title = "" }) => {
       const tutorialData = {
         header: "Welcome to the VTHacks Live-Site!",
         body:
-          "The Live-Site is the tool that will be used on the day of the event!",
+          "The Live-Site is the tool that will be used on the day of the event! Access the schedule, a list of workshops, resources to use, and see what prizes you can win",
         footer: ["Got it!"],
       }
       const { header, body, footer } = tutorialData
