@@ -7,6 +7,7 @@
 <h1 align="center">
   VTHacks Live Site
 </h1>
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6ad1a547-3547-42e1-81f7-ce957bb2c23e/deploy-status)](https://app.netlify.com/sites/vt-hacks-live-site/deploys)
 
 The Production Live Site can be found [here](https://vt-hacks-live-site.netlify.app/)
