@@ -1,10 +1,11 @@
 {
   "start": "02/17/2021 22:00 -0500",
+  "display": false,
   "name": "Papa Johns",
-  "duration": 180,
-  "category": "workshop1",
-  "location": "Virtual",
-  "description": "big activity",
   "contentLink": "n/a",
-  "callLink": "n/a"
+  "duration": 180,
+  "location": "Virtual",
+  "callLink": "n/a",
+  "description": "big activity",
+  "category": "workshop1"
 }

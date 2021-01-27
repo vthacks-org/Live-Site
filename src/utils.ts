@@ -134,6 +134,7 @@ export function splitEvent(event: IEvent): IEvent[] {
     const newDuration = timeLeft < currDuration ? timeLeft : currDuration
 
     const newLeg: IEvent = {
+      display,
       name,
       start: newStart,
       duration: newDuration,
@@ -169,17 +170,19 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
   }
 
   schedule.forEach(event => {
-    // Pushes event to the correct days
-    const eventStart = event.start
-    const daysBetween = daysApart(DAY_OF_THE_EVENT, eventStart)
-    if (daysBetween >= 0 && daysBetween < HACK_LENGTH) {
-      // If event should span across two days, edit the event
-      // to last for the entirety of the first day, and the
-      // last day to start at 12am and end at the correct time
+    if (event.display) {
+      // Pushes event to the correct days
+      const eventStart = event.start
+      const daysBetween = daysApart(DAY_OF_THE_EVENT, eventStart)
+      if (daysBetween >= 0 && daysBetween < HACK_LENGTH) {
+        // If event should span across two days, edit the event
+        // to last for the entirety of the first day, and the
+        // last day to start at 12am and end at the correct time
 
-      const eventLegs = splitEvent(event)
-      for (let i = 0; i < eventLegs.length; i++) {
-        tempDays[daysBetween + i].events.push(eventLegs[i])
+        const eventLegs = splitEvent(event)
+        for (let i = 0; i < eventLegs.length; i++) {
+          tempDays[daysBetween + i].events.push(eventLegs[i])
+        }
       }
     }
   })

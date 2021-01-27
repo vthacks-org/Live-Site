@@ -29,3 +29,26 @@
 #info-view .links {
   font-size: 36px;
 }
+
+.devPostLink {
+  width: 36px;
+  height: 36px;
+  /* background: url("/devpost.svg"); */
+  background-size: 36px 36px;
+  color: blue;
+  margin: -15px 0 0 0;
+}
+
+.devPostLink > svg {
+  width: 36px;
+  height: 36px;
+  margin-top: -10px;
+}
+
+#XMLID_1_ {
+  fill: #3a3a3a;
+}
+
+.devPostLink:hover #XMLID_1_ {
+  fill: #013f54;
+}
