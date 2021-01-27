@@ -42,7 +42,13 @@ const WorkshopView = ({ schedule, name, blacklist }) => {
       }
     }
     if (n < 1) {
-      return <NoContentComponent name={name} />
+      return (
+        <Container>
+          <Col>
+            <NoContentComponent name={name} />
+          </Col>
+        </Container>
+      )
     }
 
     return _.map(days, (day, index) => {

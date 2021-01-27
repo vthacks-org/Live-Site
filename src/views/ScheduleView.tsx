@@ -37,6 +37,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
 
   const days = daysFromSchedule(schedule)
 
+  // TODO: Find initial days dynamically
   let initialDay = days[0]
   if (getRelativeDayTime(days[1].date) === RelativeTime.Present) {
     initialDay = days[1]

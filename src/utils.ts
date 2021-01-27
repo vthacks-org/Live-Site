@@ -86,13 +86,13 @@ export function isSameDay(first: Date, second: Date) {
 }
 
 export function formatDateLong(date: Date) {
-  return `${LONG_DAY_NAMES[date.getDay() - 1]}, ${
+  return `${LONG_DAY_NAMES[date.getDay()]}, ${
     LONG_MONTH_NAMES[date.getMonth()]
   } ${date.getDate()}`
 }
 
 export function formatDateShort(date: Date) {
-  return `${SHORT_DAY_NAMES[date.getDay() - 1]}, ${
+  return `${SHORT_DAY_NAMES[date.getDay()]}, ${
     SHORT_MONTH_NAMES[date.getMonth()]
   } ${date.getDate()}`
 }
@@ -123,6 +123,7 @@ export function splitEvent(event: IEvent): IEvent[] {
       description,
       contentLink,
       callLink,
+      display,
     } = currEvent
 
     const newStart =
@@ -141,6 +142,7 @@ export function splitEvent(event: IEvent): IEvent[] {
       description,
       contentLink,
       callLink,
+      display,
     }
 
     currEvent = newLeg
@@ -153,6 +155,7 @@ export function splitEvent(event: IEvent): IEvent[] {
 export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
   schedule.forEach(event => (event.start = new Date(event.start)))
 
+  console.log(schedule)
   let tempDays: IEventDay[] = []
   for (let i = 0; i < HACK_LENGTH; i++) {
     const date = new Date(DAY_OF_THE_EVENT.getTime() + ONE_DAY_MILLISECOND * i)

@@ -39,13 +39,13 @@ export const CLOCK_EMOJI_THIRTY_LIST = [
 export const TIMEZONE_ABBR = ""
 
 export const LONG_DAY_NAMES = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ]
 
 export const SHORT_DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -93,7 +93,7 @@ export const DUMMY_EVENT: IEvent = {
 }
 
 export const DAY_OF_THE_EVENT: Date = new Date("2021-02-26T00:00:00-05:00")
-export const EVENT_END_TIME_DATE: Date = new Date("2021-02-29T00:00:00-05:00")
+export const EVENT_END_TIME_DATE: Date = new Date("2021-03-01T00:00:00-05:00")
 export const HACK_LENGTH: Number = daysApart(
   DAY_OF_THE_EVENT,
   EVENT_END_TIME_DATE
