@@ -10,10 +10,7 @@ const NoContentComponent = ({ name }: Props) => {
   return (
     <div>
       <h2>No {formattedName} to be found here! </h2>
-      <p>
-        Unfortunately we have no {formattedName.toLowerCase()} to populate this
-        area at the moment. Please look again later!
-      </p>
+      <p>More info will be posted closer to the date of the event!</p>
     </div>
   )
 }
