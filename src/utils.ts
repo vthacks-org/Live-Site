@@ -139,10 +139,7 @@ export function splitEvent(event: IEvent): IEvent[] {
       ONE_DAY_MINUTE -
       (currEvent.start.getHours() * 60 + currEvent.start.getMinutes())
 
-    const legStart =
-      eventLegs.length === 0
-        ? currEvent.start
-        : new Date(currEvent.start.getTime() + timeLeft * 60 * 1000)
+    const legStart = currEvent.start
 
     // New duration is either time left in day, or time remaining in event
     const legDuration = timeLeft < currDuration ? timeLeft : currDuration
@@ -172,9 +169,7 @@ export function splitEvent(event: IEvent): IEvent[] {
 
     const newStart =
       currDuration > 0
-        ? new Date(
-            legStart.getTime() + timeLeft * 60 * 1000 + ONE_DAY_MILLISECOND
-          )
+        ? new Date(legStart.getTime() + timeLeft * 60 * 1000)
         : null
     eventLegs.push(newLeg)
     currDuration -= newLeg.duration
@@ -219,7 +214,7 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
         // last day to start at 12am and end at the correct time
 
         const eventLegs = splitEvent(event)
-
+        console.log(eventLegs)
         for (let i = 0; i < eventLegs.length; i++) {
           tempDays[daysBetween + i].events.push(eventLegs[i])
         }
@@ -252,10 +247,11 @@ export function sortEventsDuration(events: IEvent[], key: SortKeys) {
 export function calculateTimelineRows(events: IEvent[]) {
   const checkConflicts = (a: IEvent, b: IEvent) => {
     // TODO: Check both ways
+
     return (
-      (a.start.getTime() < b.start.getTime() &&
+      (a.start.getTime() <= b.start.getTime() &&
         a.start.getTime() + a.duration * 60 * 1000 > b.start.getTime()) ||
-      (b.start.getTime() < a.start.getTime() &&
+      (b.start.getTime() <= a.start.getTime() &&
         b.start.getTime() + b.duration * 60 * 1000 > a.start.getTime())
     )
   }
