@@ -3,6 +3,7 @@ export enum EventCategory {
   Workshop = "workshop",
   Hacker = "hacker",
   UX = "ux",
+  Organizer = "organizer",
 }
 
 export const EventCategoryColor: {
@@ -12,6 +13,7 @@ export const EventCategoryColor: {
   [EventCategory.Workshop]: "deepskyblue",
   [EventCategory.UX]: "#ff47c5",
   [EventCategory.Hacker]: "#30ff5d",
+  [EventCategory.Organizer]: "#ff483b",
 }
 
 export enum RoutePath {
