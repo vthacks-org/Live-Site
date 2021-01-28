@@ -112,7 +112,7 @@ class TimelineComponent extends React.Component<PropTypesDay> {
                   left:
                     (labelSpaceHorizontal / minutes) *
                     dateToMinutesInDay(ele.start),
-                  top: (trackStartHeight + trackSpace) * totalIndex,
+                  top: (trackStartHeight + trackSpace) * (totalIndex / 2),
                 }}
                 onClick={() => this.handleEventListItemClick(ele)}
               >

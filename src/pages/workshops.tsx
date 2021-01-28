@@ -18,7 +18,6 @@ const Workshops: React.FC<Props> = ({
     allScheduleJson: { nodes: schedule },
   },
 }) => {
-  console.log(schedule)
   return (
     <Layout>
       <WorkshopView schedule={schedule} name="workshops" blacklist={[EC.UX]} />
