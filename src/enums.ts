@@ -19,7 +19,7 @@ export enum RoutePath {
   Workshops = "/workshops",
   Resources = "/resources",
   Submission_Guidelines = "/submission_guidelines",
-  UX_Events = "/ux-events",
+  UX_Events = "/ux_events",
   Prizes = "/prizes",
 }
 
