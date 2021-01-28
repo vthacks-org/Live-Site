@@ -1,4 +1,4 @@
-import { RelativeTime } from "./enums"
+import { RelativeTime, SortKeys } from "./enums"
 
 import {
   ONE_MINUTE_MILLISECOND,
@@ -110,12 +110,30 @@ export function daysApart(start: Date, end: Date) {
   return n
 }
 
+function __daysApart__(start: Date, end: Date) {
+  const result = (end.getTime() - start.getTime()) / ONE_DAY_MILLISECOND
+
+  return end.getTime() >
+    new Date(start.getTime() + ONE_DAY_MILLISECOND * result).getTime()
+    ? Math.ceil(result)
+    : Math.floor(result)
+}
+
 export function splitEvent(event: IEvent): IEvent[] {
   const eventLegs: IEvent[] = []
   let currEvent: IEvent = event
   let currDuration = event.duration
 
   while (currDuration > 0) {
+    // Check if duration extends past event
+
+    if (
+      event.start.getTime() + currDuration * 60 * 1000 >
+      EVENT_END_TIME_DATE.getTime()
+    ) {
+      break
+    }
+
     // Time left in the day
     const timeLeft =
       ONE_DAY_MINUTE -
@@ -194,7 +212,7 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
     if (event.display) {
       // Pushes event to the correct days
       const eventStart = event.start
-      const daysBetween = daysApart(DAY_OF_THE_EVENT, eventStart)
+      const daysBetween = __daysApart__(DAY_OF_THE_EVENT, eventStart)
       if (daysBetween >= 0 && daysBetween < HACK_LENGTH) {
         // If event should span across two days, edit the event
         // to last for the entirety of the first day, and the
@@ -216,4 +234,63 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
   )
 
   return days
+}
+
+export function sortEventsDuration(events: IEvent[], key: SortKeys) {
+  const compare = (a: IEvent, b: IEvent) => {
+    switch (key) {
+      case SortKeys.Descending:
+        return b.duration - a.duration
+      default:
+        return a.duration - b.duration
+    }
+  }
+
+  return events.sort(compare)
+}
+
+export function calculateTimelineRows(events: IEvent[]) {
+  const checkConflicts = (a: IEvent, b: IEvent) => {
+    // TODO: Check both ways
+    return (
+      a.start.getTime() < b.start.getTime() &&
+      a.start.getTime() + a.duration * 60 * 1000 > b.start.getTime()
+    )
+  }
+
+  const canAdd = (arr, el) => {
+    for (let i = 0; i < arr.length; i++) {
+      if (checkConflicts(arr[i], el)) {
+        return false
+      }
+    }
+    return true
+  }
+
+  const add = (matrix: IEvent[][], el: IEvent) => {
+    for (let i = 0; i < matrix.length; i++) {
+      if (matrix[0][0] === null) {
+        matrix[0][0] = el
+      } else if (canAdd(matrix[i], el)) {
+        matrix[i].push(el)
+      } else {
+        let k = 0
+        while (!canAdd(matrix[i + k], el)) {
+          if (i + k === matrix.length - 1) {
+            matrix.push([])
+          }
+          k++
+        }
+        matrix[i + k].push(el)
+      }
+      break
+    }
+  }
+  let rows: IEvent[][] = [[null]]
+
+  const e = sortEventsDuration(events, SortKeys.Descending)
+  e.forEach(el => {
+    add(rows, el)
+  })
+  return rows
 }

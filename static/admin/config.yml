@@ -33,14 +33,13 @@ collections:
           name: category,
           label: Category,
           widget: select,
-          options:
-            ["workshop1", "workshop2", "activity", "career", "hacker", "ux"],
+          options: ["workshop1", "workshop2", "workshop3", "hacker", "ux"],
         }
       - {
           name: location,
           label: Location,
           widget: select,
-          options: ["Virtual", "Surge 301", "Surge 303"],
+          options: ["Virtual"],
         }
       - { name: description, label: Description, widget: text, required: false }
       - { name: contentLink, label: Slides/VOD, widget: text, required: false }
