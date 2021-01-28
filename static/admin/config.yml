@@ -33,7 +33,7 @@ collections:
           name: category,
           label: Category,
           widget: select,
-          options: ["workshop", "hacker", "ux", "organizer"],
+          options: ["workshop", "hacker", "ux", "organizer", "sponsor"],
         }
       - {
           name: location,
