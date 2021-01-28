@@ -93,8 +93,11 @@ class TimelineComponent extends React.Component<PropTypesDay> {
         return calculateTimelineRows(categoryBuckets[k])
       })
 
+      let totalIndex = 0
+
       return _.map(buckets, (bucket: IEvent[][], bucketIndex) => {
         return _.map(bucket, (row: IEvent[], rowIndex) => {
+          totalIndex++
           return _.map(row, ele => {
             return (
               <div
@@ -109,7 +112,7 @@ class TimelineComponent extends React.Component<PropTypesDay> {
                   left:
                     (labelSpaceHorizontal / minutes) *
                     dateToMinutesInDay(ele.start),
-                  top: trackStartHeight + trackSpace * (rowIndex + bucketIndex),
+                  top: (trackStartHeight + trackSpace) * totalIndex,
                 }}
                 onClick={() => this.handleEventListItemClick(ele)}
               >
