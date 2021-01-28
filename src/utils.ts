@@ -77,7 +77,6 @@ export function formattedEventTime(event: IEvent) {
 }
 
 export function isSameDay(first: Date, second: Date) {
-  console.log(first, second)
   return (
     first.getFullYear() === second.getFullYear() &&
     first.getMonth() === second.getMonth() &&
@@ -214,7 +213,6 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
         // last day to start at 12am and end at the correct time
 
         const eventLegs = splitEvent(event)
-        console.log(eventLegs)
         for (let i = 0; i < eventLegs.length; i++) {
           tempDays[daysBetween + i].events.push(eventLegs[i])
         }
