@@ -1,4 +1,4 @@
-import { RelativeTime } from "./enums"
+import { RelativeTime, SortKeys } from "./enums"
 
 import {
   ONE_MINUTE_MILLISECOND,
@@ -207,7 +207,7 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
       events: [],
     }
   }
-  console.log(schedule)
+
   schedule.forEach(event => {
     if (event.display) {
       // Pushes event to the correct days
@@ -234,4 +234,64 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
   )
 
   return days
+}
+
+export function sortEventsDuration(events: IEvent[], key: SortKeys) {
+  const compare = (a: IEvent, b: IEvent) => {
+    switch (key) {
+      case SortKeys.Descending:
+        return b.duration - a.duration
+      default:
+        return a.duration - b.duration
+    }
+  }
+
+  return events.sort(compare)
+}
+
+export function calculateTimelineRows(events: IEvent[]) {
+  const checkConflicts = (a: IEvent, b: IEvent) => {
+    console.log(a.start.getTime() < b.start.getTime())
+    // console.log()
+    return (
+      a.start.getTime() < b.start.getTime() &&
+      a.start.getTime() + a.duration * 60 * 1000 > b.start.getTime()
+    )
+  }
+
+  const canAdd = (arr, el) => {
+    for (let i = 0; i < arr.length; i++) {
+      if (checkConflicts(arr[i], el)) {
+        return false
+      }
+    }
+    return true
+  }
+
+  const add = (matrix: IEvent[][], el: IEvent) => {
+    for (let i = 0; i < matrix.length; i++) {
+      if (matrix[0][0] === null) {
+        matrix[0][0] = el
+      } else if (canAdd(matrix[i], el)) {
+        matrix[i].push(el)
+      } else {
+        let k = 0
+        while (!canAdd(matrix[i + k], el)) {
+          if (i + k === matrix.length - 1) {
+            matrix.push([])
+          }
+          k++
+        }
+        matrix[i + k].push(el)
+      }
+      break
+    }
+  }
+  let rows: IEvent[][] = [[null]]
+
+  const e = sortEventsDuration(events, SortKeys.Descending)
+  e.forEach(el => {
+    add(rows, el)
+  })
+  return rows
 }

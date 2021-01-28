@@ -2,12 +2,14 @@ import React from "react"
 import "./TimelineComponent.css"
 
 import { PropTypesDay, IEvent, ICategoryEventList } from "../interfaces"
-import { EventCategoryColor } from "../enums"
+import { EventCategoryColor, SortKeys } from "../enums"
 import {
   identity,
   getRelativeEventTime,
   dateToMinutesInDay,
   formattedEventTime,
+  sortEventsDuration,
+  calculateTimelineRows,
 } from "../utils"
 import Color from "../colors"
 
@@ -84,6 +86,12 @@ class TimelineComponent extends React.Component<PropTypesDay> {
 
   renderTimelineTracks() {
     const categoryBuckets = processCategoryBuckets(this.props.day.events)
+    // console.log("category buckets", categoryBuckets)
+    const clone = categoryBuckets
+    Object.keys(clone).map((k, i) => {
+      const rows = calculateTimelineRows(clone[k])
+      console.log(rows)
+    })
 
     return (
       <div id="timeline-tracks-container">
