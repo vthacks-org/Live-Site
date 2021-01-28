@@ -110,12 +110,30 @@ export function daysApart(start: Date, end: Date) {
   return n
 }
 
+function __daysApart__(start: Date, end: Date) {
+  const result = (end.getTime() - start.getTime()) / ONE_DAY_MILLISECOND
+
+  return end.getTime() >
+    new Date(start.getTime() + ONE_DAY_MILLISECOND * result).getTime()
+    ? Math.ceil(result)
+    : Math.floor(result)
+}
+
 export function splitEvent(event: IEvent): IEvent[] {
   const eventLegs: IEvent[] = []
   let currEvent: IEvent = event
   let currDuration = event.duration
 
   while (currDuration > 0) {
+    // Check if duration extends past event
+
+    if (
+      event.start.getTime() + currDuration * 60 * 1000 >
+      EVENT_END_TIME_DATE.getTime()
+    ) {
+      break
+    }
+
     // Time left in the day
     const timeLeft =
       ONE_DAY_MINUTE -
@@ -189,12 +207,12 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
       events: [],
     }
   }
-
+  console.log(schedule)
   schedule.forEach(event => {
     if (event.display) {
       // Pushes event to the correct days
       const eventStart = event.start
-      const daysBetween = daysApart(DAY_OF_THE_EVENT, eventStart)
+      const daysBetween = __daysApart__(DAY_OF_THE_EVENT, eventStart)
       if (daysBetween >= 0 && daysBetween < HACK_LENGTH) {
         // If event should span across two days, edit the event
         // to last for the entirety of the first day, and the

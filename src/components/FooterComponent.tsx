@@ -69,7 +69,7 @@ const FooterComponent = () => {
                   x="0px"
                   y="0px"
                   viewBox="0 0 280.3 242"
-                  enable-background="new 0 0 280.3 242"
+                  enableBackground="new 0 0 280.3 242"
                   color="red"
                 >
                   <g id="XMLID_1_">
