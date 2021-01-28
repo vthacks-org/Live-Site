@@ -33,7 +33,7 @@ collections:
           name: category,
           label: Category,
           widget: select,
-          options: ["workshop1", "workshop2", "workshop3", "hacker", "ux"],
+          options: ["workshop1", "hacker", "ux"],
         }
       - {
           name: location,
@@ -169,44 +169,3 @@ collections:
           default: judges,
         }
       - { name: body, label: Body, widget: markdown }
-  # - name: ux_events
-  #   label: UX Events
-  #   folder: content/ux-events
-  #   create: true
-  #   slug: "{{year}}-{{month}}-{{day}}-{{name}}"
-  #   extension: json
-  #   fields:
-  #     - { name: display, label: Display?, widget: boolean, default: true }
-  #     - { name: name, label: Title, widget: string }
-  #     - {
-  #         name: start,
-  #         label: Date,
-  #         widget: datetime,
-  #         date_format: "MM/DD/YYYY",
-  #         time_format: "HH:mm",
-  #         format: "MM/DD/YYYY h:mm a ZZ",
-  #       }
-  #     - {
-  #         name: duration,
-  #         label: Duration (In minutes),
-  #         widget: number,
-  #         value_type: int,
-  #       }
-  #     - {
-  #         name: category,
-  #         label: Category,
-  #         widget: select,
-  #         options:
-  #           [
-  #             "default",
-  #             "food",
-  #             "workshop1",
-  #             "workshop2",
-  #             "activity",
-  #             "career",
-  #             "hacker",
-  #           ],
-  #       }
-  #     - { name: description, label: Description, widget: text, required: false }
-  #     - { name: contentLink, label: Slides/VOD, widget: text, required: false }
-  #     - { name: callLink, label: Stream Link, widget: text, required: false }

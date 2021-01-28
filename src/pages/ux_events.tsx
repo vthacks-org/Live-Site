@@ -23,7 +23,7 @@ const Ux: React.FC<Props> = ({
       <WorkshopView
         schedule={schedule}
         name="UX events"
-        blacklist={[EC.Activity, EC.Default, EC.UX]}
+        blacklist={[EC.Workshop, EC.Default, EC.UX]}
       />
     </Layout>
   )
