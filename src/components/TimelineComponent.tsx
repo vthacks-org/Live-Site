@@ -2,13 +2,12 @@ import React from "react"
 import "./TimelineComponent.css"
 
 import { PropTypesDay, IEvent, ICategoryEventList } from "../interfaces"
-import { EventCategoryColor, SortKeys } from "../enums"
+import { EventCategoryColor } from "../enums"
 import {
   identity,
   getRelativeEventTime,
   dateToMinutesInDay,
   formattedEventTime,
-  sortEventsDuration,
   calculateTimelineRows,
 } from "../utils"
 import Color from "../colors"
