@@ -49,13 +49,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `ux-events`,
-        path: `${__dirname}/content/ux-events`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `sponsors`,
         path: `${__dirname}/content/sponsors`,
       },
