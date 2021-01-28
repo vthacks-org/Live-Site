@@ -14,27 +14,27 @@ import Nav from "react-bootstrap/Nav"
 const ROUTES_WITH_TITLES = [
   {
     title: "Schedule",
-    path: "/",
+    path: RoutePath.Schedule,
   },
   {
     title: "Workshops",
-    path: "/workshops",
+    path: RoutePath.Workshops,
   },
   {
     title: "Resources",
-    path: "/resources",
+    path: RoutePath.Resources,
   },
   {
     title: "Submission Guidelines",
-    path: "/submission_guidelines",
+    path: RoutePath.Submission_Guidelines,
   },
   {
     title: "UX Events",
-    path: "/ux_events",
+    path: RoutePath.UX_Events,
   },
   {
     title: "Prizes",
-    path: "/prizes",
+    path: RoutePath.Prizes,
   },
 ]
 
@@ -72,7 +72,7 @@ const NavBarComponent = () => {
   })
 
   const brandName = mobile ? null : (
-    <Link id="wordmark" to={RoutePath.Home} onClick={collapse}>
+    <Link id="wordmark" to={RoutePath.Schedule} onClick={collapse}>
       VTHacks8
     </Link>
   )

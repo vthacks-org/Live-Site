@@ -43,9 +43,3 @@ export interface PropTypesDay {
   showAsToday: boolean
   relativeDayTime: RelativeTime
 }
-
-export interface IRouteItem {
-  path: RoutePath | RoutePath[]
-  title: string
-  component: React.FC<{}>
-}

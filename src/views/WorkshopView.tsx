@@ -14,7 +14,7 @@ import { IEvent, IEventDay } from "../interfaces"
 import _ from "lodash"
 import NoContentComponent from "../components/NoContentComponent"
 
-const WorkshopView = ({ schedule, name, blacklist }) => {
+const WorkshopView = ({ schedule, name, whitelist }) => {
   const days = daysFromSchedule(schedule)
 
   const [show, setShow] = React.useState(false)
@@ -33,7 +33,7 @@ const WorkshopView = ({ schedule, name, blacklist }) => {
     var n = 0
     for (let i = 0; i < days.length; i++) {
       for (let j = 0; j < days[i].events.length; j++) {
-        if (!blacklist.includes(days[i].events[j].category)) {
+        if (whitelist.includes(days[i].events[j].category)) {
           n++
           break
         }
@@ -54,7 +54,7 @@ const WorkshopView = ({ schedule, name, blacklist }) => {
 
     return _.map(days, (day, index) => {
       return (
-        filterWorkshops(day.events).length !== 0 && (
+        day.events.length !== 0 && (
           <div key={`workshop-day-${index}`} className="workshop-day">
             <h5>Day {index + 1}</h5>
             <div className="workshops">{renderEvents(day)}</div>
@@ -65,9 +65,10 @@ const WorkshopView = ({ schedule, name, blacklist }) => {
   }
 
   const renderEvent = event => {
-    if (blacklist.includes(event.category)) {
+    if (!whitelist.includes(event.category)) {
       return null
     }
+
     return (
       <EventListItem
         event={event}
@@ -78,7 +79,8 @@ const WorkshopView = ({ schedule, name, blacklist }) => {
   }
 
   const renderEvents = (day: IEventDay) => {
-    return _.map(filterWorkshops(day.events), (event, index) => {
+    console.log(day)
+    return _.map(day.events, (event, index) => {
       return (
         <div
           className="event-item-container"
