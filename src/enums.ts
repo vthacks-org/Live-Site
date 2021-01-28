@@ -9,14 +9,18 @@ export const EventCategoryColor: {
   [category: string]: string
 } = {
   [EventCategory.Default]: "grey",
-  [EventCategory.Workshop]: "purple",
-  [EventCategory.UX]: "lightpink",
-  [EventCategory.Hacker]: "lightgreen",
+  [EventCategory.Workshop]: "deepskyblue",
+  [EventCategory.UX]: "#ff47c5",
+  [EventCategory.Hacker]: "#30ff5d",
 }
 
 export enum RoutePath {
-  Home = "/",
-  Workshop = "/workshops",
+  Schedule = "/",
+  Workshops = "/workshops",
+  Resources = "/resources",
+  Submission_Guidelines = "/submission_guidelines",
+  UX_Events = "/ux-events",
+  Prizes = "/prizes",
 }
 
 export enum RelativeTime {
