@@ -251,8 +251,7 @@ export function sortEventsDuration(events: IEvent[], key: SortKeys) {
 
 export function calculateTimelineRows(events: IEvent[]) {
   const checkConflicts = (a: IEvent, b: IEvent) => {
-    console.log(a.start.getTime() < b.start.getTime())
-    // console.log()
+    // TODO: Check both ways
     return (
       a.start.getTime() < b.start.getTime() &&
       a.start.getTime() + a.duration * 60 * 1000 > b.start.getTime()

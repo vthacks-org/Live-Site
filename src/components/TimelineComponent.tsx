@@ -15,6 +15,7 @@ import Color from "../colors"
 
 import ModalDialog from "../components/ModalDialog"
 import { DUMMY_EVENT, TIMEZONE_ABBR } from "../constants"
+import _ from "lodash"
 
 const minutes = 60
 const timeLabelOffset = 4
@@ -86,41 +87,39 @@ class TimelineComponent extends React.Component<PropTypesDay> {
 
   renderTimelineTracks() {
     const categoryBuckets = processCategoryBuckets(this.props.day.events)
-    // console.log("category buckets", categoryBuckets)
-    const clone = categoryBuckets
-    Object.keys(clone).map((k, i) => {
-      const rows = calculateTimelineRows(clone[k])
-      console.log(rows)
-    })
 
-    return (
-      <div id="timeline-tracks-container">
-        {Object.keys(categoryBuckets).map((activityKey, activityIndex) => (
-          <div key={`timeline-track-${activityKey}-container`}>
-            {categoryBuckets[activityKey].map((event, eventIndex) => (
+    const renderCategoryBuckets = () => {
+      const buckets: IEvent[][][] = Object.keys(categoryBuckets).map(k => {
+        return calculateTimelineRows(categoryBuckets[k])
+      })
+
+      return _.map(buckets, (bucket: IEvent[][], bucketIndex) => {
+        return _.map(bucket, (row: IEvent[], rowIndex) => {
+          return _.map(row, ele => {
+            return (
               <div
-                key={`timeline-track-${activityKey}-${eventIndex}`}
+                key={`timeline-track-${ele.category}-${ele.name}`}
                 className={`timeline-track-item ${
                   this.props.showAsToday
-                    ? getRelativeEventTime(event)
+                    ? getRelativeEventTime(ele)
                     : this.props.relativeDayTime
                 }`}
                 style={{
-                  width: (labelSpaceHorizontal / minutes) * event.duration,
+                  width: (labelSpaceHorizontal / minutes) * ele.duration,
                   left:
                     (labelSpaceHorizontal / minutes) *
-                    dateToMinutesInDay(event.start),
-                  top: trackStartHeight + trackSpace * activityIndex,
+                    dateToMinutesInDay(ele.start),
+                  top: trackStartHeight + trackSpace * (rowIndex + bucketIndex),
                 }}
-                onClick={() => this.handleEventListItemClick(event)}
+                onClick={() => this.handleEventListItemClick(ele)}
               >
-                <p>{event.name}</p>
+                <p>{ele.name}</p>
                 <div
-                  key={`timeline-track-${activityKey}-${eventIndex}`}
+                  key={`timeline-track-${ele.category}-${ele.name}`}
                   className="timeline-track-line"
                   style={{
                     background:
-                      EventCategoryColor[activityKey] || Color.Overflow,
+                      EventCategoryColor[ele.category] || Color.Overflow,
                   }}
                 >
                   {["left", "right"].map(lineEnd => (
@@ -135,17 +134,21 @@ class TimelineComponent extends React.Component<PropTypesDay> {
                         cx="5"
                         cy="5"
                         r="5"
-                        fill={EventCategoryColor[activityKey] || Color.Overflow}
+                        fill={
+                          EventCategoryColor[ele.category] || Color.Overflow
+                        }
                       />
                     </svg>
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-        ))}
-      </div>
-    )
+            )
+          })
+        })
+      })
+    }
+
+    return <div id="timeline-tracks-container">{renderCategoryBuckets()}</div>
   }
 
   renderSlider() {
