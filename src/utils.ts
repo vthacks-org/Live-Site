@@ -253,8 +253,10 @@ export function calculateTimelineRows(events: IEvent[]) {
   const checkConflicts = (a: IEvent, b: IEvent) => {
     // TODO: Check both ways
     return (
-      a.start.getTime() < b.start.getTime() &&
-      a.start.getTime() + a.duration * 60 * 1000 > b.start.getTime()
+      (a.start.getTime() < b.start.getTime() &&
+        a.start.getTime() + a.duration * 60 * 1000 > b.start.getTime()) ||
+      (b.start.getTime() < a.start.getTime() &&
+        b.start.getTime() + b.duration * 60 * 1000 > a.start.getTime())
     )
   }
 
