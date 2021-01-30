@@ -14,7 +14,12 @@ collections:
     fields:
       - { name: display, label: Display?, widget: boolean, default: true }
       - { name: name, label: Title, widget: string }
-      - { name: subtitle, label: Subtitle, widget: string, required: false }
+      - {
+          name: subtitle,
+          label: Event Leaders,
+          widget: string,
+          required: false,
+        }
       - {
           name: start,
           label: Date,
@@ -98,6 +103,30 @@ collections:
   - name: submission_guidelines
     label: "Submission Guidelines"
     folder: content/submission-guidelines
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    extension: markdown
+    format: frontmatter
+    fields:
+      - { name: display, label: Display?, widget: boolean, default: true }
+      - { name: title, label: Title, widget: string }
+      - {
+          name: shouldDisplayTitle,
+          label: "Display Title?",
+          widget: boolean,
+          default: true,
+          hint: "If this field is set to true, the resulting markdown page will display the title field as a big header. Disable for more customization and control of the page",
+        }
+      - {
+          name: "templateKey",
+          label: "Template Key",
+          widget: hidden,
+          default: submission_guidelines,
+        }
+      - { name: body, label: Body, widget: markdown }
+  - name: getting_started
+    label: "Getting Started"
+    folder: content/getting-started
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     extension: markdown

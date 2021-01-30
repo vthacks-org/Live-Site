@@ -61,6 +61,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `getting-started`,
+        path: `${__dirname}/content/getting-started`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gatsby Starter Blog`,
