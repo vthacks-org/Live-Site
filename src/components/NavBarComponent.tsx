@@ -4,39 +4,16 @@ import "../App.css"
 import "../index.css"
 
 import { RoutePath, EventListener } from "../enums"
-import { MOBILE_BREAKPOINT_WIDTH, ONE_MINUTE_MILLISECOND } from "../constants"
+import {
+  MOBILE_BREAKPOINT_WIDTH,
+  ONE_MINUTE_MILLISECOND,
+  ROUTES_WITH_TITLES,
+} from "../constants"
 
 import { Link } from "gatsby"
 
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
-
-const ROUTES_WITH_TITLES = [
-  {
-    title: "Schedule",
-    path: RoutePath.Schedule,
-  },
-  {
-    title: "Workshops",
-    path: RoutePath.Workshops,
-  },
-  {
-    title: "Resources",
-    path: RoutePath.Resources,
-  },
-  {
-    title: "Submission Guidelines",
-    path: RoutePath.Submission_Guidelines,
-  },
-  {
-    title: "UX Events",
-    path: RoutePath.UX_Events,
-  },
-  {
-    title: "Prizes",
-    path: RoutePath.Prizes,
-  },
-]
 
 const NavBarComponent = () => {
   const [expanded, setExpanded] = useState(false)

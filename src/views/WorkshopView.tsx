@@ -79,7 +79,6 @@ const WorkshopView = ({ schedule, name, whitelist }) => {
   }
 
   const renderEvents = (day: IEventDay) => {
-    console.log(day)
     return _.map(day.events, (event, index) => {
       return (
         <div
