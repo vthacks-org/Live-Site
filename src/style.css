@@ -330,4 +330,17 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+  #mlh-trust-badge {
+    display: none !important;
+  }
+  #devpost-submit {
+    padding-right: auto !important;
+  }
+
+  #devpost-submit > .btn-outline-primary {
+    border: hidden !important;
+  }
+  #devpost-submit > .btn {
+    padding-left: 0.375rem !important;
+  }
 }
