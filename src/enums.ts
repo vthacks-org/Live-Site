@@ -25,6 +25,7 @@ export enum RoutePath {
   Submission_Guidelines = "/submission_guidelines",
   UX_Events = "/ux_events",
   Prizes = "/prizes",
+  Getting_Started = "/getting_started",
 }
 
 export enum RelativeTime {

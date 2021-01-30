@@ -1,4 +1,4 @@
-import { EventCategory } from "./enums"
+import { EventCategory, RoutePath } from "./enums"
 import { IEvent } from "./interfaces"
 import { daysApart } from "./utils"
 
@@ -82,7 +82,7 @@ export const SHORT_MONTH_NAMES = [
 
 export const DUMMY_EVENT: IEvent = {
   name: "",
-  display: true,
+  display: false,
   start: new Date(),
   duration: 0,
   category: EventCategory.Default,
@@ -99,3 +99,34 @@ export const HACK_LENGTH: Number = daysApart(
   DAY_OF_THE_EVENT,
   EVENT_END_TIME_DATE
 )
+
+export const ROUTES_WITH_TITLES = [
+  {
+    title: "Schedule",
+    path: RoutePath.Schedule,
+  },
+  {
+    title: "Getting Started",
+    path: RoutePath.Getting_Started,
+  },
+  {
+    title: "Workshops",
+    path: RoutePath.Workshops,
+  },
+  {
+    title: "UX Events",
+    path: RoutePath.UX_Events,
+  },
+  {
+    title: "Resources",
+    path: RoutePath.Resources,
+  },
+  {
+    title: "Submission Guidelines",
+    path: RoutePath.Submission_Guidelines,
+  },
+  {
+    title: "Prizes",
+    path: RoutePath.Prizes,
+  },
+]
