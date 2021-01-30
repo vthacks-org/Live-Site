@@ -143,13 +143,6 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
             alt=""
           />
         </Row>
-        <Row>
-          <div className="dev-post">
-            <a href="https://vthacks7.devpost.com/" target="_blank">
-              <img className="dev-post" src={devPostImage} />
-            </a>
-          </div>
-        </Row>
       </Col>
     </Container>
   )
