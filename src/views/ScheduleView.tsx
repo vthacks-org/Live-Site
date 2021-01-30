@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, lazy, Suspense } from "react"
 import "./ScheduleView.css"
 
 import {
@@ -20,8 +20,8 @@ import Loadable from "@loadable/component"
 
 import EventListComponent from "../components/EventListComponent"
 
-import DiscordComponent from "../components/DiscordComponent"
-import TwitterComponent from "../components/TwitterComponent"
+const DiscordComponent = lazy(() => import("../components/DiscordComponent"))
+const TwitterComponent = lazy(() => import("../components/TwitterComponent"))
 
 type Props = {
   schedule: IEvent[]
@@ -130,17 +130,21 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
           />
         </div>
         <Row className="extra-content">
-          <DiscordComponent
-            className="discord-container"
-            serverId="753747861480669312"
-          />
-          <TwitterComponent
-            className="twitter-container"
-            account="VT_Hacks"
-            limit={5}
-            theme="light"
-            alt=""
-          />
+          <Suspense fallback={<h2>Loading Discord Widget</h2>}>
+            <DiscordComponent
+              className="discord-container"
+              serverId="753747861480669312"
+            />
+          </Suspense>
+          <Suspense fallback={<h2>Loading Twitter Timeline</h2>}>
+            <TwitterComponent
+              className="twitter-container"
+              account="VT_Hacks"
+              limit={5}
+              theme="light"
+              alt=""
+            />
+          </Suspense>
         </Row>
       </Col>
     </Container>
