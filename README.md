@@ -22,14 +22,20 @@ We hope you like it! - Jacob, Brian
 
 ## How to use the Netlify CMS to populate data on the Live Site
 
-1. **Navigate to /admin on the Live Site**
+1. **Navigate to /admin on the Live Site!**
    Sign in with [github](https://github.com). If you aren't in the vthacks-org organization on github you'll have to request access.
 
-2. **Browse Collections**
+2. **Browse Collections!**
    Select the collection you'd like to edit
 
-3. **Create a new Item**
+3. **Create a new Item!**
    Or if you'd rather, edit an item
+4. **Toggle Display on or off!**
+   All items have the ability to be created, but not display themselves on the LiveSite. If you want to create info, but not have it yet displayed, make sure you disable the display toggle (It is turned on by default)
 
-4. **Publish Changes!**
+5. **Publish Changes!**
    Publishing your changes will tell netlify to deploy the website with the new information that was provided. The build and deploy process takes about 1 - 2 minutes
+
+## How to start the development server
+
+**Navigate to `/Live-Site`** Run `npm start`
