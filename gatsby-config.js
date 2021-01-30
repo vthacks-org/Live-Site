@@ -76,7 +76,14 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/Logo_Mountains.svg`,
+        // icon: `static/favicon.svg`,
+        icons: [
+          {
+            src: `static/favicon.svg`,
+            sizes: `192x192`,
+            type: `image/svg`,
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

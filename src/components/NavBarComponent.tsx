@@ -88,7 +88,7 @@ const NavBarComponent = () => {
         {placeHolder}
 
         <Navbar.Brand id="brand" style={{ marginRight: marginRight }}>
-          <img src="/Logo_Mountains.svg" alt="Logo" />
+          <img src="/favicon.svg" alt="Logo" />
           {brandName}
         </Navbar.Brand>
         <Navbar.Toggle
