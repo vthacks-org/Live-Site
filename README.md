@@ -30,9 +30,12 @@ We hope you like it! - Jacob, Brian
 
 3. **Create a new Item!**
    Or if you'd rather, edit an item
-   
 4. **Toggle Display on or off!**
    All items have the ability to be created, but not display themselves on the LiveSite. If you want to create info, but not have it yet displayed, make sure you disable the display toggle (It is turned on by default)
 
 5. **Publish Changes!**
    Publishing your changes will tell netlify to deploy the website with the new information that was provided. The build and deploy process takes about 1 - 2 minutes
+
+## How to start the development server
+
+**Navigate to `/Live-Site`** Run `npm start`
