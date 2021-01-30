@@ -12,8 +12,6 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 library.add(fab)
 
-const devPostImage = require("../assets/brand-logos/devpost.svg")
-
 const FooterComponent = () => {
   return (
     <footer>

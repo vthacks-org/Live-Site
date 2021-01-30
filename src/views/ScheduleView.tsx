@@ -80,7 +80,6 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
   const showAsToday =
     (relativeDayTime === RelativeTime.Present || !SHOW_AS_LIVE_DATES) &&
     !hasPassed
-  const devPostImage = require("../assets/brand-logos/devpost-logo.svg")
 
   const renderTimelineDays = () => {
     const createLabels = () => {
@@ -138,7 +137,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
           <TwitterComponent
             className="twitter-container"
             account="VT_Hacks"
-            limit={15}
+            limit={5}
             theme="light"
             alt=""
           />
