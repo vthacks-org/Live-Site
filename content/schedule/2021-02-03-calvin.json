@@ -4,7 +4,7 @@
   "duration": 60,
   "category": "workshop",
   "location": "Virtual",
-  "subtitle": "Peter",
-  "name": "Calvin",
+  "subtitle": "Calvin",
+  "name": "Creating a 3D renderer from scratch",
   "description": "As computational power continues to grow, generating photo-realistic renders is becoming more and more feasible on consumer-grade hardware. This workshop will serve as an introduction to physically based rendering in Python while introducing most of the key areas of ongoing research in the field."
 }
