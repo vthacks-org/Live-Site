@@ -1,0 +1,10 @@
+{
+  "display": true,
+  "start": "02/27/2021 5:00 pm -0500",
+  "duration": 60,
+  "category": "workshop",
+  "location": "Virtual",
+  "subtitle": "Peter",
+  "name": "Calvin",
+  "description": "As computational power continues to grow, generating photo-realistic renders is becoming more and more feasible on consumer-grade hardware. This workshop will serve as an introduction to physically based rendering in Python while introducing most of the key areas of ongoing research in the field."
+}
