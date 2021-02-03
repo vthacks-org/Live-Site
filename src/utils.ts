@@ -248,9 +248,9 @@ export function calculateTimelineRows(events: IEvent[]) {
 
     return (
       (a.start.getTime() <= b.start.getTime() &&
-        a.start.getTime() + a.duration * 60 * 1000 > b.start.getTime()) ||
+        a.start.getTime() + a.duration * 60 * 1000 >= b.start.getTime()) ||
       (b.start.getTime() <= a.start.getTime() &&
-        b.start.getTime() + b.duration * 60 * 1000 > a.start.getTime())
+        b.start.getTime() + b.duration * 60 * 1000 >= a.start.getTime())
     )
   }
 
