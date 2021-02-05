@@ -113,7 +113,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
   }
 
   return (
-    <Container id="schedule" fluid>
+    <Container id="schedule">
       <Col>
         <div>
           {renderTimelineDays()}
