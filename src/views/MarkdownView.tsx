@@ -18,8 +18,7 @@ const MarkdownView = ({ templateKey, list }: Props) => {
     }
     var numDisp = 0
     const items = _.map(list, item => {
-      const { node } = item
-
+      const { node } = item;
       if (!node.frontmatter.display) {
         return null
       }
