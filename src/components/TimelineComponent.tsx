@@ -14,6 +14,9 @@ import {
 import Color from "../colors"
 
 import ModalDialog from "../components/ModalDialog"
+import Tooltip from "react-bootstrap/Tooltip"
+import OverlayTrigger from "react-bootstrap/OverlayTrigger"
+
 import { DUMMY_EVENT, TIMEZONE_ABBR } from "../constants"
 import _ from "lodash"
 
@@ -103,51 +106,60 @@ class TimelineComponent extends React.Component<PropTypesDay> {
           totalIndex++
           return _.map(row, ele => {
             return (
-              <div
+              <OverlayTrigger
                 key={`timeline-track-${ele.category}-${ele.name}`}
-                className={`timeline-track-item ${
-                  this.props.showAsToday
-                    ? getRelativeEventTime(ele)
-                    : this.props.relativeDayTime
-                }`}
-                style={{
-                  width: (labelSpaceHorizontal / minutes) * ele.duration,
-                  left:
-                    (labelSpaceHorizontal / minutes) *
-                    dateToMinutesInDay(ele.start),
-                  top: (trackStartHeight + trackSpace) * (totalIndex / 2),
-                }}
-                onClick={() => this.handleEventListItemClick(ele)}
+                placement="top"
+                overlay={
+                  <Tooltip id={`tooltip-${ele.category}-${ele.name}`}>
+                    {ele.name}
+                  </Tooltip>
+                }
               >
-                <p>{ele.name}</p>
                 <div
-                  key={`timeline-track-${ele.category}-${ele.name}`}
-                  className="timeline-track-line"
+                  className={`timeline-track-item ${
+                    this.props.showAsToday
+                      ? getRelativeEventTime(ele)
+                      : this.props.relativeDayTime
+                  }`}
                   style={{
-                    background:
-                      EventCategoryColor[ele.category] || Color.Overflow,
+                    width: (labelSpaceHorizontal / minutes) * ele.duration,
+                    left:
+                      (labelSpaceHorizontal / minutes) *
+                      dateToMinutesInDay(ele.start),
+                    top: (trackStartHeight + trackSpace) * (totalIndex / 2),
                   }}
+                  onClick={() => this.handleEventListItemClick(ele)}
                 >
-                  {["left", "right"].map(lineEnd => (
-                    <svg
-                      key={`timeline-line-${lineEnd}`}
-                      className={`timeline-track-line-end-${lineEnd}`}
-                      height="10"
-                      width="10"
-                    >
-                      <circle
+                  <p>{ele.name}</p>
+                  <div
+                    key={`timeline-track-${ele.category}-${ele.name}`}
+                    className="timeline-track-line"
+                    style={{
+                      background:
+                        EventCategoryColor[ele.category] || Color.Overflow,
+                    }}
+                  >
+                    {["left", "right"].map(lineEnd => (
+                      <svg
+                        key={`timeline-line-${lineEnd}`}
                         className={`timeline-track-line-end-${lineEnd}`}
-                        cx="5"
-                        cy="5"
-                        r="5"
-                        fill={
-                          EventCategoryColor[ele.category] || Color.Overflow
-                        }
-                      />
-                    </svg>
-                  ))}
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          className={`timeline-track-line-end-${lineEnd}`}
+                          cx="5"
+                          cy="5"
+                          r="5"
+                          fill={
+                            EventCategoryColor[ele.category] || Color.Overflow
+                          }
+                        />
+                      </svg>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </OverlayTrigger>
             )
           })
         })
