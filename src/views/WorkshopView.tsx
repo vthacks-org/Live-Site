@@ -97,7 +97,7 @@ const WorkshopView = ({ schedule, name, whitelist }) => {
   }
 
   return (
-    <Container id="workshop-view" fluid>
+    <Container id="workshop-view">
       <Col>
         <div>
           <ModalDialog
