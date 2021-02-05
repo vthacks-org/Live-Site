@@ -133,3 +133,12 @@ export const ROUTES_WITH_TITLES = [
     path: RoutePath.Prizes,
   },
 ]
+
+export const eventCatPrio = {
+  [EventCategory.Default]: 5,
+  [EventCategory.Hacker]: 4,
+  [EventCategory.UX]: 3,
+  [EventCategory.Workshop]: 2,
+  [EventCategory.Sponsor]: 1,
+  [EventCategory.Organizer]: 0,
+}

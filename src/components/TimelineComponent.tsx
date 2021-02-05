@@ -9,6 +9,7 @@ import {
   dateToMinutesInDay,
   formattedEventTime,
   calculateTimelineRows,
+  sortCategoryBucketKeys,
 } from "../utils"
 import Color from "../colors"
 
@@ -86,9 +87,12 @@ class TimelineComponent extends React.Component<PropTypesDay> {
 
   renderTimelineTracks() {
     const categoryBuckets = processCategoryBuckets(this.props.day.events)
+    console.log(categoryBuckets)
+
+    const keys = sortCategoryBucketKeys(categoryBuckets, null)
 
     const renderCategoryBuckets = () => {
-      const buckets: IEvent[][][] = Object.keys(categoryBuckets).map(k => {
+      const buckets: IEvent[][][] = keys.map(k => {
         return calculateTimelineRows(categoryBuckets[k])
       })
 

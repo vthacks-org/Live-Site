@@ -1,4 +1,4 @@
-import { RelativeTime, SortKeys } from "./enums"
+import { EventCategory, RelativeTime, SortKeys } from "./enums"
 
 import {
   ONE_MINUTE_MILLISECOND,
@@ -8,6 +8,7 @@ import {
   SHORT_DAY_NAMES,
   SHORT_MONTH_NAMES,
   LONG_MONTH_NAMES,
+  eventCatPrio,
 } from "./constants"
 import {
   TIMEZONE_ABBR,
@@ -15,7 +16,7 @@ import {
   EVENT_END_TIME_DATE,
   HACK_LENGTH,
 } from "./constants"
-import { IEvent, IEventDay } from "./interfaces"
+import { ICategoryEventList, IEvent, IEventDay } from "./interfaces"
 
 export function identity<T>(arg: T): T {
   return arg
@@ -240,6 +241,20 @@ export function sortEventsDuration(events: IEvent[], key: SortKeys) {
   }
 
   return events.sort(compare)
+}
+
+export function sortCategoryBucketKeys(buckets: ICategoryEventList, key) {
+  const compare = (a: String, b: String) => {
+    // console.log(eventCatPrio[a])
+    // console.log(Object.entries(a))
+    switch (key) {
+      case SortKeys.Descending:
+        return eventCatPrio[b] - eventCatPrio[a]
+      default:
+        return eventCatPrio[a] - eventCatPrio[b]
+    }
+  }
+  return Object.keys(buckets).sort(compare)
 }
 
 export function calculateTimelineRows(events: IEvent[]) {
