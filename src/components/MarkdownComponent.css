@@ -1,4 +1,9 @@
 .markdown-content {
   word-break: break-word;
   overflow-wrap: break-word;
+  padding-left: 15px;
+}
+
+.markdown-title {
+  padding-left: 0px;
 }
