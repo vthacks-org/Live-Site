@@ -3,8 +3,16 @@ title: MLH
 shouldDisplayTitle: true
 templateKey: resources
 ---
-* **Domain.com**: register a free `.tech`, `.online`, or `.space` domain through Domain.com using the code `SPOOKYSCARY` at checkout
-* **Google Cloud**: redeem up to $100 dollars in credit using either the form you received via email, or the form at <https://hackp.ac/GoogleCloudCredits>. DM me to redeem more credits if you need 👍
-* **Hardware Hack**: Feel free to use any hardware you may have on hand, or an emulator such as <https://echosim.io/welcome> (for Amazon Alexa simulation), or <https://developers.google.com/assistant/conversational/overview> (for Google hardware simulation), or anything else that fits your use case!
-* **CoackroachDB**: Head over to <https://hackp.ac/CockroachDB> and use code `CRDB30` to get started!
-* **Github Student Developer Pack**: Get GitHub Pro status along with tons of credits and tutorials on how to use em over at <https://hackp.ac/learn>
+### Resources
+- Claim your Swag - fill out [this form]([http://hackp.ac/Address](http://hackp.ac/Address "http://hackp.ac/Address%22)) to receive MLH swag for VTHacks 8 
+- Domain.com - [Claim a free]( http://hackp.ac/domain) .tech, .space, or .online domain with 1 year of domain privacy using the code in the #mlh Discord channel 
+- Google Cloud - Use up to $100 of Google Cloud Credits using the code you received via email, or by filling out [this form](http://hackp.ac/GoogleCloudCredits)
+- CoackRoadDB - Get started building a scalable, SQL, cloud database using this [link](http://hackp.ac/CockroachDB). Be sure to include a screenshot of your admin dashboard in your Devpost submission to be considered for that prize category!!
+- Github - Claim tons of free educational and developer resources through the [Github Student Developer Pack](http://hackp.ac/github)
+
+### Prizes
+- Best Domain Name from Domain.com - PowerSquare Qi Wireless Chargers and Backpacks 
+- Best Hardware Hack, Sponsored by Digi-Key - Grove Beginner Kit 
+- Best Use of Google Cloud - Backpacks!
+- Best Use of CockroachDB - 3D printing pen !
+ - GitHub Octocat Drawing - Octocat Figurine. Enter by tweeting your own Octocat creation to @MLHacks @GitHubEducation and include #MyOctocat #VTHacks8
