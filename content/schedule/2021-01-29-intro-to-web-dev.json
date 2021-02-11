@@ -4,5 +4,6 @@
   "name": "Intro to Web Dev",
   "duration": 60,
   "category": "workshop",
-  "location": "Virtual"
+  "location": "Virtual",
+  "description": "In this workshop, participants will learn the structure and syntax of basic HTML and CSS. Participants will receive a skeleton of a portfolio website and will update the HTML to include information about themselves and edit the CSS to style and position elements on their page! Then, they’ll deploy their new website."
 }

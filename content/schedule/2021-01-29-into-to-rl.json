@@ -1,9 +1,10 @@
 {
   "display": true,
   "start": "02/27/2021 3:00 pm -0500",
-  "name": "Into to RL",
+  "name": "Intro to RL",
   "subtitle": "Patrick / Andrew",
   "location": "Virtual",
   "category": "workshop",
-  "duration": 60
+  "duration": 60,
+  "description": "Are you interested in learning how a computer can learn how to play a game all on its own? Through the power of Reinforcement Learning, in this workshop we will be explaining we can use neural networks (and some statistics) to make a machine learning model gradually learn how to \"beat\" a game. The only requirement is that you have a working Python installation above version 3.0 and want to learn!"
 }
