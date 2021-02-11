@@ -34,7 +34,7 @@ const EventListItem: React.FC<PropTypes> = props => {
             <circle cx="6" cy="6" r="6" fill={Color.LiveActivity} />
           </svg>
         )}
-        <h6>{props.event.name}</h6>
+        <h4>{props.event.name}</h4>
         <p>{formattedEventTime(props.event)}</p>
       </div>
     </div>
