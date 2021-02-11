@@ -1,6 +1,7 @@
 ---
 title: MLH
 shouldDisplayTitle: true
+display: true
 templateKey: resources
 ---
 ### Resources
