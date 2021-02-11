@@ -2,6 +2,7 @@
 title: MLH Prizes
 shouldDisplayTitle: true
 templateKey: prizes
+display: true
 ---
 * **Best Domain Name**: funniest/most clever domain registered through Domain.com - Domain.com backpacks
 * **Best use of Google Cloud**: Google Home Minis
