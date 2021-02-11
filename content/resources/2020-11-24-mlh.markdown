@@ -17,3 +17,4 @@ templateKey: resources
 - Best Use of Google Cloud - Backpacks!
 - Best Use of CockroachDB - 3D printing pen !
  - GitHub Octocat Drawing - Octocat Figurine. Enter by tweeting your own Octocat creation to @MLHacks @GitHubEducation and include #MyOctocat #VTHacks8
+

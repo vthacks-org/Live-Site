@@ -5,7 +5,7 @@ import { MarkdownContent } from "../interfaces"
 const MarkdownComponent = ({ node }: MarkdownContent) => {
   const renderTitle = () => {
     if (node.frontmatter.shouldDisplayTitle) {
-      return <h2>{node.frontmatter.title}</h2>
+      return <h1>{node.frontmatter.title}</h1>
     }
     return null
   }
