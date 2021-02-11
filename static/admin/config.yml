@@ -59,6 +59,7 @@ collections:
     extension: markdown
     format: frontmatter
     fields:
+      - { name: display, label: Display?, widget: boolean, default: true }
       - { name: title, label: Title, widget: string }
       - {
           name: shouldDisplayTitle,
