@@ -105,6 +105,28 @@ const ModalDialog: React.FC<PropTypes> = ({
     )
   }
 
+  const renderDescription = () => {
+    if (!event || !event.description) {
+      return null
+    }
+
+    let re = /(https?:\/\/[^\s]+)/g
+
+    let hits = event.description.match(re)
+    var description = event.description
+    if (hits) {
+      console.log(event.description)
+      console.log(hits)
+      hits.forEach(hit => {
+        description = event.description.replaceAll(
+          hit,
+          `<a href=${hit} target='_blank'>${hit}</a>`
+        )
+      })
+    }
+    return <p dangerouslySetInnerHTML={{ __html: description }}></p>
+  }
+
   const title = `${event.name} ${event.subtitle ? `- ${event.subtitle}` : ""}`
 
   return (
@@ -117,7 +139,7 @@ const ModalDialog: React.FC<PropTypes> = ({
         {/* {renderLocation()} */}
 
         {renderHosts()}
-        {event.description && <p>{event.description}</p>}
+        {renderDescription()}
         {renderContentLink()}
         {renderCallLink()}
       </Modal.Body>
