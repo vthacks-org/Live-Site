@@ -12,7 +12,6 @@
 
 The Production Live Site can be found [here](https://vt-hacks-live-site.netlify.app/)
 
-Later We will provide instructions on how to use the Netlify CMS to population the Live Site with information.
 
 The Live Site is the website that we will be directing Hackers to on the day of the event
 
@@ -39,3 +38,9 @@ We hope you like it! - Jacob, Brian
 ## How to start the development server
 
 **Navigate to `/Live-Site`** Run `npm start`
+
+## Collections
+
+**Schedule.** The schedule selection creates items that then populate the workshops page, ux events page, and schedule view. 
+
+**Markdown Collections** The other collections are markdown collections. Items in these collections take a title, which can be set to display as an h1 or hidden, and markdown content that can be used to put whatever information one would like on the page. These collections can suffice with just a single item populating all markdown content on the page or multiple items.
