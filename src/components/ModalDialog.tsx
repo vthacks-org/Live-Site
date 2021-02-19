@@ -115,8 +115,6 @@ const ModalDialog: React.FC<PropTypes> = ({
     let hits = event.description.match(re)
     var description = event.description
     if (hits) {
-      console.log(event.description)
-      console.log(hits)
       hits.forEach(hit => {
         description = event.description.replaceAll(
           hit,

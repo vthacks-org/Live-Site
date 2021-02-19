@@ -90,7 +90,6 @@ class TimelineComponent extends React.Component<PropTypesDay> {
 
   renderTimelineTracks() {
     const categoryBuckets = processCategoryBuckets(this.props.day.events)
-    console.log(categoryBuckets)
 
     const keys = sortCategoryBucketKeys(categoryBuckets, null)
 

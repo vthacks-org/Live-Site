@@ -48,7 +48,7 @@ export const LONG_DAY_NAMES = [
   "Saturday",
 ]
 
-export const SHORT_DAY_NAMES = ["Sun", "Tue", "Wed", "Thu", "Fri", "Sat", "Mon"]
+export const SHORT_DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 export const LONG_MONTH_NAMES = [
   "January",

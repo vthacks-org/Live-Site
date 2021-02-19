@@ -249,8 +249,6 @@ export function sortEventsDuration(events: IEvent[], key: SortKeys) {
 
 export function sortCategoryBucketKeys(buckets: ICategoryEventList, key) {
   const compare = (a: String, b: String) => {
-    // console.log(eventCatPrio[a])
-    // console.log(Object.entries(a))
     switch (key) {
       case SortKeys.Descending:
         return eventCatPrio[b] - eventCatPrio[a]
