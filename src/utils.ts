@@ -111,12 +111,19 @@ export function daysApart(start: Date, end: Date) {
 }
 
 function __daysApart__(start: Date, end: Date) {
-  const result = (end.getTime() - start.getTime()) / ONE_DAY_MILLISECOND
-
-  return end.getTime() >
-    new Date(start.getTime() + ONE_DAY_MILLISECOND * result).getTime()
-    ? Math.ceil(result)
-    : Math.floor(result)
+  var n = 0
+  if (end.getTime() > start.getTime()) {
+    while (!isSameDay(start, end)) {
+      n++
+      start = new Date(start.getTime() + ONE_DAY_MILLISECOND)
+    }
+    return n
+  }
+  while (!isSameDay(start, end)) {
+    n++
+    start = new Date(start.getTime() - ONE_DAY_MILLISECOND)
+  }
+  return n
 }
 
 export function splitEvent(event: IEvent): IEvent[] {
