@@ -37,7 +37,7 @@ const ModalDialog: React.FC<PropTypes> = ({
   }
 
   const renderLocation = () => {
-    if (!event.location) {
+    if (!event || !event.location) {
       return null
     }
 
@@ -53,7 +53,7 @@ const ModalDialog: React.FC<PropTypes> = ({
   }
 
   const renderCallLink = () => {
-    if (!event.callLink) {
+    if (!event || !event.callLink) {
       return null
     }
 
@@ -73,7 +73,7 @@ const ModalDialog: React.FC<PropTypes> = ({
   }
 
   const renderContentLink = () => {
-    if (!event.contentLink) {
+    if (!event || !event.contentLink) {
       return null
     }
 
@@ -92,6 +92,19 @@ const ModalDialog: React.FC<PropTypes> = ({
     )
   }
 
+  const renderHosts = () => {
+    if (!event || !event.subtitle) {
+      return null
+    }
+
+    return (
+      <p>
+        <strong>Hosted by: </strong>
+        {event.subtitle}
+      </p>
+    )
+  }
+
   const title = `${event.name} ${event.subtitle ? `- ${event.subtitle}` : ""}`
 
   return (
@@ -101,7 +114,9 @@ const ModalDialog: React.FC<PropTypes> = ({
       </Modal.Header>
       <Modal.Body>
         {renderTime()}
-        {renderLocation()}
+        {/* {renderLocation()} */}
+
+        {renderHosts()}
         {event.description && <p>{event.description}</p>}
         {renderContentLink()}
         {renderCallLink()}

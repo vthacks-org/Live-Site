@@ -7,7 +7,7 @@ export interface IEvent {
   start: Date
   duration: number
   category: EventCategory
-  location: string
+  location?: string
   description: string
   contentLink: string
   callLink: string

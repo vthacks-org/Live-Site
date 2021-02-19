@@ -115,6 +115,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
   return (
     <Container id="schedule">
       <Col>
+        *All times are relative to your locale
         <div>
           {renderTimelineDays()}
           <TimelineComponent

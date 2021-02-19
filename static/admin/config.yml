@@ -40,12 +40,6 @@ collections:
           widget: select,
           options: ["workshop", "hacker", "ux", "organizer", "sponsor"],
         }
-      - {
-          name: location,
-          label: Location,
-          widget: select,
-          options: ["Virtual"],
-        }
       - { name: description, label: Description, widget: text, required: false }
       - { name: contentLink, label: Slides/VOD, widget: text, required: false }
       - { name: callLink, label: Stream Link, widget: text, required: false }
