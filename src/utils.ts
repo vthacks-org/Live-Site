@@ -147,6 +147,7 @@ export function splitEvent(event: IEvent): IEvent[] {
     // Pull off vals from the currEvent to populate the new event leg
     const {
       name,
+      subtitle,
       category,
       location,
       description,
@@ -157,6 +158,7 @@ export function splitEvent(event: IEvent): IEvent[] {
 
     const newLeg: IEvent = {
       display,
+      subtitle,
       name,
       start: legStart,
       duration: legDuration,
@@ -173,8 +175,10 @@ export function splitEvent(event: IEvent): IEvent[] {
         : null
     eventLegs.push(newLeg)
     currDuration -= newLeg.duration
+
     currEvent = {
       display,
+      subtitle,
       name,
       start: newStart,
       duration: currDuration,
