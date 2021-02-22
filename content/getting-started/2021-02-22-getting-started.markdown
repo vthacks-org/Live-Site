@@ -2,7 +2,7 @@
 display: true
 title: Getting Started
 shouldDisplayTitle: false
-templateKey: submission_guidelines
+templateKey: getting_started
 ---
 # Getting Started at VTHacks 8
 
