@@ -140,7 +140,7 @@ collections:
           name: "templateKey",
           label: "Template Key",
           widget: hidden,
-          default: submission_guidelines,
+          default: getting_started,
         }
       - { name: body, label: Body, widget: markdown }
 
