@@ -12,6 +12,3 @@ templateKey: prizes
 * **(Most Polished) 14,000 ft. Hack**: Most polished and complete hack. Each team member receives an Incase backpack.
 * **(Best UX/UI) Sherpa Hack**: Best User Experience or User Interface hack. Each team member receives an Amazon Fire Stick.
 * **(Most Unique) Strange Yak Award**: Most unique hack. Each team member receives a portable hammock.
-* **Capital One | Best Financial Hack**: Each winning team member will receive a $200 Amazon gift card
-* **echoAR | Best AR/VR Hack Using echoAR**: Best use of echoAR. Each team member receives a $50 Amazon gift card.
-
