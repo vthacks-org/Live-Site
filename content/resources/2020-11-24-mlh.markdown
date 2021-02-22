@@ -11,11 +11,13 @@ templateKey: resources
 * Google Cloud - Use up to $100 of Google Cloud Credits using the code you received via email, or by filling out [this form](http://hackp.ac/GoogleCloudCredits)
 * CoackRoadDB - Get started building a scalable, SQL, cloud database using this [link](http://hackp.ac/CockroachDB). Be sure to include a screenshot of your admin dashboard in your Devpost submission to be considered for that prize category!!
 * Github - Claim tons of free educational and developer resources through the [Github Student Developer Pack](http://hackp.ac/github)
+* DataStax Astra - sign up with 5GB free and no credit card needed to start working with Apache Cassandra right away!
 
 ### Prizes
 
 * Best Domain Name from Domain.com - PowerSquare Qi Wireless Chargers and Backpacks 
 * Best Hardware Hack, Sponsored by Digi-Key - Grove Beginner Kit 
 * Best Use of Google Cloud - Backpacks!
-* Best Use of CockroachDB - 3D printing pen !
+* Best Use of CockroachDB - 3D printing pen ! 
 * GitHub Octocat Drawing - Octocat Figurine. Enter by tweeting your own Octocat creation to @MLHacks @GitHubEducation and include #MyOctocat #VTHacks8
+* Best use of DataStax Astra -  Blue Snowball Microphones
