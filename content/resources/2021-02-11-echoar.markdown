@@ -2,6 +2,7 @@
 title: echoAR
 shouldDisplayTitle: true
 templateKey: resources
+display: true
 ---
 ## Resources
 - Claim a 1-month free echoAR subscription [here](https://console.echoar.xyz/#/auth/register-hackathon?code=VTHacks8)

@@ -1,9 +1,10 @@
 {
   "display": true,
-  "start": "02/26/2021 7:00 pm -0500",
+  "start": "02/27/2021 11:00 am -0500",
   "name": "Intro to Web Dev",
   "duration": 60,
   "category": "workshop",
   "location": "Virtual",
-  "description": "In this workshop, participants will learn the structure and syntax of basic HTML and CSS. Participants will receive a skeleton of a portfolio website and will update the HTML to include information about themselves and edit the CSS to style and position elements on their page! Then, they’ll deploy their new website."
+  "description": "In this workshop, participants will learn the structure and syntax of basic HTML and CSS. Participants will receive a skeleton of a portfolio website and will update the HTML to include information about themselves and edit the CSS to style and position elements on their page! Then, they’ll deploy their new website.",
+  "subtitle": "Mehak, Jacob"
 }
