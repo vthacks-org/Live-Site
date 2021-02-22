@@ -63,7 +63,7 @@ const NavBarComponent = () => {
       <a
         id="devpost-submit"
         target="_blank"
-        href="https://vthacks7.devpost.com/"
+        href="https://vthacks-8.devpost.com/"
         style={{ paddingRight: "11vw" }}
       >
         <Button variant="outline-primary" className="navbar-link">
