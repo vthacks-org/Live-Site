@@ -1,9 +1,9 @@
 {
   "display": true,
-  "start": "02/27/2021 4:00 pm -0500",
+  "start": "02/27/2021 1:30 pm -0500",
   "name": "2v2 Rocket League Tournament",
   "description": "Team up with your friends or strangers to participate and have fun playing soccer with rocket-powered cars! In both tournaments, the winning team will receive a prize.",
-  "duration": 120,
+  "duration": 60,
   "category": "ux",
   "location": "Virtual"
 }
