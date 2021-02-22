@@ -1,10 +1,12 @@
 {
-  "display": true,
   "start": "02/27/2021 5:00 pm -0500",
+  "display": true,
+  "name": "Creating a 3D renderer from scratch",
+  "contentLink": "https://github.com/calvin-godfrey/renderingworkshop",
   "duration": 60,
-  "category": "workshop",
   "location": "Virtual",
   "subtitle": "Calvin",
-  "name": "Creating a 3D renderer from scratch",
-  "description": "As computational power continues to grow, generating photo-realistic renders is becoming more and more feasible on consumer-grade hardware. This workshop will serve as an introduction to physically based rendering in Python while introducing most of the key areas of ongoing research in the field."
+  "callLink": "https://virginiatech.zoom.us/j/9428284102",
+  "description": "As computational power continues to grow, generating photo-realistic renders is becoming more and more feasible on consumer-grade hardware. This workshop will serve as an introduction to physically based rendering in Python while introducing most of the key areas of ongoing research in the field.",
+  "category": "workshop"
 }
