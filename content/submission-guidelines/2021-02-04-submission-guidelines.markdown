@@ -4,7 +4,7 @@ title: Submission Guidelines
 shouldDisplayTitle: false
 templateKey: submission_guidelines
 ---
-1. Submit to [Devpost]() early - you can edit everything in your submission (write up, video, code, website, prizes, etc) all the way up to the deadline which is **11:00 AM EST**. Late submissions will not be accepted, so we encourage you to submit early, and update your submission with final changes closer to the deadline. 
+1. Submit to [Devpost](https://vthacks-8.devpost.com/) early - you can edit everything in your submission (write up, video, code, website, prizes, etc) all the way up to the deadline which is **11:00 AM EST**. Late submissions will not be accepted, so we encourage you to submit early, and update your submission with final changes closer to the deadline. 
 
 2. **Every submission must have a video demo** attached to it. There's a required field on the submission page where you can link to a video. You can upload any video as a placeholder until you actually have time record a demo. You can record a video using free software like [Open Broadcast Studio](https://obsproject.com/), the Google Chrome plugin: [Loom](https://chrome.google.com/webstore/detail/loom-for-chrome/liecbddmkiiihnedobmlmillhodjkdmb?hl=en-US), or even [Zoom](https://zoom.us/)! 
 
