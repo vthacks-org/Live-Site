@@ -1,10 +1,12 @@
 {
-  "display": true,
   "start": "02/27/2021 12:00 pm -0500",
+  "display": true,
   "name": "Intro to Webscraping",
-  "subtitle": "",
-  "location": "Virtual",
-  "category": "workshop",
+  "contentLink": "https://github.com/murphypone/webscraping-workshop",
   "duration": 60,
-  "description": "This intermediate workshop covers web scraping in Python using BeautifulSoup and simple data manipulation using pandas. We'll be automatically pulling data from IMBd's top 1,000 list as an example, but the techniques used can be generalized to just about any other site as well! Basic familiarity with Python is recommended, and participants are encouraged to come with [Python 3.7+](https://www.python.org/downloads/) and [Jupyter](https://jupyter.org/install) pre-installed on their computers."
+  "location": "Virtual",
+  "subtitle": "",
+  "callLink": "https://virginiatech.zoom.us/j/4836087091",
+  "description": "This intermediate workshop covers web scraping in Python using BeautifulSoup and simple data manipulation using pandas. We'll be automatically pulling data from IMBd's top 1,000 list as an example, but the techniques used can be generalized to just about any other site as well! Basic familiarity with Python is recommended, and participants are encouraged to come with [Python 3.7+](https://www.python.org/downloads/) and [Jupyter](https://jupyter.org/install) pre-installed on their computers.",
+  "category": "workshop"
 }
