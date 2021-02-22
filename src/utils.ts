@@ -229,9 +229,9 @@ export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
         // If event should span across two days, edit the event
         // to last for the entirety of the first day, and the
         // last day to start at 12am and end at the correct time
-        console.log(event)
+
         const eventLegs = splitEvent(event)
-        console.log(eventLegs)
+
         for (let i = 0; i < eventLegs.length; i++) {
           tempDays[daysBetween + i].events.push(eventLegs[i])
         }
