@@ -1,9 +1,11 @@
 {
+  "start": "02/27/2021 11:00 am -0500",
   "display": true,
-  "start": "02/26/2021 8:00 pm -0500",
   "name": "Intro to Java",
-  "subtitle": "Juan, Ayush",
-  "category": "workshop",
+  "duration": 60,
   "location": "Virtual",
-  "duration": 60
+  "subtitle": "Juan, Ayush",
+  "callLink": "https://virginiatech.zoom.us/j/83655843666",
+  "description": "An introductory level workshop that introduced students to Java. In this workshop you will learn how to work with basic data (such as lists of integers or decimals) and manipulate it to produce a desired outcome. This workshop cover a range of concepts including: for-loops, while-loops, if-statements, data types, and arrays.",
+  "category": "workshop"
 }

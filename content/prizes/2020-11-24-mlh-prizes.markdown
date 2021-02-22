@@ -1,11 +1,14 @@
 ---
-title: MLH Prizes
+display: true
+title: Prizes
 shouldDisplayTitle: true
 templateKey: prizes
 ---
-* **Best Domain Name**: funniest/most clever domain registered through Domain.com - Domain.com backpacks
-* **Best use of Google Cloud**: Google Home Minis
-* **Best Hardware Hack Sponsored by Digi-Key**: Grove Beginner Kit, with Arduino Uno R3
-* **Best use of CockroachDB**: Branded 3D Printing Pen (IN ORDER TO BE ELIGIBLE FOR THIS PRIZE/THE T-SHIRT, YOU MUST INCLUDE A PICTURE OF YOUR ADMIN DASHBOARD IN YOUR DEVPOST SUBMISSION)
-* **GitHub Draw an Octocat Win an Octocat**: Tweet your own Octocat to [@githubeducation](https://github.com/githubeducation), [@mlhacks](https://github.com/mlhacks) with the hashtags #MyOctocat, #demonhacks
-* **USAF CTF Challenge**: US-based participants of this mini event who complete all the challenges will be entered to win some cool prizes. The event will take place at 11 AM CDT, on Saturday, link TBA in #mlh-ctf-challenge
+* **(1st overall) The Everest Award**: Best overall project. Each team member wins a $100 Visa gift card.
+* **(2nd overall) The Matterhorn Award**: 2nd best overall project. Each team member wins a $90 Patagonia gift card.
+* **(3rd overall) The Olympus Award**: 3rd best overall project. Each team member wins a Quadcopter drone.
+* **(Best Beginner) Greenhorn Hack**: Best beginner hack. Half of the team must be first time hackers. Each team member wins a $25 UberEats gift card.
+* **(People's Choice) Happy Camper Hack**: People's Choice award. Each team member receives a Corsair K55 Keyboard.
+* **(Most Polished) 14,000 ft. Hack**: Most polished and complete hack. Each team member receives an Incase backpack.
+* **(Best UX/UI) Sherpa Hack**: Best User Experience or User Interface hack. Each team member receives an Amazon Fire Stick.
+* **(Most Unique) Strange Yak Award**: Most unique hack. Each team member receives a portable hammock.

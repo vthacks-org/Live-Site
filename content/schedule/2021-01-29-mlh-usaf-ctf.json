@@ -1,10 +1,11 @@
 {
-  "display": true,
+  "prizes": "Three USAF branded prizes will be raffled to US-based participants who completed all the challenges",
   "start": "02/27/2021 12:00 pm -0500",
+  "display": true,
   "name": "MLH USAF CTF",
-  "subtitle": "JP",
+  "duration": 30,
   "location": "Virtual",
-  "category": "workshop",
-  "duration": 60,
-  "description": "Walk through three cyber security challenges ranging from topics like cryptography to steganography with our MLH Coach. After completing all the challenges, three USAF branded prizes will be raffled to US-based participants who completed all the challenges, so be sure to stop by!"
+  "subtitle": "JP",
+  "description": "Walk through three cyber security challenges ranging from topics like cryptography to steganography with our MLH Coach. After completing all the challenges, three USAF branded prizes will be raffled to US-based participants who completed all the challenges, so be sure to stop by!",
+  "category": "workshop"
 }
