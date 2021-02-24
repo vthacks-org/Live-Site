@@ -65,3 +65,7 @@
   z-index: 10000;
   background-color: transparent;
 }
+
+.btn-outline-primary {
+  color: "#013f54";
+}

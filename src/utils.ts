@@ -202,6 +202,13 @@ export function splitEvent(event: IEvent): IEvent[] {
       callLink,
     }
   }
+  if (
+    event.duration <= 0 &&
+    eventLegs.length == 0 &&
+    event.start.getTime() < EVENT_END_TIME_DATE.getTime()
+  ) {
+    eventLegs.push(event)
+  }
   return eventLegs
 }
 
@@ -262,7 +269,7 @@ export function sortEventsDuration(events: IEvent[], key: SortKeys) {
 }
 
 export function sortCategoryBucketKeys(buckets: ICategoryEventList, key) {
-  const compare = (a: String, b: String) => {
+  const compare = (a: string, b: string) => {
     switch (key) {
       case SortKeys.Descending:
         return eventCatPrio[b] - eventCatPrio[a]
