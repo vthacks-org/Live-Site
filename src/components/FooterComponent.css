@@ -33,9 +33,7 @@
 .devPostLink {
   width: 36px;
   height: 36px;
-  /* background: url("/devpost.svg"); */
   background-size: 36px 36px;
-  color: blue;
   margin: -15px 0 0 0;
 }
 

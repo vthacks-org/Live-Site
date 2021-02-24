@@ -202,6 +202,13 @@ export function splitEvent(event: IEvent): IEvent[] {
       callLink,
     }
   }
+  if (
+    event.duration <= 0 &&
+    eventLegs.length == 0 &&
+    event.start.getTime() < EVENT_END_TIME_DATE.getTime()
+  ) {
+    eventLegs.push(event)
+  }
   return eventLegs
 }
 

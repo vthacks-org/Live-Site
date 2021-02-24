@@ -17,12 +17,12 @@
   max-height: 800px;
   overflow: scroll;
   flex-grow: 1;
-  margin: 5px;
+  margin: 15px;
 }
 
 .discord-container {
   flex-grow: 1;
-  margin: 5px;
+  margin: 15px;
 }
 
 .discord-container iframe {
