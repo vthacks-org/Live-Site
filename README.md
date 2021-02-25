@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://vt-hacks-live-site.netlify.app/" target="_blank" >
+  <a href="https://live.vthacks.com/" target="_blank" >
     <img alt="VTHacks" src="https://vt-hacks-live-site.netlify.app/favicon.svg" width="180" />
   </a>
 </p>
