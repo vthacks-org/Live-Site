@@ -1,7 +1,7 @@
 ---
 display: true
 title: Submission Guidelines
-shouldDisplayTitle: false
+shouldDisplayTitle: true
 templateKey: submission_guidelines
 ---
 
