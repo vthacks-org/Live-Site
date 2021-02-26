@@ -1,10 +1,12 @@
 {
-  "display": true,
   "start": "02/26/2021 7:00 pm -0500",
+  "display": true,
   "name": "Github Basics",
-  "subtitle": "Tim",
+  "contentLink": "https://github.com/mlh/mlh-localhost-github",
   "duration": 60,
-  "category": "workshop",
   "location": "Virtual",
-  "description": "GitHub is one of the most popular colloboration websites for coding! Learning the basics is crucial for working with teams efficiently. In this workshop, navigating the website and the most important commands will be discussed. In addition this workshop will also have a demonstration of using GitHub with GitBash."
+  "subtitle": "Tim",
+  "callLink": "https://virginiatech.zoom.us/j/87173743583",
+  "description": "GitHub is one of the most popular colloboration websites for coding! Learning the basics is crucial for working with teams efficiently. In this workshop, navigating the website and the most important commands will be discussed. In addition this workshop will also have a demonstration of using GitHub with GitBash.",
+  "category": "workshop"
 }

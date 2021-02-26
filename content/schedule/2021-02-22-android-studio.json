@@ -2,7 +2,7 @@
   "display": true,
   "start": "02/26/2021 7:00 pm -0500",
   "name": "Android Studio",
-  "description": " In the workshop, I will do a brief overview of mobile programming concepts, App structure, and Android Studio features. Then I perform a live walkthrough of making a simple calculator app.",
+  "description": "In the workshop, I will do a brief overview of mobile programming concepts, App structure, and Android Studio features. Then I perform a live walkthrough of making a simple calculator app.",
   "subtitle": "Bhupinder",
   "duration": 60,
   "category": "workshop",
