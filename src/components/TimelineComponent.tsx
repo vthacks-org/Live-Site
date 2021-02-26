@@ -173,6 +173,15 @@ class TimelineComponent extends React.Component<PropTypesDay> {
       return null
     }
     return (
+      <OverlayTrigger
+                key={`timeline-track-rn`}
+                placement="right"
+                overlay={
+                  <Tooltip id={`tooltip-rn`}>
+                    Current Time
+                  </Tooltip>
+                }
+              >
       <div
         id="timeline-slider"
         style={{
@@ -193,7 +202,7 @@ class TimelineComponent extends React.Component<PropTypesDay> {
         >
           <path d="M0 100 L50 2 L100 100 Z"></path>
         </svg>
-      </div>
+      </div></OverlayTrigger>
     )
   }
 
