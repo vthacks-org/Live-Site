@@ -188,6 +188,7 @@ class TimelineComponent extends React.Component<PropTypesDay> {
       <div
         id="timeline-slider"
         style={{
+          top: "2rem",
           left: this.computeSliderPos(),
           background: EventCategoryColor.hacker
         }}
