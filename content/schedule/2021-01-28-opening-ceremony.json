@@ -1,10 +1,11 @@
 {
-  "display": true,
   "start": "02/26/2021 5:00 pm -0500",
-  "duration": 60,
+  "display": true,
   "name": "Opening Ceremony",
+  "duration": 60,
   "location": "Virtual",
-  "category": "organizer",
+  "subtitle": "Peter, Patrick",
+  "callLink": "https://youtu.be/vVHTNWfMFSI",
   "description": "Opening ceremony",
-  "subtitle": "Peter, Patrick"
+  "category": "organizer"
 }
