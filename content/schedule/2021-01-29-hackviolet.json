@@ -1,9 +1,10 @@
 {
   "display": true,
   "start": "02/27/2021 12:00 pm -0500",
-  "name": "HackViolet",
+  "name": "Impostor Syndrome",
   "subtitle": "",
   "location": "Virtual",
   "category": "workshop",
-  "duration": 60
+  "duration": 60,
+  "description": "Imposter syndrome is very common in tech, especially in people from marginalized groups. During this workshop, Madelyn Nelson, a platform software engineer at Sprout Social, will share her own stories about imposter syndrome, as well as a list of concrete strategies to cope with - or even overcome - this challenge."
 }
