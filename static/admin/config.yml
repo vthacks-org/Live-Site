@@ -38,7 +38,7 @@ collections:
           name: category,
           label: Category,
           widget: select,
-          options: ["workshop", "hacker", "ux", "organizer", "sponsor"],
+          options: ["workshop", "ux", "organizer", "sponsor"],
         }
       - { name: description, label: Description, widget: text, required: false }
       - { name: contentLink, label: Slides/VOD, widget: text, required: false }

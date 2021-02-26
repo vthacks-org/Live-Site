@@ -73,6 +73,9 @@ class TimelineComponent extends React.Component<PropTypesDay> {
         }
       }
     }
+    setInterval(() => {
+      this.setState({date: Date.now()});
+    }, 1000*60)
   }
 
   computeSliderPos() {
@@ -186,18 +189,19 @@ class TimelineComponent extends React.Component<PropTypesDay> {
         id="timeline-slider"
         style={{
           left: this.computeSliderPos(),
+          background: EventCategoryColor.hacker
         }}
       >
         <svg
           className="triangle-pointer top"
-          fill="#ff7f7f"
+          fill={EventCategoryColor.hacker}
           viewBox="0 0 100 100"
         >
           <path d="M0 0 L50 100 L100 0 Z"></path>
         </svg>
         <svg
           className="triangle-pointer bottom"
-          fill="#ff7f7f"
+          fill={EventCategoryColor.hacker}
           viewBox="0 0 100 100"
         >
           <path d="M0 100 L50 2 L100 100 Z"></path>

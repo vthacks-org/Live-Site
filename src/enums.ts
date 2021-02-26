@@ -13,7 +13,7 @@ export const EventCategoryColor: {
   [EventCategory.Default]: "grey",
   [EventCategory.Workshop]: "deepskyblue",
   [EventCategory.UX]: "#ff47c5",
-  [EventCategory.Hacker]: "#30ff5d",
+  [EventCategory.Hacker]: "#f89b6a",
   [EventCategory.Organizer]: "#ff3333",
   [EventCategory.Sponsor]: "#ffff42",
 }

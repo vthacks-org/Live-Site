@@ -65,7 +65,7 @@ const ModalDialog: React.FC<PropTypes> = ({
         &nbsp;
         <span>
           <a href={event.callLink} target="_blank">
-            Call Link
+            Meeting Link
           </a>
         </span>
       </p>
