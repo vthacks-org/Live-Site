@@ -6,10 +6,11 @@ import {
   SHOW_AS_LIVE_DATES,
   MOBILE_BREAKPOINT_WIDTH,
   ONE_DAY_MILLISECOND,
+  EVENT_END_TIME_DATE,
 } from "../constants"
 import { EventListener, RelativeTime } from "../enums"
 import { IEvent, IEventDay } from "../interfaces"
-import { getRelativeDayTime, daysFromSchedule } from "../utils"
+import { getRelativeDayTime, daysFromSchedule, isSameDay } from "../utils"
 import _ from "lodash"
 
 import { Container, Row, Col } from "react-bootstrap"
@@ -54,6 +55,18 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
     }
   }
 
+  const selectToday = () => {
+    for (let i = 0; i < days.length; i++) {
+      if (isSameDay(new Date(), days[i].date)) {
+        setDay(days[i])
+      }
+    }
+  }
+
+  useEffect(() => {
+    selectToday()
+  }, [])
+
   useEffect(() => {
     updateDimensions()
     window.addEventListener(EventListener.Resize, updateDimensions)
@@ -68,10 +81,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
   })
 
   const hasPassed =
-    new Date().getTime() >=
-    new Date(
-      days[days.length - 1].date.getTime() + ONE_DAY_MILLISECOND
-    ).getTime()
+    new Date().getTime() >= EVENT_END_TIME_DATE.getTime() + ONE_DAY_MILLISECOND
 
   const relativeDayTime = hasPassed
     ? RelativeTime.Future
@@ -92,7 +102,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
             key={`btn-group-${index}`}
             onClick={() => setDay(eventDay)}
             className="day-label-btn"
-            active={false}
+            active={true}
             style={{
               backgroundColor: color,
               borderColor: color,
