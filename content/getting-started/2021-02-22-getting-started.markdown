@@ -4,11 +4,11 @@ title: Getting Started
 shouldDisplayTitle: false
 templateKey: getting_started
 ---
-# Getting Started at VTHacks 8
+# Getting Started at VTHacks IX
 
-Thank you for attending VTHacks 8! Although we wish we could hack with you in person, we are super excited for our all-virtual event this year. This guide has been assembled to help you make sure your VTHacks experience is as enriching as possible. If you have a question that is not answered in this guide, don’t hesitate to contact one of the staff through our social media [@VT_hacks](https://twitter.com/VT_Hacks) or on our [Discord](https://discord.gg/qRGP9RmPCc).
+Thank you for attending VTHacks IX! Although we wish we could hack with you in person, we are super excited for our all-virtual event this year. This guide has been assembled to help you make sure your VTHacks experience is as enriching as possible. If you have a question that is not answered in this guide, don’t hesitate to contact one of the staff through our social media [@VT_hacks](https://twitter.com/VT_Hacks) or on our [Discord](https://discord.gg/qRGP9RmPCc).
 
-VTHacks 8 is an MLH Member Event. If you have questions about anything that MLH offers for this event, feel free to ping JP, the Coach for this event on Discord or visit [hack.mlh.io](http://hack.mlh.io/).  If you witness something you feel is an issue, please report it to a staff member or MLH Coach and so that we can resolve your issue as quickly as possible. All participants must follow the [MLH Code of Conduct](https://static.mlh.io/docs/mlh-code-of-conduct.pdf). If you witness a violation of the Code of Conduct or of our rules, please report it ASAP to a member of staff.
+VTHacks IX is an MLH Member Event. If you have questions about anything that MLH offers for this event, feel free to ping JP, the Coach for this event on Discord or visit [hack.mlh.io](http://hack.mlh.io/).  If you witness something you feel is an issue, please report it to a staff member or MLH Coach and so that we can resolve your issue as quickly as possible. All participants must follow the [MLH Code of Conduct](https://static.mlh.io/docs/mlh-code-of-conduct.pdf). If you witness a violation of the Code of Conduct or of our rules, please report it ASAP to a member of staff.
 
 ## What is a hackathon and how can I get started?
 
