@@ -12,6 +12,7 @@ import {
 } from "../constants"
 
 import { Link } from "gatsby"
+import config from "../config.json"
 
 import { Navbar, Nav, Button } from "react-bootstrap"
 
@@ -39,6 +40,7 @@ const NavBarComponent = () => {
     updateDimensions()
     window.addEventListener(EventListener.Resize, updateDimensions)
     const interval = setInterval(() => {
+      //@ts-expect-error
       setDummy({})
     }, ONE_MINUTE_MILLISECOND)
 
@@ -50,7 +52,7 @@ const NavBarComponent = () => {
 
   const brandName = mobile ? null : (
     <Link id="wordmark" to={RoutePath.Schedule} onClick={collapse}>
-      VTHacks8
+      {config.title}
     </Link>
   )
 
