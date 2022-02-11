@@ -4,7 +4,5 @@ shouldDisplayTitle: true
 templateKey: resources
 display: true
 ---
+
 ## Resources
-- Claim a 1-month free echoAR subscription [here](https://console.echoar.xyz/#/auth/register-hackathon?code=VTHacks8)
-## Prizes
-- Best AR/VR Hack Using the echoAR Platform - $50 Amazon Gift Card

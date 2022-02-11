@@ -4,5 +4,5 @@ shouldDisplayTitle: true
 templateKey: resources
 display: true
 ---
+
 ## Resources
-- Claim an extended trial period of Balsamiq Cloud to quickly sketch and wireframe your hack's UI using the code received in Get Ready for VTHacks 8 email along with these [activation instructions](https://support.balsamiq.com/sales/cloudpromo/)
