@@ -7,4 +7,4 @@ templateKey: resources
 
 ### Resources
 
-resources
+MLH Resources coming soon.

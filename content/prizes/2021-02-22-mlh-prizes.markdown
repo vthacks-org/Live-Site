@@ -5,4 +5,4 @@ shouldDisplayTitle: true
 templateKey: prizes
 ---
 
-prizes
+MLH Prizes coming soon.

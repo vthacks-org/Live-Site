@@ -5,4 +5,4 @@ shouldDisplayTitle: true
 templateKey: prizes
 ---
 
-prizes
+Sponsor Prizes coming soon.

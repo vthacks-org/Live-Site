@@ -1,8 +1,0 @@
----
-title: echoAR
-shouldDisplayTitle: true
-templateKey: resources
-display: true
----
-
-## Resources

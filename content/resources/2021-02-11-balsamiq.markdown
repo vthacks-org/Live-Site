@@ -1,8 +1,0 @@
----
-title: Balsamiq
-shouldDisplayTitle: true
-templateKey: resources
-display: true
----
-
-## Resources

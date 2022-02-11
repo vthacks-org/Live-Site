@@ -58,7 +58,7 @@ const FooterComponent = () => {
             <span className="devpost">
               <a
                 className="devPostLink"
-                href="https://vthacks-8.devpost.com/"
+                href="https://vthacks-ix.devpost.com/"
                 target="_blank"
               >
                 <svg

@@ -5,4 +5,4 @@ shouldDisplayTitle: true
 templateKey: submission_guidelines
 ---
 
-submission guidelines
+Submisson Guidelines coming soon.
