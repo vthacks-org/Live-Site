@@ -3,7 +3,10 @@
   "private": true,
   "description": "VTHacks Live Site",
   "version": "0.1.0",
-  "authors": ["Jacob Miller <jacobmiller22@vt.edu>", "Brian Wieder <bwieder@vt.edu"],
+  "authors": [
+    "Jacob Miller <jacobmiller22@vt.edu>",
+    "Brian Wieder <bwieder@vt.edu"
+  ],
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -46,7 +49,6 @@
   ],
   "license": "0BSD",
   "main": "n/a",
- 
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
