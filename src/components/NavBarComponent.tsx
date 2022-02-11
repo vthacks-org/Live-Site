@@ -123,8 +123,8 @@ const NavBarComponent = () => {
             target="_blank"
           >
             <img
-              src="https://s3.amazonaws.com/logged-assets/trust-badge/2021/mlh-trust-badge-2021-white.svg"
-              alt="Major League Hacking 2021 Hackathon Season"
+              src="https://s3.amazonaws.com/logged-assets/trust-badge/2022/mlh-trust-badge-2022-white.svg"
+              alt="Major League Hacking 2022 Hackathon Season"
               style={{ width: "100%" }}
             />
           </a>

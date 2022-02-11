@@ -71,6 +71,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
     updateDimensions()
     window.addEventListener(EventListener.Resize, updateDimensions)
     const interval = setInterval(() => {
+      //@ts-ignore
       setDummy({})
     }, ONE_MINUTE_MILLISECOND)
 
@@ -143,7 +144,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
         <Row className="extra-content">
           <DiscordComponent
             className="discord-container"
-            serverId="753747861480669312"
+            serverId="929966430089252874"
           />
           <TwitterComponent
             className="twitter-container"

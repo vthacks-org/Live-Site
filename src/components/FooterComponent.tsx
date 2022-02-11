@@ -20,7 +20,7 @@ const FooterComponent = () => {
         <Row className="links">
           <Col>
             <span className="discord">
-              <a href="https://discord.gg/xeT9GxXe3P" target="_blank">
+              <a href="https://discord.gg/FjdxXqjnSm" target="_blank">
                 <FontAwesomeIcon
                   icon={["fab", "discord"]}
                   className="icon"
