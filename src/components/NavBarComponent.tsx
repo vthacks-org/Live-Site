@@ -57,7 +57,7 @@ const NavBarComponent = () => {
   )
 
   const renderSubmit = () => {
-    if (Date.now() > DEVPOST_SUBMISSION_OPEN.getTime()) {
+    if (Date.now() <= DEVPOST_SUBMISSION_OPEN.getTime()) {
       return null
     }
 
