@@ -36,6 +36,7 @@ export const pageQuery = graphql`
         subtitle
         start
         duration
+        location
         category
         description
         contentLink

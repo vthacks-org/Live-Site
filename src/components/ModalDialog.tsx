@@ -1,6 +1,7 @@
 import React from "react"
 
 import Modal from "react-bootstrap/Modal"
+import Badge from "react-bootstrap/Badge"
 
 import { CLOCK_EMOJI_HOUR_LIST, CLOCK_EMOJI_THIRTY_LIST } from "../constants"
 import { IEvent } from "../interfaces"
@@ -26,13 +27,13 @@ const ModalDialog: React.FC<PropTypes> = ({
       ? CLOCK_EMOJI_HOUR_LIST
       : CLOCK_EMOJI_THIRTY_LIST)[hours % 12]
     return (
-      <p>
+      <span>
         <span role="img" aria-label="clock emoji">
           {list}
         </span>
         &nbsp;
         <span>{formattedTime}</span>
-      </p>
+      </span>
     )
   }
 
@@ -41,6 +42,17 @@ const ModalDialog: React.FC<PropTypes> = ({
       return null
     }
 
+    return (
+      <Badge
+        style={{
+          padding: "0.5rem",
+          textTransform: "uppercase",
+        }}
+        variant="primary"
+      >
+        {event.location}
+      </Badge>
+    )
     return (
       <p>
         <span role="img" aria-label="round pushpin emoji">
@@ -133,8 +145,15 @@ const ModalDialog: React.FC<PropTypes> = ({
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {renderTime()}
-        {/* {renderLocation()} */}
+        <p
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          {renderTime()}
+          {renderLocation()}
+        </p>
 
         {renderHosts()}
         {renderDescription()}
