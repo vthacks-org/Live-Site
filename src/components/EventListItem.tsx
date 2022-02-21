@@ -1,6 +1,8 @@
 import React from "react"
 import "./EventListItem.css"
 
+import Badge from "react-bootstrap/Badge"
+
 import { EVENT_LIST_ITEM_HEIGHT } from "../constants"
 import { EventCategoryColor, RelativeTime } from "../enums"
 import Color from "../colors"
@@ -34,7 +36,35 @@ const EventListItem: React.FC<PropTypes> = props => {
             <circle cx="6" cy="6" r="6" fill={Color.LiveActivity} />
           </svg>
         )}
-        <h4>{props.event.name}</h4>
+
+        <span
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: "0.5rem",
+          }}
+        >
+          <span
+            style={{
+              fontSize: "1.5rem",
+              lineHeight: 1.2,
+              fontWeight: 500,
+              fontFamily: "BNRoute22",
+            }}
+          >
+            {props.event.name}
+          </span>
+          <Badge
+            style={{
+              padding: "0.5rem",
+              textTransform: "uppercase",
+              height: "min-content",
+            }}
+            variant="primary"
+          >
+            {props.event.location}
+          </Badge>
+        </span>
         <p>{formattedEventTime(props.event)}</p>
       </div>
     </div>
