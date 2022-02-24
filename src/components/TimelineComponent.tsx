@@ -74,8 +74,8 @@ class TimelineComponent extends React.Component<PropTypesDay> {
       }
     }
     setInterval(() => {
-      this.setState({date: Date.now()});
-    }, 1000*60)
+      this.setState({ date: Date.now() })
+    }, 1000 * 60)
   }
 
   computeSliderPos() {
@@ -109,10 +109,12 @@ class TimelineComponent extends React.Component<PropTypesDay> {
           return _.map(row, ele => {
             return (
               <OverlayTrigger
-                key={`timeline-track-${ele.category}-${ele.name}`}
+                key={`timeline-track-${ele.category}-${ele.name}-${ele.start}`}
                 placement="top"
                 overlay={
-                  <Tooltip id={`tooltip-${ele.category}-${ele.name}`}>
+                  <Tooltip
+                    id={`tooltip-${ele.category}-${ele.name}-${ele.start}`}
+                  >
                     {ele.name}
                   </Tooltip>
                 }
@@ -168,7 +170,11 @@ class TimelineComponent extends React.Component<PropTypesDay> {
       })
     }
 
-    return <div id="timeline-tracks-container">{renderCategoryBuckets()}</div>
+    return (
+      <div id={`timeline-tracks-container-${this.props.day.index}`}>
+        {renderCategoryBuckets()}
+      </div>
+    )
   }
 
   renderSlider() {
@@ -177,37 +183,34 @@ class TimelineComponent extends React.Component<PropTypesDay> {
     }
     return (
       <OverlayTrigger
-                key={`timeline-track-rn`}
-                placement="right"
-                overlay={
-                  <Tooltip id={`tooltip-rn`}>
-                    Current Time
-                  </Tooltip>
-                }
-              >
-      <div
-        id="timeline-slider"
-        style={{
-          top: "2rem",
-          left: this.computeSliderPos(),
-          background: EventCategoryColor.hacker
-        }}
+        key={`timeline-track-rn`}
+        placement="right"
+        overlay={<Tooltip id={`tooltip-rn`}>Current Time</Tooltip>}
       >
-        <svg
-          className="triangle-pointer top"
-          fill={EventCategoryColor.hacker}
-          viewBox="0 0 100 100"
+        <div
+          id="timeline-slider"
+          style={{
+            top: "2rem",
+            left: this.computeSliderPos(),
+            background: EventCategoryColor.hacker,
+          }}
         >
-          <path d="M0 0 L50 100 L100 0 Z"></path>
-        </svg>
-        <svg
-          className="triangle-pointer bottom"
-          fill={EventCategoryColor.hacker}
-          viewBox="0 0 100 100"
-        >
-          <path d="M0 100 L50 2 L100 100 Z"></path>
-        </svg>
-      </div></OverlayTrigger>
+          <svg
+            className="triangle-pointer top"
+            fill={EventCategoryColor.hacker}
+            viewBox="0 0 100 100"
+          >
+            <path d="M0 0 L50 100 L100 0 Z"></path>
+          </svg>
+          <svg
+            className="triangle-pointer bottom"
+            fill={EventCategoryColor.hacker}
+            viewBox="0 0 100 100"
+          >
+            <path d="M0 100 L50 2 L100 100 Z"></path>
+          </svg>
+        </div>
+      </OverlayTrigger>
     )
   }
 
