@@ -6,7 +6,7 @@ import "../index.css"
 import { RoutePath, EventListener } from "../enums"
 import {
   MOBILE_BREAKPOINT_WIDTH,
-  ONE_MINUTE_MILLISECOND,
+  ONE_SECOND_MILLISECOND,
   ROUTES_WITH_TITLES,
   DEVPOST_SUBMISSION_OPEN,
 } from "../constants"
@@ -42,7 +42,7 @@ const NavBarComponent = () => {
     const interval = setInterval(() => {
       //@ts-expect-error
       setDummy({})
-    }, ONE_MINUTE_MILLISECOND)
+    }, ONE_SECOND_MILLISECOND)
 
     return () => {
       window.removeEventListener(EventListener.Resize, updateDimensions)

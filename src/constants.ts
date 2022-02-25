@@ -5,6 +5,7 @@ import { daysApart } from "./utils"
 export const SHOW_AS_LIVE_DATES = true
 export const MOBILE_BREAKPOINT_WIDTH = 992
 export const ONE_MINUTE_MILLISECOND = 60000
+export const ONE_SECOND_MILLISECOND = 1000
 export const ONE_DAY_MILLISECOND = 1000 * 60 * 60 * 24
 export const ONE_DAY_MINUTE = 24 * 60
 export const EVENT_LIST_ITEM_HEIGHT = 72
