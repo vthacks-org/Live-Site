@@ -4,5 +4,6 @@
   "name": "Breakfast",
   "duration": 60,
   "location": "main hall",
-  "category": "organizer"
+  "category": "organizer",
+  "description": "Bagels, Apples, Oranges, Orange Juice, etc. Common breakfast items"
 }
