@@ -41,7 +41,6 @@ const EventListItem: React.FC<PropTypes> = props => {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            marginBottom: "0.5rem",
           }}
         >
           <span
@@ -65,7 +64,7 @@ const EventListItem: React.FC<PropTypes> = props => {
             {props.event.location}
           </Badge>
         </span>
-        <p>{formattedEventTime(props.event)}</p>
+        <span>{formattedEventTime(props.event)}</span>
       </div>
     </div>
   )
