@@ -1,9 +1,10 @@
 {
   "display": true,
   "start": "02/26/2022 5:00 pm -0500",
-  "name": "Alexey: Computer Vision and Demos",
+  "name": "Computer Vision and Demos",
   "duration": 60,
   "location": "virtual",
   "category": "workshop",
-  "callLink": "https://virginiatech.zoom.us/j/85905170950"
+  "callLink": "https://virginiatech.zoom.us/j/85905170950",
+  "subtitle": "Alexey"
 }
