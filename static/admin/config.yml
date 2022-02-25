@@ -39,7 +39,7 @@ collections:
           label: Location,
           widget: select,
           options:
-            ["virtual", "main hall", "torg 1060", "torg 2150", "torg 1020"],
+            ["virtual", "main hall", "torg 1060", "torg 2150", "torg 1020", "torg 1040"],
         }
       - {
           name: category,
