@@ -7,4 +7,8 @@ templateKey: resources
 
 ### Resources
 
-MLH Resources coming soon.
+Hackathon Starter Kits
+
+Check out this awesome hackathon starter kit from MLH [here](https://hack.mlh.io/learn)!
+
+
