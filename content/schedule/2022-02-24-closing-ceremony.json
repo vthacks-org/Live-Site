@@ -3,6 +3,7 @@
   "start": "02/27/2022 1:30 pm -0500",
   "name": "Closing Ceremony",
   "duration": 60,
-  "location": "virtual",
-  "category": "organizer"
+  "location": "torg 2150",
+  "category": "organizer",
+  "subtitle": "Patrick, Zane"
 }
