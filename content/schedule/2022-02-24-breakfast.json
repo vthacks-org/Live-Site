@@ -4,5 +4,6 @@
   "name": "Breakfast",
   "duration": 180,
   "location": "main hall",
-  "category": "organizer"
+  "category": "organizer",
+  "description": "Carol Lee Donuts, Coffee"
 }
