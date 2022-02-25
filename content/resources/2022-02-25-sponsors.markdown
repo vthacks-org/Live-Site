@@ -1,0 +1,12 @@
+---
+display: true
+title: Sponsors
+shouldDisplayTitle: true
+templateKey: resources
+---
+
+### Capital One Resources
+
+Capital One Hackathon API
+
+Use Capital One's Hackathon API to use in your projects! Information about their API can be found [here](http://api.nessieisreal.com/).
