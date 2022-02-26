@@ -4,20 +4,20 @@ title: Sponsor Prizes
 shouldDisplayTitle: true
 templateKey: prizes
 ---
-## Mantech
+# Mantech
 
-**Designed for Security and Privacy**
+## Designed for Security and Privacy
 
 **Award:** Oculus Headset
 
-## Peraton
+# Peraton
 
-**Best AI/Machine Learning Hack**
+## Best AI/Machine Learning Hack
 
 **Award:** $400 Amazon Gift Card for whole team
 
-## Capital One
+# Capital One
 
-**Best Financial Hack**
+## Best Financial Hack
 
 **Award**: $250 Amazon Gift Card
