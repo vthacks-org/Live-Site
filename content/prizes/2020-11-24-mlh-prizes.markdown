@@ -4,7 +4,7 @@ title: Prizes
 shouldDisplayTitle: true
 templateKey: prizes
 ---
-## 1st Place
+## (1st overall) The Everest Award
 
 **Award:** iPad
 
@@ -25,7 +25,7 @@ templateKey: prizes
 Voted on Devpost
 
 **Award:**
-[Bean Bag Chair](https://www.amazon.com/Big-Joe-645602-Chair-Stretch/dp/B008AE0WV0)
+[Big Joe beanbag chair](https://www.amazon.com/Big-Joe-645602-Chair-Stretch/dp/B008AE0WV0)
 
 ## First Hackathon Prize
 Majority of team is first time
