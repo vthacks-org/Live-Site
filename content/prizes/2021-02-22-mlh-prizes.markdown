@@ -13,8 +13,8 @@ The sky is not the limit! Try your hand at making a space-themed application for
 
 ## Dream Big and Create More Cheers with AB InBev
 
-"AB InBev is all about bringing people together and creating more cheers for a better world! Using whatever tools, hardware and/or software at your disposal, build a hack that leads us into a brighter future for a chance to win some amazing prizes for you and your team. 
-Remember, AB inBev is looking for innovative projects that can possibly change the world in a positive way! We can't wait to see what you come up with."
+AB InBev is all about bringing people together and creating more cheers for a better world! Using whatever tools, hardware and/or software at your disposal, build a hack that leads us into a brighter future for a chance to win some amazing prizes for you and your team. 
+Remember, AB inBev is looking for innovative projects that can possibly change the world in a positive way! We can't wait to see what you come up with.
 
 **Award:** Anker Wireless Charger Bundle
 
