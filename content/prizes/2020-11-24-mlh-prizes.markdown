@@ -19,7 +19,7 @@ templateKey: prizes
 ## Best UX/UI
 
 **Award:**
-[One Wacom Graphic Drawing Tablet](https://www.amazon.com/Wacom-Graphic-Drawing-Tablet-Beginners/dp/B07S1RR3FR)
+[Wacom Graphic Drawing Tablet](https://www.amazon.com/Wacom-Graphic-Drawing-Tablet-Beginners/dp/B07S1RR3FR)
 
 ## People’s Choice
 Voted on Devpost
