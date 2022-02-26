@@ -6,25 +6,25 @@ templateKey: prizes
 ---
 ## 1st Place
 
-** Award: ** iPad
+**Award:** iPad
 
 ## 2nd Place
 
-** Award: ** Nintendo Switch Lite
+**Award:** Nintendo Switch Lite
 
 ## 3rd Place
 
-** Award: ** Airpods 3rd Generation
+**Award:** Airpods 3rd Generation
 
 ## Best UX/UI
 
-** Award: **
+**Award:**
 [One Wacom Graphic Drawing Tablet](https://www.amazon.com/Wacom-Graphic-Drawing-Tablet-Beginners/dp/B07S1RR3FR)
 
 ## People’s Choice
 Voted on Devpost
 
-** Award: **
+**Award:**
 [Bean Bag Chair](https://www.amazon.com/Big-Joe-645602-Chair-Stretch/dp/B008AE0WV0)
 
 ## First Hackathon Prize
