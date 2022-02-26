@@ -288,10 +288,27 @@ export function calculateTimelineRows(events: IEvent[]) {
       (b.start.getTime() <= a.start.getTime() &&
         b.start.getTime() + b.duration * 60 * 1000 >= a.start.getTime())
 
-    const k = 5 * 60 * 1000
+    const c = 13 / 60 // 13 characters = 60 minutes. character/minute
 
-    const complexConflict =
-      a.start.getTime() - (b.start.getTime() + b.duration) <= k * b.name.length
+    const x = 90 / 13 // 90 pixels = 13 characters pixels/character
+
+    const prev = a.start.getTime() > b.start.getTime() ? b : a
+    const next = a.start.getTime() > b.start.getTime() ? a : b
+
+    const diff =
+      (next.start.getTime() -
+        (prev.start.getTime() + prev.duration * 60 * 1000)) /
+      (60 * 1000) // Difference in minutes
+
+    const k = 90 / c // pixel*minute/character.
+    // k / 60 -> pixel/character
+
+    // if (pix(prev) - pix(duration(w1)) >= pix(diff(prev, next)) )
+
+    const prevPix = (prev.name.length * k) / 60
+    const prevDurationPix = prev.duration * c * x
+    const diffPix = diff * c * x
+    const complexConflict = prevPix - prevDurationPix >= diffPix
 
     return simpleConflict || complexConflict
   }
