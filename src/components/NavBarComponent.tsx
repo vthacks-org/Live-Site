@@ -15,7 +15,6 @@ import { Link } from "gatsby"
 import config from "../config.json"
 
 import { Navbar, Nav, Button } from "react-bootstrap"
-import useNow from "../hooks/useNow"
 
 const NavBarComponent = () => {
   const [expanded, setExpanded] = useState(false)
