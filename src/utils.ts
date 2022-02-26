@@ -282,14 +282,18 @@ export function sortCategoryBucketKeys(buckets: ICategoryEventList, key) {
 
 export function calculateTimelineRows(events: IEvent[]) {
   const checkConflicts = (a: IEvent, b: IEvent) => {
-    // TODO: Check both ways
-
-    return (
+    const simpleConflict =
       (a.start.getTime() <= b.start.getTime() &&
         a.start.getTime() + a.duration * 60 * 1000 >= b.start.getTime()) ||
       (b.start.getTime() <= a.start.getTime() &&
         b.start.getTime() + b.duration * 60 * 1000 >= a.start.getTime())
-    )
+
+    const k = 5 * 60 * 1000
+
+    const complexConflict =
+      a.start.getTime() - (b.start.getTime() + b.duration) <= k * b.name.length
+
+    return simpleConflict || complexConflict
   }
 
   const canAdd = (arr, el) => {
