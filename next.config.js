@@ -27,6 +27,7 @@ module.exports = {
   images: {
     domains: ["s3.amazonaws.com"],
   },
+
   plugins: [
     "postcss-flexbugs-fixes",
     [
