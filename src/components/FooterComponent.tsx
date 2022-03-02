@@ -3,7 +3,7 @@ import React from "react"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import "./FooterComponent.css"
+import styles from "./FooterComponent.module.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -16,48 +16,60 @@ const FooterComponent = () => {
   return (
     <footer>
       <hr />
-      <Container id="info-view" fluid>
-        <Row className="links">
+      <Container id={styles["info-view"]} fluid>
+        <Row className={styles["links"]}>
           <Col>
-            <span className="discord">
+            <span className={styles["discord"]}>
               <a href="https://discord.gg/FjdxXqjnSm" target="_blank">
                 <FontAwesomeIcon
                   icon={["fab", "discord"]}
-                  className="icon"
+                  className={styles["icon"]}
                 ></FontAwesomeIcon>
               </a>
             </span>
-            <span className="twitter">
+            <span className={styles["twitter"]}>
               <a href="https://twitter.com/VT_Hacks/" target="_blank">
-                <FontAwesomeIcon icon={["fab", "twitter"]} className="icon" />
+                <FontAwesomeIcon
+                  icon={["fab", "twitter"]}
+                  className={styles["icon"]}
+                />
               </a>
             </span>
-            <span className="facebook">
+            <span className={styles["facebook"]}>
               <a href="https://www.facebook.com/vthacks/" target="_blank">
-                <FontAwesomeIcon icon={["fab", "facebook"]} className="icon" />
+                <FontAwesomeIcon
+                  icon={["fab", "facebook"]}
+                  className={styles["icon"]}
+                />
               </a>
             </span>
-            <span className="instagram">
+            <span className={styles["instagram"]}>
               <a href="https://www.instagram.com/vthacks/" target="_blank">
-                <FontAwesomeIcon icon={["fab", "instagram"]} className="icon" />
+                <FontAwesomeIcon
+                  icon={["fab", "instagram"]}
+                  className={styles["icon"]}
+                />
               </a>
             </span>
-            <span className="youtube">
+            <span className={styles["youtube"]}>
               <a
                 href="https://www.youtube.com/channel/UCZb_vAWHi02uSnScEoZ07_Q"
                 target="_blank"
               >
-                <FontAwesomeIcon icon={["fab", "youtube"]} className="icon" />
+                <FontAwesomeIcon
+                  icon={["fab", "youtube"]}
+                  className={styles["icon"]}
+                />
               </a>
             </span>
-            <span className="mail">
+            <span className={styles["mail"]}>
               <a href="mailto:hacker@vthacks.com" target="_blank">
-                <FontAwesomeIcon icon={faEnvelope} className="icon" />
+                <FontAwesomeIcon icon={faEnvelope} className={styles["icon"]} />
               </a>
             </span>
-            <span className="devpost">
+            <span className={styles["devpost"]}>
               <a
-                className="devPostLink"
+                className={styles["devPostLink"]}
                 href="https://vthacks-ix.devpost.com/"
                 target="_blank"
               >

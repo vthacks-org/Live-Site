@@ -1,5 +1,5 @@
 import React from "react"
-import "./EventListItem.css"
+import styles from "./EventListItem.module.css"
 
 import Badge from "react-bootstrap/Badge"
 
@@ -9,6 +9,7 @@ import Color from "../colors"
 
 import { IEvent } from "../interfaces"
 import { formattedEventTime } from "../utils"
+import clsx from "clsx"
 
 interface PropTypes {
   event: IEvent
@@ -18,12 +19,14 @@ interface PropTypes {
 
 const EventListItem: React.FC<PropTypes> = props => {
   return (
-    <div className={`event-item ${props.relativeDayTime}`}>
+    <div
+      className={clsx(styles["event-item"], styles[`${props.relativeDayTime}`])}
+    >
       <div
-        className="event-item-content"
+        className={styles["event-item-content"]}
         style={{ minHeight: EVENT_LIST_ITEM_HEIGHT }}
       >
-        <svg className="category-circle" height="12" width="12">
+        <svg className={styles["category-circle"]} height="12" width="12">
           <circle
             cx="6"
             cy="6"
@@ -32,7 +35,7 @@ const EventListItem: React.FC<PropTypes> = props => {
           />
         </svg>
         {props.relativeDayTime === RelativeTime.Present && (
-          <svg className="active-circle" height="12" width="12">
+          <svg className={styles["active-circle"]} height="12" width="12">
             <circle cx="6" cy="6" r="6" fill={Color.LiveActivity} />
           </svg>
         )}

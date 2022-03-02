@@ -1,5 +1,5 @@
 import React from "react"
-import "./EventListComponent.css"
+import styles from "./EventListComponent.module.css"
 
 import { EVENT_LIST_ITEM_HEIGHT, DUMMY_EVENT } from "../constants"
 import { PropTypesDay, IEvent } from "../interfaces"
@@ -94,7 +94,7 @@ class EventListComponent extends React.Component<PropTypesDay> {
 
   render() {
     return (
-      <div id="event-list" ref={this.scrollContainerRef}>
+      <div id={styles["event-list"]} ref={this.scrollContainerRef}>
         <ModalDialog
           show={this.state.modalShow}
           onHide={() => this.setState({ modalShow: false })}

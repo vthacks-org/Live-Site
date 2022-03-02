@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "BNRoute22";
-  src: url("./assets/fonts/BNRoute22.otf");
+  src: url("/fonts/BNRoute22.otf") format("opentype");
+  font-display: swap;
 }
 
 @supports (font-variation-settings: normal) {
@@ -26,17 +27,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: BNRoute22;
+  font-family: "BNRoute22";
 }
 #navbar-main {
   font-size: 1.5em !important;
 }
 
 #brand {
-  font-family: BNRoute22;
+  font-family: "BNRoute22";
   font-size: 1em !important;
 }
 
 code {
-  font-family: Inter;
+  font-family: "Inter";
 }

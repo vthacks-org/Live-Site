@@ -1,8 +1,8 @@
 import React from "react"
 import NavBarComponent from "./NavBarComponent"
 import { Helmet } from "react-helmet"
-import "../App.css"
-import "../index.css"
+import appStyles from "./layout.module.css"
+// import "../index.css"
 import FooterComponent from "./FooterComponent"
 import { Modal, Button } from "react-bootstrap"
 
@@ -41,14 +41,14 @@ const Layout = ({ children, title = "" }) => {
 
   return (
     <>
-      <div className="App">
-        <Helmet>
+      <div className={appStyles["App"]}>
+        {/* <Helmet>
           <title>VTHacks - {title}</title>
           <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
-        </Helmet>
+        </Helmet> */}
         <NavBarComponent />
         {renderTutorial()}
-        <div className="app-content" id="switch">
+        <div className={appStyles["app-content"]} id={appStyles["switch"]}>
           {children}
         </div>
         <FooterComponent />

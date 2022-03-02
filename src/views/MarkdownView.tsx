@@ -4,28 +4,33 @@ import MarkdownComponent from "../components/MarkdownComponent"
 import NoContentComponent from "../components/NoContentComponent"
 import _ from "lodash"
 
-import { MarkdownContent } from "../interfaces"
+// import { MarkdownContent } from "../interfaces"
+import { GrayMatterFile } from "gray-matter"
+import { Markdown } from "../interfaces"
 
-type Props = {
+type MarkdownViewProps = {
   templateKey: string
-  list: [MarkdownContent]
+  markdown: Markdown[]
 }
 
-const MarkdownView = ({ templateKey, list }: Props) => {
+const MarkdownView: React.FC<MarkdownViewProps> = ({
+  templateKey,
+  markdown,
+}) => {
   const renderMarkdown = () => {
-    if (!list.length) {
+    if (!markdown.length) {
       return <NoContentComponent name={templateKey} />
     }
     var numDisp = 0
-    const items = _.map(list, item => {
-      const { node } = item;
-      if (!node.frontmatter.display) {
+    const items = _.map(markdown, (item, i) => {
+      const { display } = item.data
+      if (!display) {
         return null
       }
       numDisp++
       return (
-        <div key={node.id}>
-          <MarkdownComponent node={node} />
+        <div key={`markdown-content-${i}`}>
+          <MarkdownComponent markdown={item} />
         </div>
       )
     })
@@ -44,3 +49,9 @@ const MarkdownView = ({ templateKey, list }: Props) => {
 }
 
 export default MarkdownView
+
+export type MarkdownPageProps = {
+  data: {
+    markdown: Markdown[]
+  }
+}

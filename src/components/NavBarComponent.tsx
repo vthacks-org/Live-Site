@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
-import "./NavBarComponent.css"
-import "../App.css"
-import "../index.css"
+import styles from "./NavBarComponent.module.css"
+import Image from "next/image"
 
 import { RoutePath, EventListener } from "../enums"
 import {
@@ -11,12 +10,12 @@ import {
   DEVPOST_SUBMISSION_OPEN,
 } from "../constants"
 
-import { Link } from "gatsby"
+import Link from "next/link"
 import config from "../config.json"
 
 import { Navbar, Nav, Button } from "react-bootstrap"
 
-const NavBarComponent = () => {
+const NavBarComponent = (): JSX.Element => {
   const [expanded, setExpanded] = useState(false)
   const [mobile, setMobile] = useState(true)
   const [, setDummy] = useState()
@@ -51,8 +50,10 @@ const NavBarComponent = () => {
   })
 
   const brandName = mobile ? null : (
-    <Link id="wordmark" to={RoutePath.Schedule} onClick={collapse}>
-      {config.title}
+    <Link href={RoutePath.Schedule}>
+      <a id={styles["wordmark"]} onClick={collapse}>
+        {config.title}
+      </a>
     </Link>
   )
 
@@ -62,34 +63,35 @@ const NavBarComponent = () => {
     }
 
     return (
-      <a
-        id="devpost-submit"
-        target="_blank"
-        href="https://vthacks-ix.devpost.com/"
-        style={{ paddingRight: "11vw" }}
-      >
-        <Button variant="outline-primary" className="navbar-link">
+      <Button variant="outline-primary" id={styles["navbar-link"]}>
+        <a
+          id={styles["devpost-submit"]}
+          target="_blank"
+          href="https://vthacks-ix.devpost.com/"
+          style={{ paddingRight: "11vw" }}
+        >
           Submit to Devpost
-        </Button>
-      </a>
+        </a>
+      </Button>
     )
   }
 
   const placeHolder = mobile ? <a style={{ width: "56px" }}> </a> : null
   const marginRight = mobile ? "0px" : "1rem"
+
   return (
     <>
       <div
-        id="navbar-hidden-overlay"
+        id={styles["navbar-hidden-overlay"]}
         style={{
           display: expanded ? "block" : "none",
         }}
         onClick={collapse}
       />
-      <Navbar id="navbar-main" expanded={expanded} expand="lg">
+      <Navbar id={styles["navbar-main"]} expanded={expanded} expand="lg">
         {placeHolder}
 
-        <Navbar.Brand id="brand" style={{ marginRight: marginRight }}>
+        <Navbar.Brand id={styles["brand"]} style={{ marginRight: marginRight }}>
           <img src="/favicon.svg" alt="Logo" />
           {brandName}
         </Navbar.Brand>
@@ -99,33 +101,34 @@ const NavBarComponent = () => {
           style={{ color: "white" }}
         />
 
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+        <Navbar.Collapse id={styles["basic-navbar-nav"]}>
+          <Nav className={styles["mr-auto"]}>
             {ROUTES_WITH_TITLES.map((routeItem, index) => (
               <Link
-                key={`route-path-link-${index}`}
-                to={
+                href={
                   Array.isArray(routeItem.path)
                     ? routeItem.path[0]
                     : routeItem.path
                 }
-                onClick={collapse}
-                className="navbar-link"
+                key={`route-path-link-${index}`}
               >
-                {routeItem.title}
+                <a onClick={collapse} className={styles["navbar-link"]}>
+                  {routeItem.title}
+                </a>
               </Link>
             ))}
           </Nav>
-          <Nav className="ml-auto">{renderSubmit()}</Nav>
+          <Nav className={styles["ml-auto"]}>{renderSubmit()}</Nav>
           <a
-            id="mlh-trust-badge"
+            id={styles["mlh-trust-badge"]}
             href="https://mlh.io/seasons/2021/events"
             target="_blank"
           >
-            <img
+            <Image
               src="https://s3.amazonaws.com/logged-assets/trust-badge/2022/mlh-trust-badge-2022-white.svg"
               alt="Major League Hacking 2022 Hackathon Season"
-              style={{ width: "100%" }}
+              width={400}
+              height={700}
             />
           </a>
         </Navbar.Collapse>

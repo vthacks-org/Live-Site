@@ -1,41 +1,28 @@
-import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
-import MarkdownView from "../views/MarkdownView"
+import MarkdownView, { MarkdownPageProps } from "../views/MarkdownView"
 
-import { MarkdownProps } from "../types"
+import { loadMarkdownPage, MarkdownPage } from "../lib/markdown"
 
-const Submissions: React.FC<MarkdownProps> = ({
-  data: {
-    allMarkdownRemark: { edges: getting_started },
-  },
-}) => {
+const Submissions: React.FC<MarkdownPageProps> = ({ data }) => {
+  const { markdown } = data
   return (
     <Layout title="Getting Started">
-      <MarkdownView templateKey="getting_started" list={getting_started} />
+      <MarkdownView templateKey="getting_started" markdown={markdown} />
     </Layout>
   )
 }
 
 export default Submissions
 
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "getting_started" } } }
-    ) {
-      edges {
-        node {
-          id
-          html
-          frontmatter {
-            title
-            templateKey
-            shouldDisplayTitle
-            display
-          }
-        }
-      }
-    }
+export const getStaticProps = async () => {
+  const markdown = await loadMarkdownPage(MarkdownPage.GETTING_STARTED)
+
+  return {
+    props: {
+      data: {
+        markdown,
+      },
+    },
   }
-`
+}

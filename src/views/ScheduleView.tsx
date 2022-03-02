@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import "./ScheduleView.css"
+import styles from "./ScheduleView.module.css"
 
 import {
   ONE_MINUTE_MILLISECOND,
@@ -21,15 +21,20 @@ import Loadable from "@loadable/component"
 
 import EventListComponent from "../components/EventListComponent"
 
-import DiscordComponent from "../components/DiscordComponent"
-import TwitterComponent from "../components/TwitterComponent"
-
 type Props = {
   schedule: IEvent[]
 }
 
 const TimelineComponent = Loadable(
   () => import("../components/TimelineComponent")
+)
+
+const DiscordComponent = Loadable(
+  () => import("../components/DiscordComponent")
+)
+
+const TwitterComponent = Loadable(
+  () => import("../components/TwitterComponent")
 )
 
 const ScheduleView: React.FC<Props> = ({ schedule }) => {
@@ -102,12 +107,13 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
           <Button
             key={`btn-group-${index}`}
             onClick={() => setDay(eventDay)}
-            className="day-label-btn"
+            className={styles["day-label-btn"]}
             active={true}
             style={{
               backgroundColor: color,
               borderColor: color,
               fontSize: "1em",
+              fontWeight: isActive ? "bold" : "normal",
             }}
           >
             {(!mobile && eventDay.longTitle) || eventDay.title}
@@ -117,17 +123,17 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
     }
 
     return (
-      <div className="d-flex flex-column">
-        <ButtonGroup>{createLabels()}</ButtonGroup>
+      <div className={styles["d-flex flex-column"]}>
+        <ButtonGroup style={{ width: "100%" }}>{createLabels()}</ButtonGroup>
       </div>
     )
   }
 
   return (
-    <Container id="schedule">
+    <Container id={styles["schedule"]}>
       <Col>
         *All times are relative to your locale
-        <div>
+        <div style={{ width: "100%" }}>
           {renderTimelineDays()}
           <TimelineComponent
             day={day}
@@ -141,13 +147,13 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
             relativeDayTime={relativeDayTime}
           />
         </div>
-        <Row className="extra-content">
+        <Row className={styles["extra-content"]}>
           <DiscordComponent
-            className="discord-container"
+            className={styles["discord-container"]}
             serverId="929966430089252874"
           />
           <TwitterComponent
-            className="twitter-container"
+            className={styles["twitter-container"]}
             account="VT_Hacks"
             limit={5}
             theme="light"

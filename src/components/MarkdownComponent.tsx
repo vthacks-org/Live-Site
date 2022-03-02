@@ -1,20 +1,29 @@
-import "./MarkdownComponent.css"
+import styles from "./MarkdownComponent.module.css"
 import React from "react"
-import { MarkdownContent } from "../interfaces"
+import { Markdown } from "../interfaces"
+import ReactMarkdown from "react-markdown"
 
-const MarkdownComponent = ({ node }: MarkdownContent) => {
+type MarkdownComponentProps = {
+  markdown: Markdown
+}
+
+const MarkdownComponent: React.FC<MarkdownComponentProps> = ({ markdown }) => {
   const renderTitle = () => {
-    if (node.frontmatter.shouldDisplayTitle) {
-      return <h1 className="mardown-title ">{node.frontmatter.title}</h1>
+    if (markdown.data.shouldDisplayTitle) {
+      return <h1 className={styles["markdown-title"]}>{markdown.data.title}</h1>
     }
     return null
   }
   return (
     <div>
       {renderTitle()}
-      <div className="markdown-content">
+      {/* <div className={styles["markdown-content"]}>
         <div dangerouslySetInnerHTML={{ __html: node.html }}></div>
-      </div>
+      </div> */}
+      <ReactMarkdown
+        source={markdown.content}
+        className={styles["react-markdown"]}
+      />
     </div>
   )
 }

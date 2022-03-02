@@ -1,5 +1,6 @@
 import React from "react"
-import "./TimelineComponent.css"
+import styles from "./TimelineComponent.module.css"
+import clsx from "clsx"
 
 import { PropTypesDay, IEvent, ICategoryEventList } from "../interfaces"
 import { EventCategoryColor } from "../enums"
@@ -113,18 +114,25 @@ class TimelineComponent extends React.Component<PropTypesDay> {
                 placement="top"
                 overlay={
                   <Tooltip
-                    id={`tooltip-${ele.category}-${ele.name}-${ele.start}`}
+                    id={
+                      styles[`tooltip-${ele.category}-${ele.name}-${ele.start}`]
+                    }
                   >
                     {ele.name}
                   </Tooltip>
                 }
               >
                 <div
-                  className={`timeline-track-item ${
-                    this.props.showAsToday
-                      ? getRelativeEventTime(ele)
-                      : this.props.relativeDayTime
-                  }`}
+                  className={clsx(
+                    styles["timeline-track-item"],
+                    styles[
+                      `${
+                        this.props.showAsToday
+                          ? getRelativeEventTime(ele)
+                          : this.props.relativeDayTime
+                      }`
+                    ]
+                  )}
                   style={{
                     width: (labelSpaceHorizontal / minutes) * ele.duration,
                     left:
@@ -137,7 +145,7 @@ class TimelineComponent extends React.Component<PropTypesDay> {
                   <p>{ele.name}</p>
                   <div
                     key={`timeline-track-${ele.category}-${ele.name}`}
-                    className="timeline-track-line"
+                    className={styles["timeline-track-line"]}
                     style={{
                       background:
                         EventCategoryColor[ele.category] || Color.Overflow,
@@ -146,12 +154,14 @@ class TimelineComponent extends React.Component<PropTypesDay> {
                     {["left", "right"].map(lineEnd => (
                       <svg
                         key={`timeline-line-${lineEnd}`}
-                        className={`timeline-track-line-end-${lineEnd}`}
+                        className={styles[`timeline-track-line-end-${lineEnd}`]}
                         height="10"
                         width="10"
                       >
                         <circle
-                          className={`timeline-track-line-end-${lineEnd}`}
+                          className={
+                            styles[`timeline-track-line-end-${lineEnd}`]
+                          }
                           cx="5"
                           cy="5"
                           r="5"
@@ -171,7 +181,7 @@ class TimelineComponent extends React.Component<PropTypesDay> {
     }
 
     return (
-      <div id={`timeline-tracks-container-${this.props.day.index}`}>
+      <div id={styles[`timeline-tracks-container-${this.props.day.index}`]}>
         {renderCategoryBuckets()}
       </div>
     )
@@ -185,10 +195,10 @@ class TimelineComponent extends React.Component<PropTypesDay> {
       <OverlayTrigger
         key={`timeline-track-rn`}
         placement="right"
-        overlay={<Tooltip id={`tooltip-rn`}>Current Time</Tooltip>}
+        overlay={<Tooltip id={styles[`tooltip-rn`]}>Current Time</Tooltip>}
       >
         <div
-          id="timeline-slider"
+          id={styles["timeline-slider"]}
           style={{
             top: "2rem",
             left: this.computeSliderPos(),
@@ -196,14 +206,14 @@ class TimelineComponent extends React.Component<PropTypesDay> {
           }}
         >
           <svg
-            className="triangle-pointer top"
+            className={styles["triangle-pointer top"]}
             fill={EventCategoryColor.hacker}
             viewBox="0 0 100 100"
           >
             <path d="M0 0 L50 100 L100 0 Z"></path>
           </svg>
           <svg
-            className="triangle-pointer bottom"
+            className={styles["triangle-pointer bottom"]}
             fill={EventCategoryColor.hacker}
             viewBox="0 0 100 100"
           >
@@ -216,11 +226,11 @@ class TimelineComponent extends React.Component<PropTypesDay> {
 
   renderTimeline() {
     return (
-      <div id="timeline-label-container">
+      <div id={styles["timeline-label-container"]}>
         {timeLabels.map((label, index) => (
           <div key={`timeline-label-${index}`}>
             <p
-              className="timeline-label"
+              className={styles["timeline-label"]}
               style={{
                 top: labelSpaceVertical,
                 left: index * labelSpaceHorizontal + timeLabelOffset,
@@ -230,7 +240,7 @@ class TimelineComponent extends React.Component<PropTypesDay> {
               {label}
             </p>
             <div
-              className="timeline-label-marker"
+              className={styles["timeline-label-marker"]}
               style={{
                 left: index * labelSpaceHorizontal - timeMarkerOffset,
               }}
@@ -243,7 +253,7 @@ class TimelineComponent extends React.Component<PropTypesDay> {
 
   render() {
     return (
-      <div id="timeline" ref={this.scrollContainerRef}>
+      <div id={styles["timeline"]} ref={this.scrollContainerRef}>
         <ModalDialog
           show={this.state.modalShow}
           onHide={() => this.setState({ modalShow: false })}

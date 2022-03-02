@@ -1,23 +1,18 @@
-import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import WorkshopView from "../views/WorkshopView"
 import { IEvent } from "../interfaces"
 import { EventCategory as EC } from "../enums"
+import { loadScheduleSorted } from "../lib/schedule"
 
-type Props = {
+type UXPageProps = {
   data: {
-    allScheduleJson: {
-      nodes: IEvent[]
-    }
+    schedule: IEvent[]
   }
 }
 
-const Ux: React.FC<Props> = ({
-  data: {
-    allScheduleJson: { nodes: schedule },
-  },
-}) => {
+const UxPage: React.FC<UXPageProps> = ({ data }) => {
+  const { schedule } = data
   return (
     <Layout>
       <WorkshopView schedule={schedule} name="UX events" whitelist={[EC.UX]} />
@@ -25,22 +20,16 @@ const Ux: React.FC<Props> = ({
   )
 }
 
-export default Ux
+export default UxPage
 
-export const pageQuery = graphql`
-  query {
-    allScheduleJson {
-      nodes {
-        name
-        location
-        start
-        duration
-        category
-        description
-        contentLink
-        callLink
-        display
-      }
-    }
+export const getStaticProps = async () => {
+  const schedule = await loadScheduleSorted()
+
+  return {
+    props: {
+      data: {
+        schedule,
+      },
+    },
   }
-`
+}

@@ -13,16 +13,13 @@ export interface IEvent {
   callLink: string
 }
 
-export interface MarkdownContent {
-  node: {
-    html: string
-    id: string
-    frontmatter: {
-      title: string
-      display: boolean
-      templateKey: string
-      shouldDisplayTitle: boolean
-    }
+export interface Markdown {
+  content: string
+  data: {
+    title: string
+    display: boolean
+    templateKey: string
+    shouldDisplayTitle: boolean
   }
 }
 

@@ -1,5 +1,5 @@
 import React from "react"
-import "./WorkshopView.css"
+import styles from "./WorkshopView.module.css"
 
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
@@ -55,9 +55,9 @@ const WorkshopView = ({ schedule, name, whitelist }) => {
     return _.map(days, (day, index) => {
       return (
         day.events.length !== 0 && (
-          <div key={`workshop-day-${index}`} className="workshop-day">
+          <div key={`workshop-day-${index}`} className={styles["workshop-day"]}>
             <h5>Day {index + 1}</h5>
-            <div className="workshops">{renderEvents(day)}</div>
+            <div className={styles["workshops"]}>{renderEvents(day)}</div>
           </div>
         )
       )
@@ -82,7 +82,7 @@ const WorkshopView = ({ schedule, name, whitelist }) => {
     return _.map(day.events, (event, index) => {
       return (
         <div
-          className="event-item-container"
+          className={styles["event-item-container"]}
           key={`event-list-item-${index}`}
           onClick={() => {
             setShow(true)
@@ -97,7 +97,7 @@ const WorkshopView = ({ schedule, name, whitelist }) => {
   }
 
   return (
-    <Container id="workshop-view">
+    <Container id={styles["workshop-view"]}>
       <Col>
         <div>
           <ModalDialog

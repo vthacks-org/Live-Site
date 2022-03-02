@@ -1,3 +1,11 @@
 {
-  "title": "VTHacks IX"
+  "title": "VTHacks IX",
+  "markdownPages": [
+    "getting-started",
+    "judges",
+    "prizes",
+    "resources",
+    "sponsors",
+    "submission-guidelines"
+  ]
 }

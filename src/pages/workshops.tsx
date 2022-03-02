@@ -1,23 +1,18 @@
-import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import WorkshopView from "../views/WorkshopView"
 import { IEvent } from "../interfaces"
 import { EventCategory as EC } from "../enums"
+import { loadScheduleSorted } from "../lib/schedule"
 
-type Props = {
+type WorkshopsPageProps = {
   data: {
-    allScheduleJson: {
-      nodes: IEvent[]
-    }
+    schedule: IEvent[]
   }
 }
 
-const Workshops: React.FC<Props> = ({
-  data: {
-    allScheduleJson: { nodes: schedule },
-  },
-}) => {
+const Workshops: React.FC<WorkshopsPageProps> = ({ data }) => {
+  const { schedule } = data
   return (
     <Layout>
       <WorkshopView
@@ -31,20 +26,32 @@ const Workshops: React.FC<Props> = ({
 
 export default Workshops
 
-export const pageQuery = graphql`
-  query {
-    allScheduleJson {
-      nodes {
-        name
-        location
-        start
-        duration
-        category
-        description
-        contentLink
-        callLink
-        display
-      }
-    }
+export const getStaticProps = async () => {
+  const schedule = await loadScheduleSorted()
+
+  return {
+    props: {
+      data: {
+        schedule,
+      },
+    },
   }
-`
+}
+
+// export const pageQuery = graphql`
+//   query {
+//     allScheduleJson {
+//       nodes {
+//         name
+//         location
+//         start
+//         duration
+//         category
+//         description
+//         contentLink
+//         callLink
+//         display
+//       }
+//     }
+//   }
+// `
