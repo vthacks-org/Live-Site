@@ -4,5 +4,6 @@
   "name": "Acing the Technical Interview",
   "duration": 30,
   "location": "virtual",
-  "category": "workshop"
+  "category": "workshop",
+  "description": "This is a test description"
 }
