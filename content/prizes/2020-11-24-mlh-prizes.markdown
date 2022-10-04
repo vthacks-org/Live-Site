@@ -22,12 +22,14 @@ templateKey: prizes
 [Wacom Graphic Drawing Tablet](https://www.amazon.com/Wacom-Graphic-Drawing-Tablet-Beginners/dp/B07S1RR3FR)
 
 ## People’s Choice
+
 Voted on Devpost
 
 **Award:**
 [Big Joe beanbag chair](https://www.amazon.com/Big-Joe-645602-Chair-Stretch/dp/B008AE0WV0)
 
 ## First Hackathon Prize
+
 Majority of team is first time
 
 **Award:**
@@ -51,3 +53,7 @@ Most refined / technically complete. Achieves what it sets out to do while also 
 
 **Award:**
 [Playstation Classic Console](https://www.amazon.com/PlayStation-Classic-Console/dp/B07HHVF2XG/)
+
+
+
+P﻿articipation: $1,000,000
