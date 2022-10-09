@@ -214,6 +214,7 @@ export function splitEvent(event: IEvent): IEvent[] {
 
 export function daysFromSchedule(schedule: IEvent[]): IEventDay[] {
   schedule.forEach(event => (event.start = new Date(event.start)))
+  console.log(schedule);
 
   let tempDays: IEventDay[] = []
   for (let i = 0; i < HACK_LENGTH; i++) {

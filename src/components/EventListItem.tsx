@@ -61,10 +61,12 @@ const EventListItem: React.FC<PropTypes> = props => {
             }}
             variant="primary"
           >
-            {props.event.location}
+            {/* {props.event.location} */}
           </Badge>
         </span>
-        <span>{formattedEventTime(props.event)}</span>
+        <span>
+          {/* {formattedEventTime(props.event)} */}
+        </span>
       </div>
     </div>
   )

@@ -93,10 +93,10 @@ export const DUMMY_EVENT: IEvent = {
   callLink: "",
 }
 
-export const DAY_OF_THE_EVENT: Date = new Date("2022-02-25T00:00:00.000-05:00")
-export const EVENT_END_TIME_DATE: Date = new Date("2022-02-28T00:00:00-05:00")
+export const DAY_OF_THE_EVENT: Date = new Date("2023-11-10T00:00:00.000-05:00")
+export const EVENT_END_TIME_DATE: Date = new Date("2023-11-13T00:00:00-05:00")
 export const DEVPOST_SUBMISSION_OPEN: Date = new Date(
-  "2022-02-26T21:30:00-05:00"
+  "2023-11-12T21:30:00-05:00"
 )
 
 export const HACK_LENGTH: Number = daysApart(

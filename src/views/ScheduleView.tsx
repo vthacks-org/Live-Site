@@ -20,6 +20,7 @@ import Button from "react-bootstrap/Button"
 import Loadable from "@loadable/component"
 
 import EventListComponent from "../components/EventListComponent"
+import PlannedEventsComponent from "../components/PlannedEventsComponent";
 
 import DiscordComponent from "../components/DiscordComponent"
 import TwitterComponent from "../components/TwitterComponent"
@@ -126,9 +127,9 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
   return (
     <Container id="schedule">
       <Col>
-        *All times are relative to your locale
+        {/* *All times are relative to your locale */}
         <div>
-          {renderTimelineDays()}
+          {/* {renderTimelineDays()}
           <TimelineComponent
             day={day}
             showAsToday={showAsToday}
@@ -139,7 +140,8 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
             day={day}
             showAsToday={showAsToday}
             relativeDayTime={relativeDayTime}
-          />
+          /> */}
+          <PlannedEventsComponent schedule={schedule} />
         </div>
         <Row className="extra-content">
           <DiscordComponent
