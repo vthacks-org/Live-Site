@@ -4,5 +4,6 @@
   "name": "Hacking Starts",
   "duration": 0,
   "location": "main hall",
-  "category": "organizer"
+  "category": "organizer",
+  "description": "Official start time of VT Hacks!"
 }
