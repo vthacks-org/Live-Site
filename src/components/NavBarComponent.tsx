@@ -15,6 +15,7 @@ import { Link } from "gatsby"
 import config from "../config.json"
 
 import { Navbar, Nav, Button } from "react-bootstrap"
+import { url } from "inspector"
 
 const NavBarComponent = () => {
   const [expanded, setExpanded] = useState(false)
@@ -68,7 +69,7 @@ const NavBarComponent = () => {
         href="https://vthacks-ix.devpost.com/"
         style={{ paddingRight: "11vw" }}
       >
-        <Button variant="outline-primary" className="navbar-link">
+        <Button variant="outline-primary" className="navbar-link" disabled>
           Submit to Devpost
         </Button>
       </a>
@@ -89,18 +90,20 @@ const NavBarComponent = () => {
       <Navbar id="navbar-main" expanded={expanded} expand="lg">
         {placeHolder}
 
-        <Navbar.Brand id="brand" style={{ marginRight: marginRight }}>
-          <img src="/favicon.svg" alt="Logo" />
-          {brandName}
-        </Navbar.Brand>
+        <a href="/" id="logo-link">
+          <img src="/navLogo.png" alt="Logo" id="logo-image" />
+        </a>
+        
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           onClick={toggle}
-          style={{ color: "white" }}
-        />
+          style={{
+            borderColor: '#333'
+          }}
+        />  
 
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="mr-auto" id="links-div">
             {ROUTES_WITH_TITLES.map((routeItem, index) => (
               <Link
                 key={`route-path-link-${index}`}
@@ -117,17 +120,16 @@ const NavBarComponent = () => {
             ))}
           </Nav>
           <Nav className="ml-auto">{renderSubmit()}</Nav>
-          <a
-            id="mlh-trust-badge"
-            href="https://mlh.io/seasons/2023/events"
-            target="_blank"
-          >
-            <img
-              src="https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-white.svg"
-              alt="Major League Hacking 2023 Hackathon Season"
-              style={{ width: "100%" }}
-            />
-          </a>
+            <a
+              id="mlh-trust-badge"
+              href="https://mlh.io/seasons/2023/events"
+              target="_blank"
+            >
+              <img
+                src="https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-black.svg"
+                alt="Major League Hacking 2023 Hackathon Season"
+              />
+            </a>
         </Navbar.Collapse>
       </Navbar>
     </>

@@ -8,6 +8,7 @@
 .timeline-label,
 .timeline-label-marker {
   position: absolute;
+  color: #ddd;
 }
 
 .timeline-label {
@@ -18,7 +19,7 @@
 .timeline-label-marker {
   height: 6.5%;
   width: 2px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(80, 80, 80, 0.4);
 }
 
 #timeline-slider {
@@ -47,6 +48,7 @@
   position: absolute;
   transition: opacity 0.2s;
   cursor: pointer;
+  color: #ddd;
 }
 
 .timeline-track-item.past {

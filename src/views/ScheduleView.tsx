@@ -97,7 +97,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
     const createLabels = () => {
       return _.map(days, (eventDay, index) => {
         const isActive = index === day.index
-        const color = isActive ? "#f89b6a" : "#3a3a3a"
+        const color = isActive ? "#9028ad" : "#3a3a3a"
 
         return (
           <Button
@@ -129,7 +129,7 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
       <Col>
         {/* *All times are relative to your locale */}
         <div>
-          {/* {renderTimelineDays()}
+          {renderTimelineDays()}
           <TimelineComponent
             day={day}
             showAsToday={showAsToday}
@@ -140,8 +140,8 @@ const ScheduleView: React.FC<Props> = ({ schedule }) => {
             day={day}
             showAsToday={showAsToday}
             relativeDayTime={relativeDayTime}
-          /> */}
-          <PlannedEventsComponent schedule={schedule} />
+          />
+          {/* <PlannedEventsComponent schedule={schedule} /> */}
         </div>
         <Row className="extra-content">
           <DiscordComponent

@@ -45,10 +45,11 @@ const EventListItem: React.FC<PropTypes> = props => {
         >
           <span
             style={{
-              fontSize: "1.5rem",
+              fontSize: "1.2rem",
               lineHeight: 1.2,
-              fontWeight: 500,
-              fontFamily: "BNRoute22",
+              fontWeight: 'bold',
+              fontFamily: "Roboto, sans-serif",
+              color: "#ddd"
             }}
           >
             {props.event.name}

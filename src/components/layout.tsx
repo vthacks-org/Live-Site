@@ -47,6 +47,7 @@ const Layout = ({ children, title = "" }) => {
           <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
         </Helmet>
         <NavBarComponent />
+        <div className="navbar-spacer" />
         {renderTutorial()}
         <div className="app-content" id="switch">
           {children}

@@ -2,12 +2,29 @@
   word-break: break-word;
   overflow-wrap: break-word;
   padding-left: 15px;
+  color: #ddd;
+  font-family: Roboto, sans-serif;
+}
+
+.markdown-content h1, h2, h3, h4, h5 {
+  color: #eee;
+  font-weight: bold !important; 
+}
+
+.markdown-content h1 {
+  font-size: 2rem;
+}
+
+.markdown-content h2 {
+  font-size: 1.5rem;
 }
 
 .markdown-title {
   padding-left: 0px;
+  color: #dde;
+  font-weight: bold;
 }
 
 p {
-  padding-left: 15px;
+  padding-left: 18px;
 }

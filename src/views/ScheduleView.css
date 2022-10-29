@@ -3,8 +3,13 @@
   justify-content: center;
 }
 
-.day-label-button {
-  background-color: #3a3a3a;
+.day-label-btn {
+  border: none !important;
+}
+
+.day-label-btn:active {
+  border: none !important;
+  background-color: green !important;
 }
 
 .dev-post img {

@@ -6,10 +6,7 @@ const TwitterComponent = ({ limit, account, theme, className, alt }) => {
     script.src = "https://platform.twitter.com/widgets.js"
     document.getElementsByClassName(className)[0].appendChild(script)
   }, [])
-
-  if (theme !== "light" || theme !== "dark") {
-    theme = "light"
-  }
+  
   if (alt === "") {
     alt = `Tweets by ${account}`
   }
@@ -17,7 +14,7 @@ const TwitterComponent = ({ limit, account, theme, className, alt }) => {
     <div className={className}>
       <a
         className="twitter-timeline"
-        data-theme={theme}
+        data-theme={"dark"}
         data-tweet-limit={limit}
         data-chrome="noheader nofooter noborders"
         href={`https://twitter.com/${account}`}

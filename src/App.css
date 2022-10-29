@@ -11,6 +11,12 @@
 
   flex-direction: column;
   justify-content: center;
+
+  background: linear-gradient(to bottom, rgb(27, 28, 83), rgb(38, 27, 83));
+}
+
+.navbar-spacer {
+  height: 50px;
 }
 
 .app-content {

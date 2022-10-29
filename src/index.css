@@ -7,7 +7,7 @@
 
 @supports (font-variation-settings: normal) {
   html {
-    font-family: "Inter var", sans-serif;
+    font-family: Roboto, sans-serif;
   }
 }
 
@@ -26,14 +26,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: BNRoute22;
+  font-family: Roboto, sans-serif;
 }
 #navbar-main {
   font-size: 1.5em !important;
 }
 
 #brand {
-  font-family: BNRoute22;
+  font-family: Roboto, sans-serif;
   font-size: 1em !important;
 }
 
