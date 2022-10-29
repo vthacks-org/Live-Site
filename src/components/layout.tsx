@@ -44,7 +44,7 @@ const Layout = ({ children, title = "" }) => {
       <div className="App">
         <Helmet>
           <title>VTHacks - {title}</title>
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
+          <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico"></link>
         </Helmet>
         <NavBarComponent />
         <div className="navbar-spacer" />

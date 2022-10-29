@@ -80,13 +80,6 @@ const NavBarComponent = () => {
   const marginRight = mobile ? "0px" : "1rem"
   return (
     <>
-      <div
-        id="navbar-hidden-overlay"
-        style={{
-          display: expanded ? "block" : "none",
-        }}
-        onClick={collapse}
-      />
       <Navbar id="navbar-main" expanded={expanded} expand="lg">
         {placeHolder}
 
