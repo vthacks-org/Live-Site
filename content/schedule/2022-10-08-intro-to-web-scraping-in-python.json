@@ -1,9 +1,10 @@
 {
   "display": true,
-  "start": "10/08/2022 12:46 pm -0400",
+  "start": "11/11/2022 10:15 pm -0500",
   "name": "Intro to Python",
   "subtitle": "Luke",
   "duration": 60,
   "location": "main hall",
-  "category": "workshop"
+  "category": "workshop",
+  "description": "Python is a very popular general purpose scripting language. It has tons of applications in many fields from web development to machine learning. This workshop will give an introduction to the language, its syntax, and explore its use cases."
 }
