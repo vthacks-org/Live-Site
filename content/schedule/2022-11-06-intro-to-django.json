@@ -1,0 +1,9 @@
+{
+  "display": true,
+  "start": "11/12/2022 11:00 am -0500",
+  "name": "Intro to Django",
+  "duration": 60,
+  "location": "main hall",
+  "category": "workshop",
+  "subtitle": "Vinit"
+}
