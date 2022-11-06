@@ -1,0 +1,10 @@
+{
+  "display": true,
+  "start": "11/12/2022 3:00 pm -0500",
+  "name": "MLH Snyk CTF",
+  "subtitle": "MLH",
+  "duration": 60,
+  "location": "main hall",
+  "category": "ux",
+  "description": "Snyk is a platform allowing you to scan, prioritize, and fix security vulnerabilities in your own code. In this challenge, you'll need to expose hidden vulnerabilities in a web application using Snyk & your cybersecurity skills!"
+}
