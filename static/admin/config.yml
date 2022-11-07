@@ -39,7 +39,7 @@ collections:
           label: Location,
           widget: select,
           options:
-            ["virtual", "main hall", "torg 1060", "torg 2150", "torg 1020", "torg 1040"],
+            ["virtual", "Hancock 100", "Holden Auditorium", "GLC Auditorium", "Holden Hallway", "Randolph Atrium", "Holden Active Learning Room", "Holden Learning Theater", "Randolph Lobby", "GLC Multipurpose Room", "Holden 234", "Holden 244", ],
         }
       - {
           name: category,
