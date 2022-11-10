@@ -1,9 +1,10 @@
 {
   "display": true,
-  "start": "11/12/2022 11:00 am -0500",
+  "start": "11/12/2022 11:15 am -0500",
   "name": "Intro to Django",
   "duration": 60,
   "location": "main hall",
   "category": "workshop",
-  "subtitle": "Vinit"
+  "subtitle": "Vinit",
+  "description": "Giving Brief overview of Django with regards to project building for hackathon and using Django for connection of backend and frontend"
 }
