@@ -4,20 +4,17 @@ title: Sponsor Prizes
 shouldDisplayTitle: true
 templateKey: prizes
 ---
-# Mantech
+## Best Sustainability Hack
+Sponsored By Capgemini
 
-## Designed for Security and Privacy
+Oculus VR
 
-**Award:** Oculus Headset
+## Peraton 
+$100 Amazon Gift Card
 
-# Peraton
+## JB Hunt
+Internship and 3D Printer
 
-## Best AI/Machine Learning Hack
+## Cipher Tech
+$75 Gift Card and Swag Bag
 
-**Award:** $400 Amazon Gift Card for whole team
-
-# Capital One
-
-## Best Financial Hack
-
-**Award**: $250 Amazon Gift Card
