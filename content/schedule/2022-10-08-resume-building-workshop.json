@@ -1,9 +1,10 @@
 {
   "display": true,
-  "start": "11/12/2022 12:00 pm -0500",
+  "start": "11/12/2022 11:00 am -0500",
   "subtitle": "Alyssa Henderson",
   "name": "Resume Building Workshop",
   "duration": 60,
   "location": "main hall",
-  "category": "workshop"
+  "category": "workshop",
+  "description": "Get career and resume tips from VT's very own Career & Profession Development department. Bringing a hard copy of your resume is recommended!"
 }
