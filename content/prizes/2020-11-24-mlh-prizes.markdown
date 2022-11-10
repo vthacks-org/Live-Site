@@ -6,54 +6,64 @@ templateKey: prizes
 ---
 ## (1st overall) The Everest Award
 
-**Award:** iPad
+**Award:** Nintendo Switch
 
 ## 2nd Place
 
-**Award:** Nintendo Switch Lite
+**Award:** Beats Studio 3
 
 ## 3rd Place
 
-**Award:** Airpods 3rd Generation
+**Award:** JBL Flip 5
 
 ## Best UX/UI
 
 **Award:**
-[Wacom Graphic Drawing Tablet](https://www.amazon.com/Wacom-Graphic-Drawing-Tablet-Beginners/dp/B07S1RR3FR)
+[](https://www.amazon.com/Wacom-Graphic-Drawing-Tablet-Beginners/dp/B07S1RR3FR)[Graphics Drawing Tablet](https://www.amazon.com/Graphics-Drawing-Graphic-Tablets-Creation/dp/B07P82FSFW/ref=sr_1_3?keywords=drawing+tablet&qid=1663962955&s=electronics&sprefix=drawing%2Celectronics%2C83&sr=1-3)
 
 ## People’s Choice
 
 Voted on Devpost
 
 **Award:**
-[Big Joe beanbag chair](https://www.amazon.com/Big-Joe-645602-Chair-Stretch/dp/B008AE0WV0)
+[](https://www.amazon.com/Big-Joe-645602-Chair-Stretch/dp/B008AE0WV0)Logitech K380
 
 ## First Hackathon Prize
 
 Majority of team is first time
 
 **Award:**
-[Sphero Mini](https://sphero.com/collections/all/products/sphero-mini)
+Uno Arduino Starter Kit
 
 ## Most Unique (Penquin)
 
 Hack different from everything else
 
 **Award:**
-[Echo Show 8 - Charcoal](https://www.bestbuy.com/site/amazon-echo-show-8-smart-display-with-alexa-charcoal/6380481.p?skuId=6380481)
+[Big Joe beanbag chair](https://www.amazon.com/Big-Joe-645602-Chair-Stretch/dp/B008AE0WV0)[](https://www.bestbuy.com/site/amazon-echo-show-8-smart-display-with-alexa-charcoal/6380481.p?skuId=6380481)
 
 ## Most Polished (Glass)
 
 Most refined / technically complete. Achieves what it sets out to do while also being meaningful
 
 **Award:**
-[Arduino Starter Kit](https://store-usa.arduino.cc/products/arduino-starter-kit-multi-language)
+Apple Airtag
 
 ## Best Presentation
 
 **Award:**
-[Playstation Classic Console](https://www.amazon.com/PlayStation-Classic-Console/dp/B07HHVF2XG/)
+Echo Show 5
 
+## Best Sustainability Hack
+Sponsored By Capgemini
 
+Oculus VR
 
-P﻿articipation: $1,000,000
+## Peraton 
+$100 Amazon Gift Card
+
+## JB Hunt
+Internship and 3D Printer
+
+## Cipher Tech
+$75 Gift Card and Swag Bag
