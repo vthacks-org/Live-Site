@@ -3,7 +3,7 @@
   "start": "11/11/2022 11:15 pm -0500",
   "name": "Intro to Django",
   "duration": 60,
-  "location": "main hall",
+  "location": "Holden 244",
   "category": "workshop",
   "subtitle": "Vinit",
   "description": "Giving Brief overview of Django with regards to project building for hackathon and using Django for connection of backend and frontend"
