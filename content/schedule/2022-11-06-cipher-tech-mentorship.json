@@ -1,9 +1,10 @@
 {
   "display": true,
   "start": "11/12/2022 1:30 pm -0500",
-  "name": "Cipher Tech Mentorship",
+  "name": "Cipher Tech Mentorship + Skribbl.io",
   "subtitle": "Cipher Tech",
   "duration": 60,
   "location": "main hall",
-  "category": "sponsor"
+  "category": "sponsor",
+  "description": "Join CipherTech virtually to get some help on your project and relax by playing a fun game of skribbl.io"
 }
