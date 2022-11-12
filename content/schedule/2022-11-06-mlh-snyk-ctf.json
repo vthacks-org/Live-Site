@@ -4,7 +4,7 @@
   "name": "MLH Snyk CTF",
   "subtitle": "MLH",
   "duration": 60,
-  "location": "virtual",
+  "location": "Holden 234",
   "category": "ux",
   "description": "Snyk is a platform allowing you to scan, prioritize, and fix security vulnerabilities in your own code. In this challenge, you'll need to expose hidden vulnerabilities in a web application using Snyk & your cybersecurity skills!"
 }
