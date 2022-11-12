@@ -129,10 +129,10 @@ export const ROUTES_WITH_TITLES = [
     title: "Submission Guidelines",
     path: RoutePath.Submission_Guidelines,
   },
-//   {
-//     title: "Prizes",
-//     path: RoutePath.Prizes,
-//   },
+   {
+     title: "Prizes",
+     path: RoutePath.Prizes,
+   },
 ]
 
 export const eventCatPrio = {
