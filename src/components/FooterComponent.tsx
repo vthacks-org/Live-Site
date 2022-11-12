@@ -20,7 +20,7 @@ const FooterComponent = () => {
         <Row className="links">
           <Col>
             <span className="discord">
-              <a href="https://discord.gg/FjdxXqjnSm" target="_blank">
+              <a href="https://discord.gg/5TAJxqtApf" target="_blank">
                 <FontAwesomeIcon
                   icon={["fab", "discord"]}
                   className="icon"
@@ -44,7 +44,7 @@ const FooterComponent = () => {
             </span>
             <span className="youtube">
               <a
-                href="https://www.youtube.com/channel/UCZb_vAWHi02uSnScEoZ07_Q"
+                href="https://www.youtube.com/channel/UCepvJUogPymOsjKma24SMgg"
                 target="_blank"
               >
                 <FontAwesomeIcon icon={["fab", "youtube"]} className="icon" />
@@ -58,7 +58,7 @@ const FooterComponent = () => {
             <span className="devpost">
               <a
                 className="devPostLink"
-                href="https://vthacks-ix.devpost.com/"
+                href="https://vthacks-x.devpost.com/"
                 target="_blank"
               >
                 <svg

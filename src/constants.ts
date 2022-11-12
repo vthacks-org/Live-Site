@@ -121,13 +121,13 @@ export const ROUTES_WITH_TITLES = [
     title: "UX Events",
     path: RoutePath.UX_Events,
   },
-   {
-     title: "Resources",
-     path: RoutePath.Resources,
-   },
   {
     title: "Submission Guidelines",
     path: RoutePath.Submission_Guidelines,
+  },
+  {
+    title: "Prizes",
+    path: RoutePath.Prizes,
   },
    {
      title: "Prizes",
